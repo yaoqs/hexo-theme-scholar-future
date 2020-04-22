@@ -41,12 +41,13 @@ Journal:
 
 ## Donate
 
-[paypal](paypal.me/LordYao)
+[paypal捐赠 paypal.me/LordYao](https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=243292490@qq.com&currency_code=USD&amount=1&return=http://yaoqs.github.com/about.html&item_name=LordYao%27s%20Blog&undefined_quantity=1)
 
-<image alt="alipay" src="source/images/支付宝收款码.jpg" width="200"/><br>
-<image alt="alipay" src="source/images/支付宝红包码.jpg" width="200"/><br>
-<image alt="wechat" src="source/images/微信收款码.png" width="200"/><br>
-<image alt="wechat" src="source/images/微信打赏码.png" width="200"/>
+<image alt="alipay" src="https://yaoqs.github.io/images/支付宝收款码.jpg" width="200"/><br>
+<image alt="alipay" src="https://yaoqs.github.io/images/支付宝红包码.jpg" width="200"/><br>
+<image alt="wechat" src="https://yaoqs.github.io/images/微信收款码.png" width="200"/><br>
+<image alt="wechat" src="https://yaoqs.github.io/images/微信打赏码.png" width="200"/>
+
 
 ## 感谢/Thanks
 [hexo](https://github.com/hexojs/hexo):A fast, simple & powerful blog framework, powered by Node.js. <https://hexo.io>
@@ -83,9 +84,13 @@ All Rights Reserved.
 
 ## Project plan
 
+- [ ] azure
+- [ ] 注册域名
 - [ ] about页，404页（公益）
-- [ ] 个人简历页
-- [ ] 统计页
+- [ ] 个人简历页(resume)
+- [ ] lab.html实验示例代码
+- [x] 统计页statistics.ejs
+- [x] follow.ejs
 - [ ] journal-face.png journal-menu.png
 - [ ] 图片页图片轮播 参考jb51.net代码
 - [x] 打赏功能tctip  https://www.cnblogs.com/enjoy233/p/10328361.html https://github.com/greedying/tctip
@@ -107,6 +112,4 @@ All Rights Reserved.
     ```
 - [ ] 在公告栏添加滚动文字 使用marquee标签即能实现文字的滚动
 - [x] 在页面顶部添加"Fork me on Github"图标
-
-Github+Jekyll 搭建个人网站详细教程 <https://www.jianshu.com/p/9f71e260925d>
-azure
+- [ ] 修改主题风格 Github+Jekyll 搭建个人网站详细教程 <https://www.jianshu.com/p/9f71e260925d>
