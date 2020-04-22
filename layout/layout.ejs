@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  <!---->
+    <head>
+        
+		<%
+		  var title = page.title;
+
+		  if (is_archive()){
+		    title = 'Archives';
+
+		    if (is_month()){
+		      title += ': ' + page.year + '/' + page.month;
+		    } else if (is_year()){
+		      title += ': ' + page.year;
+		    }
+		  } else if (is_category()){
+		    title = 'Category: ' + page.category;
+		  } else if (is_tag()){
+		    title = 'Tag: ' + page.tag;
+		  }
+		%>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="<%- config.description %>">
+        <link rel="shortcut icon" href="<%- theme.logo %>"/>
+        <link rel="alternate" type="application/rss+xml" title="<%- config.author %>" href="<%- theme.rss %>">
+        <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+        <meta name="description" content="{{meta_description}}">
+
+        <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="<%- config.root %>styles/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="<%- config.root %>styles/future.css">
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script></script>-->
+        <!--<script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>-->
+        <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        
+    </head>
+    <header id="header">
+        <div id="fork_me_on_github"></div>
+        <script text="script/javascript">
+          //以下函数返回 min（包含）～ max（包含）之间的数字：
+          function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) ) + min;
+          }
+          var id=getRndInteger(0,5);
+          var color='red_aa0000'
+          switch(id)
+          {
+            default:
+            color='red_aa0000';
+            break;
+            case 1:
+            color='darkblue_121621'
+            break;
+            case 2:
+            color='orange_ff7600'
+            break;
+            case 3:
+            color='gray_6d6d6d'
+            break;
+            case 4:
+            color='white_ffffff'
+          }
+          var code='<a href="https://github.com/<%- theme.github %>"><img width="123" height="123" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_'
+          
+          var code2='.png?resize='+'123'+'%2C'+'123'+'" class="attachment-full size-full" alt="" data-recalc-dims="1"></a>'
+          document.getElementById("fork_me_on_github").innerHTML=code+color+code2;
+      
+        </script>
+        
+        <% if (theme.avatar.url) { %>
+        <a id="avatar" href="<%- config.root %>"><img src="<%- theme.avatar.url %>" alt="<%- config.title%>" /></a>
+        <% } %>
+        <h1><a id="author" href="<%- config.root %>"><%- config.author %></a></h1>        
+        <% if (theme.weibostar) { -%>
+          <script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+            <%- theme.weibostar %>
+        <% } -%>
+        
+      <%- partial('./_partial/follow') %>
+
+        <span id="donate">Slogan: <%- theme.slogan %></span>
+        <h6><a href="<%- config.root %>about.html">About</a>
+          <% if (theme.custom_html_list.Resume) { -%>
+          &middot;
+          <a href="<%- config.root %><%- theme.custom_html_list.Resume %>">Resume</a>
+          <% } -%>
+          <% if (theme.custom_html_list.Lab) { -%>
+          &middot;
+          <a href="<%- config.root %><%- theme.custom_html_list.Lab %>">Lab</a>
+          <% } -%>
+        </h6>
+        <span id="donate"><a href="<%- config.root %>about.html#Donate" title="<%- theme.reward.comment %>">Donate & Reward </a></span>
+        
+        <footer>
+          <section id="footer-message">&copy; <% if(theme.copyright.since  ) { -%> 
+          <%- theme.copyright.since %> - 
+          <% } -%>
+          <%= date(new Date(), 'YYYY') %>          
+          <%- theme.copyright.admin %>.<br/>
+          <% if (theme.copyright.creative_commons.url){-%>
+          <img src="<%- theme.copyright.creative_commons.url %>"/>
+          <% } else { %>          
+          <%- theme.copyright.creative_commons.license %> .
+          <%} %> 
+           All rights reserved. <br/>
+          Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. <a href="https://github.com/yaoqs/hexo-theme-scholar-future" target="_blank"><%- theme.name %></a> theme by <a href="https://yaoqs.github.io" target="_blank"><%- theme.copyright.admin %></a>.</section>
+        </footer>
+        <%- partial('./_partial/Statistics') %>
+      </header>
+   <!---->   
+      <div id="journal-name"><%- theme.journal.title %> <br><%- theme.journal.subtitle %></div>
+    <% if (page.title == site.title) { %>          
+      <%- body %> 
+    <% } else { %>
+<!--<% if (typeof page.title == 'undefined') { %>
+      <div class="home-template">
+      <% } else { %>
+      <div class="post-template">
+      <% } %>  -->
+          
+      
+        <main id="content">
+        
+        <%- body %>
+        </main>
+        <% } %>
+
+<!--</div>-->
+</html>
+
+

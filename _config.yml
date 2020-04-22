@@ -1,0 +1,132 @@
+name: scholar-future
+description: A scholar magazine/journal like blog
+keywords: scholar-like blog
+logo: /images/githubavatar.png
+slogan: 解放思想，发展生产力
+rss: /atom.xml
+disqus: 
+custom_html_list: 
+  Lab: Lab.html
+  Resume: resume.html
+
+
+
+google_analytics:
+cnzz: <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" :"http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278269244'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278269244%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+umengplus: <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" :"http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278269244'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278269244%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+qq_ta: <script type="text/javascript" src="http://tajs.qq.com/stats?sId=66496804" charset="UTF-8"></script>
+bdtj: <script>var _hmt = _hmt || [];(function() {  var hm = document.createElement("script");  hm.src = "https://hm.baidu.com/hm.js?2023f967cb85513ede1b6a3d58177776";  var s = document.getElementsByTagName("script")[0];   s.parentNode.insertBefore(hm, s);})();</script>
+flagcounter: <a href="https://info.flagcounter.com/tQfY"><img src="https://s11.flagcounter.com/mini/tQfY/bg_FFFFFF/txt_000000/border_CCCCCC/flags_0/" alt="Flag Counter" border="0"></a>
+_360fenxi: <script>(function(b,a,e,h,f,c,g,s){b[h]=b[h]||function(){(b[h].c=b[h].c||[]).push(arguments)};b[h].s=!!c;g=a.getElementsByTagName(e)[0];s=a.createElement(e);s.src="http://s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefore(s,g)})(window,document,"script","_qha",332983,false);</script>
+_51la: <script type="text/javascript" src="http://js.users.51.la/20526175.js"></script>
+
+
+404page: toolkit.html
+
+
+favicon:
+  small: /images/robot_lite.jpg
+
+
+avatar:
+  # in theme directory(source/images): /images/avatar.gif
+  # in site  directory(source/uploads): /uploads/avatar.gif
+  # You can also use other linking images.
+  url: /images/avatar_sx_lite.png #author.jpg  #将我们的头像图片放置在blog/themes/next/source/images目录下，填写具体地址
+  # If true, the avatar would be dispalyed in circle.
+  rounded: true #鼠标放在头像上时是否旋转
+  # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
+  opacity: 1 #头像放缩指数
+  # If true, the avatar would be rotated with the cursor.
+  rotated: true #头像是否设为圆形，否则为矩形
+
+# Social accounts
+weibo: http://weibo.com/lordyao
+weibostar: <wb:follow-button uid="1262655355" type="red_1" width="63" height="24" ></wb:follow-button>
+wechat: 
+QQ: 
+dingding: 
+instagram:
+pinterest:
+github: https://yaoqs.github.io/
+facebook:
+twitter: http://twitter.com/Lord_Honor_Yao
+linkedin: 
+csdn: https://blog.csdn.net/yaokingson
+douban: https://www.douban.com/people/2307961/
+StackOverflow: 
+Azure: 
+Email: 350788415@qq.com
+
+Author: Yao Qing-sheng
+Address: Department of Natural Philosophy & Infomation Sciences, CHINA
+
+
+# Canvas-nest
+# Dependencies: https://github.com/theme-next/theme-next-canvas-nest
+canvas_nest: # 网络背景
+  enable: true
+  onmobile: true # display on mobile or not
+  color: '0,0,0' # RGB values, use ',' to separate
+  opacity: 0.5 # the opacity of line: 0~1
+  zIndex: -1 # z-index property of the background
+  count: 150 # the number of lines
+
+# JavaScript 3D library.
+# Dependencies: https://github.com/theme-next/theme-next-three
+# three_waves
+three_waves: false
+# canvas_lines
+canvas_lines: false
+# canvas_sphere
+canvas_sphere: false
+
+# Canvas-ribbon
+# Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
+# size: The width of the ribbon.
+# alpha: The transparency of the ribbon.
+# zIndex: The display level of the ribbon.
+canvas_ribbon:
+  enable: false
+  size: 300
+  alpha: 0.6
+  zIndex: -1
+
+
+ 
+reward:
+  enable: true
+  comment: 大吉大利 今晚吃鸡
+  wechatpay: /images/微信收款码.png
+  wechatreward: images/微信打赏码.png
+  alipay: /images/支付宝收款码.jpg
+  zhifubao_redpackage: /images/支付宝红包码.png
+  paypal: paypal.me/LordYao
+  #bitcoin: /images/bitcoin.jpg
+
+#————————————————
+#版权声明：本文为CSDN博主「nightmare_dimple」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+#原文链接：https://blog.csdn.net/nightmare_dimple/article/details/86661502
+
+journal:
+  title: FUTURE
+  subtitle: Natural Philosophy & Infomation Sciences
+  Author: Yao Qing-sheng
+  Author-cn: 要庆生
+  Original: true
+
+copyright: 
+  since: 2019 #建站时间
+  admin: LordYao #别填bool型，最后显示的东西是copyright || author，即左边没有设置的话就显示作者
+  Statement: 版权声明：本文为「LordYao」的原创文章，遵循 CC 4.0 BY-NC-SA 版权协议，转载请附上原文出处链接及本声明。
+  url: 原文链接：
+  creative_commons:
+    license: BY-NC-SA
+    url: 
+    sidebar: true
+    post: true
+  # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
+  # http://www.miitbeian.gov.cn
+  beian:
+    enable: false #是否显示网站备案信息
+    icp:
