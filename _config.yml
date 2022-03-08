@@ -224,3 +224,6 @@ copyright:
   beian:
     enable: false #是否显示网站备案信息
     icp:
+
+
+theme: jekyll-theme-dinky
