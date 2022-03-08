@@ -1,0 +1,63 @@
+<h6>
+    <span id = "custom_html_list"></span>
+
+    <% for (list in theme.custom_html_list){ %>
+        <% if (theme.custom_html_list[list]) { -%>
+            &middot;
+            <a href=" <%- config.root %><%- theme.custom_html_list[list] %> ">
+                <%- list %>
+            </a>
+        <% } -%>
+    <% }%>
+
+    <span id="repos">
+        <span class="dropdown" onmouseenter="showList('dropdown-a')" onmouseleave="showList('dropdown-a')">
+            <a id="a" href="javascript:void(0)" class="dropbtn">&#9776; Repositories Pages</a>
+            <div class="dropdown-content" id="dropdown-a">
+                
+    
+                <script>
+
+                    $(async function()
+                    {
+                        jax("https://api.github.com/users/yaoqs/repos",
+                        await function (dataString) {
+                                var div2 = document.querySelector("#dropdown-a");                                                
+                                for (var rep of dataString) {
+                                    //console.log(rep.name);
+                                    var i = document.createElement('a');
+                                    i.href = "https://yaoqs.github.io/" + rep.name;
+                                    i.target = "_blank";
+                                    i.innerText = rep.full_name;                                                    
+                                    div2.appendChild(i);
+                                }                                                
+                            },
+                            function(){
+                                var div2 = document.querySelector("#dropdown-a");
+                                var i = document.createElement('a');
+                                i.style.color="red";
+                                i.innerText = "当前无网络";
+                                div2.appendChild(i);
+                            })
+                    })
+                </script>
+            </div>
+        </span>
+
+        <script name="text/javascript">
+            function showList(id) {                                
+                var drop = document.getElementById(id);
+                if (drop.classList.contains('show')) {
+                    drop.classList.remove('show');
+                } else {
+                    drop.classList.add('show');
+                }
+            }                      
+
+        </script>
+
+        &middot;
+        <a href="<%- config.root %>">首页</a>
+    </span>
+</h6>
+

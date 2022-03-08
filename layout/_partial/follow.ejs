@@ -1,47 +1,14 @@
 <div id="follow-icons">
-  <% if (theme.weibo) { -%>
-      <a href="<%- theme.weibo %>"><i class="fa fa-weibo fa-2x"></i></a>
-  <% } -%>
-  <% if (theme.QQ) { -%>
-      <a href="<%- theme.QQ %>"><i class="fa fa-qq fa-2x"></i></a>
-  <% } -%>
-  <% if(theme.wechat){ -%>
-      <a href="<%- theme.wechat %>"><li class="fa fa-wechat fa-2x"></li></a>
-  <% } -%>
-  <% if(theme.dingding) { -%>
-    <a href="<%- theme.dingding %>"><li class="fa fa-dingding fa-2x"></li></a>
-<% } -%>
-  <% if (theme.instagram) { -%>
-    <a href="<%- theme.instagram %>"><i class="fa fa-instagram fa-2x"></i></a>
-  <% } -%>
-  <% if (theme.pinterest) { -%>
-    <a href="<%- theme.pinterest %>"><i class="fa fa-pinterest-square fa-2x"></i></a>
-  <% } -%>
-  <% if (theme.github) { -%>
-    <a href="<%- theme.github %>"><i class="fa fa-github-square fa-2x"></i></a>
-  <% } -%>
-  <% if (theme.facebook) { -%>
-    <a href="<%- theme.facebook %>"><i class="fa fa-facebook-square fa-2x"></i></a>
-  <% } -%>
-  <% if (theme.twitter) { -%>
-    <a href="<%- theme.twitter %>"><i class="fa fa-twitter-square fa-2x"></i></a>
-  <% } -%>
-  <% if (theme.linkedin) { -%>
-    <a href="<%- theme.linkedin %>"><i class="fa fa-linkedin-square fa-2x"></i></a>
-  <% } -%>
-  <% if (theme.csdn) { -%>
-    <a href="<%- theme.csdn %>"><i class="fa fa-common-square fa-2x"></i></a>
-  <% } -%>
-  <% if (theme.douban) { -%>
-    <a href="<%- theme.douban %>"><i class="fa fa-common-square fa-2x"></i></a>
-  <% } -%>
-  <% if (theme.StackOverflow) { -%>
-    <a href="<%- theme.StackOverflow %>"><i class="fa fa-StackOverflow-square fa-2x"></i></a>
-  <% } -%>
-  <% if (theme.Azure) { -%>
-    <a href="<%- theme.Azure %>"><i class="fa fa-Azure-square fa-2x"></i></a>
+<!--
+  http://www.fontawesome.com.cn/faicons/#web-application
+-->  
+
+  <% for ( follow in theme.Social_Accounts ) { -%>
+    <% if (theme.Social_Accounts[follow].href) { -%>
+      <a href="<%- theme.Social_Accounts[follow].href %>" title="<%- theme.Social_Accounts[follow].name %>"><i class="<%- theme.Social_Accounts[follow].class %>"></i></a>
+      <% } -%>
   <% } -%>
   <% if (theme.rss) { -%>
-    <a id="rss" href="<%- theme.rss%>"><i class="fa fa-rss-square fa-2x"></i></a>
+    <a id="rss" href="<%- theme.rss %>" title="RSS"><i class="fa fa-rss fa-2x"></i></a>
   <% } -%>
 </div>

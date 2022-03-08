@@ -14,7 +14,16 @@
     </span>    
     <span id="Abstract-content">
         <%- page.excerpt %>
-        <%- toc(page.content) %>
+        <!--Table of Contents begin-->
+        <% if (  post.toc || ( theme.toc && post.toc !== false) && !index){ %>
+          <div id="toc" class="toc-article">
+            <a class="js-toggle-toc" href="javascript:void(0)"></a>
+            <div class="toc-content">
+              <%- toc(post.content, {list_number: false}) %>
+            </div>
+          </div>
+        <% } %>
+        <!--Table of Contents end -->
     </span>
     
     
@@ -70,7 +79,7 @@
     
     <hr id="footerline"/>
     <section class="author"><br/>
-      *Corresponding author: <%- theme.Author %> &lt;Email: <%- mail_to(theme.Email) %>&gt; 
+      *Corresponding Author: <%- theme.Author %> &lt;Email: <%- mail_to(theme.Email) %>&gt; 
       <% if (theme.copyright.creative_commons.url){-%>
         <img src="<%- theme.copyright.creative_commons.url %>"/>
         <% } else { %>          
@@ -103,10 +112,7 @@
 
   </script>
 
-  <script text="script/javascript">//嵌入网页
-    
-
-  </script>
+ 
 </article>
 
 <nav class="pagination" role="pagination">

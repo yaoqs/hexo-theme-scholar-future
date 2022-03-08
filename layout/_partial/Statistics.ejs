@@ -1,11 +1,8 @@
 <div id="Statistics">
-    <%- theme.google_analytics %>
-    <%- theme.cnzz %>
-    <%- theme.umengplus %>
-    <%- theme.qq_ta %>
-    <%- theme.bdtj %>
-    <%- theme.flagcounter %>
-    <%- theme._360fenxi %>
-    <%- theme._51la %>
+    <% for (tongji in theme.site_visit_tongji ) { -%>
+        <% if(theme.site_visit_tongji[tongji]) { -%>
+            <%- theme.site_visit_tongji[tongji] -%>
+        <% } -%>
+    <% } %>
 
 </div>

@@ -3,25 +3,38 @@ description: A scholar magazine/journal like blog
 keywords: scholar-like blog
 logo: /images/githubavatar.png
 slogan: 解放思想，发展生产力
+slogan2: 为天地立心<br>为生民立命<br>为往圣继绝学<br>为万世开太平<br> &emsp;&emsp;&emsp;&emsp;--张载
+Email: 350788415@qq.com
+Author: Yao Qing-sheng
+githubname: yaoqs
+Address: Department of Natural/Social Philosophy & Infomation Sciences, CHINA
+Repositories_Pages: https://yaoqs.github.io/
 rss: /atom.xml
 disqus: 
 custom_html_list: 
+  About: about.html
   Lab: Lab.html
-  Resume: resume.html
-
-
-
-google_analytics:
-cnzz: <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" :"http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278269244'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278269244%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
-umengplus: <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" :"http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278269244'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278269244%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
-qq_ta: <script type="text/javascript" src="http://tajs.qq.com/stats?sId=66496804" charset="UTF-8"></script>
-bdtj: <script>var _hmt = _hmt || [];(function() {  var hm = document.createElement("script");  hm.src = "https://hm.baidu.com/hm.js?2023f967cb85513ede1b6a3d58177776";  var s = document.getElementsByTagName("script")[0];   s.parentNode.insertBefore(hm, s);})();</script>
-flagcounter: <a href="https://info.flagcounter.com/tQfY"><img src="https://s11.flagcounter.com/mini/tQfY/bg_FFFFFF/txt_000000/border_CCCCCC/flags_0/" alt="Flag Counter" border="0"></a>
-_360fenxi: <script>(function(b,a,e,h,f,c,g,s){b[h]=b[h]||function(){(b[h].c=b[h].c||[]).push(arguments)};b[h].s=!!c;g=a.getElementsByTagName(e)[0];s=a.createElement(e);s.src="http://s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefore(s,g)})(window,document,"script","_qha",332983,false);</script>
-_51la: <script type="text/javascript" src="http://js.users.51.la/20526175.js"></script>
-
+  Navigator: navigator.html
+  Feature: feature.html
+  Donate: donate.html
+  Game: game.html
 
 404page: toolkit.html
+
+
+
+site_visit_tongji:
+  google_analytics:
+  cnzz: <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" :"http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278269244'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278269244%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+  umengplus: <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" :"http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278269244'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278269244%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+  qq_ta: <script type="text/javascript" src="https://tajs.qq.com/stats?sId=66496804" charset="UTF-8" async></script>
+  bdtj: <script type="text/javascript">var _hmt = _hmt || [];(function() {  var hm = document.createElement("script");  hm.src = "https://hm.baidu.com/hm.js?2023f967cb85513ede1b6a3d58177776";  var s = document.getElementsByTagName("script")[0];   s.parentNode.insertBefore(hm, s);})();</script>
+  flagcounter: <a href="https://info.flagcounter.com/tQfY"><img src="https://s11.flagcounter.com/mini/tQfY/bg_FFFFFF/txt_000000/border_CCCCCC/flags_0/" alt="Flag Counter" border="0"></a>
+  _360fenxi: <script>(function(b,a,e,h,f,c,g,s){b[h]=b[h]||function(){(b[h].c=b[h].c||[]).push(arguments)};b[h].s=!!c;g=a.getElementsByTagName(e)[0];s=a.createElement(e);s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefore(s,g)})(window,document,"script","_qha",332983,false);</script>
+  _51la: <script type="text/javascript" src="https://js.users.51.la/20526175.js" async></script>
+
+
+
 
 
 favicon:
@@ -40,26 +53,107 @@ avatar:
   # If true, the avatar would be rotated with the cursor.
   rotated: true #头像是否设为圆形，否则为矩形
 
-# Social accounts
-weibo: http://weibo.com/lordyao
-weibostar: <wb:follow-button uid="1262655355" type="red_1" width="63" height="24" ></wb:follow-button>
-wechat: 
-QQ: 
-dingding: 
-instagram:
-pinterest:
-github: https://yaoqs.github.io/
-facebook:
-twitter: http://twitter.com/Lord_Honor_Yao
-linkedin: 
-csdn: https://blog.csdn.net/yaokingson
-douban: https://www.douban.com/people/2307961/
-StackOverflow: 
-Azure: 
-Email: 350788415@qq.com
+# Social Accounts
+#  http://www.fontawesome.com.cn/faicons/#web-application
+Social_Accounts:
+  weibo: 
+    name: weibo/微博
+    href: http://weibo.com/lordyao
+    class: fa fa-weibo fa-2x
+  weibostar: <wb:follow-button uid="1262655355" type="red_1" width="63" height="24" ></wb:follow-button>
+  bilibili: 
+    name: 哔哩哔哩/bilibili
+    href: https://space.bilibili.com/19354848
+    class: fa fa-share fa-2x
+  wechat: 
+    name: wechat/微信
+    href: 
+    class: fa fa-weixin fa-2x
+  QQ: 
+    name: QQ
+    href: 
+    class: fa fa-qq fa-2x
 
-Author: Yao Qing-sheng
-Address: Department of Natural Philosophy & Infomation Sciences, CHINA
+  github: 
+    name: github
+    href: https://github.com/yaoqs
+    class: fa fa-github-square fa-2x
+  dockerhub: 
+    name: dockerhub
+    href: https://hub.docker.com/u/lordyao
+    class: fa fa-github-square fa-2x
+  gitee: 
+    name: gitee
+    href: https://gitee.com/yaoqs
+    class: fa fa-github-square fa-2x
+  csdn: 
+    name: csdn
+    href: https://blog.csdn.net/yaokingson
+    class: fa fa-share fa-2x
+  StackOverflow: 
+    name: StackOverflow
+    href: 
+    class: fa fa-stack-overflow fa-2x
+  Azure: 
+    name: Azure
+    href: 
+    class: fa fa-terminal fa-2x
+  dingding: 
+    name: dingding/钉钉
+    href: 
+    class: fa fa-comment fa-2x
+  instagram:
+    name: instagram
+    href: 
+    class: fa fa-instagram fa-2x
+  pinterest:
+    name: pinterest
+    href: 
+    class: fa fa-pinterest-square fa-2x
+  facebook:
+    name: facebook
+    href: 
+    class: fa fa-facebook-square fa-2x
+  twitter: 
+    name: twitter/推特
+    href: http://twitter.com/Lord_Honor_Yao
+    class: fa fa-twitter-square fa-2x
+  linkedin: 
+    name: linkin/领英
+    href: 
+    class: fa fa-linkedin-square fa-2x
+  douban: 
+    name: 豆瓣
+    href: 
+    class: fa fa-imdb fa-2x
+  telegram:
+    name: telegram
+    href: 
+    class: fa fa-telegram fa-2x
+  youtube:
+    name: yooutube
+    href:
+    class: fa fa-youtube fa-2x
+  whatsapp:
+    name: whatsapp
+    href:
+    class: fa fa-whatsapp fa-2x
+  tumblr:
+    name: tumblr
+    href:
+    class: fa fa-tumblr fa-2x
+  slack:
+    name: slack
+    href:
+    class: fa fa-slack fa-2x
+  skype:
+    name: skype
+    href:
+    class: fa fa-skype fa-2x
+  reddit:
+    name: reddit
+    href:
+    class: fa fa-reddit fa-2x
 
 
 # Canvas-nest
@@ -109,8 +203,8 @@ reward:
 #原文链接：https://blog.csdn.net/nightmare_dimple/article/details/86661502
 
 journal:
-  title: FUTURE
-  subtitle: Natural Philosophy & Infomation Sciences
+  title: FUTURE & CIVILIZATION
+  subtitle: Natural/Social Philosophy & Infomation Sciences
   Author: Yao Qing-sheng
   Author-cn: 要庆生
   Original: true
@@ -130,4 +224,3 @@ copyright:
   beian:
     enable: false #是否显示网站备案信息
     icp:
-theme: jekyll-theme-dinky
