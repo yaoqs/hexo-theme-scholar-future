@@ -733,7 +733,17 @@ span#donate
 
 
 
-
+/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色. */
+.bg-color {
+    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+}
+/*如果想去掉banner图的颜色渐变效果，请将以下的css属性注释掉或者删除掉即可*/
+@-webkit-keyframes rainbow {
+   /* 动态切换背景颜色. */
+}
+@keyframes rainbow {
+    /* 动态切换背景颜色. */
+}
 /**************************************************************************************/
 /* Large Screens */
 @media only screen and (min-width: 1281px) {

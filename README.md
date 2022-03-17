@@ -103,6 +103,7 @@ All Rights Reserved.
 ## Project plan
 
 + [ ] azure
++ [ ] Bootstrap
 + [ ] 注册域名
 + [ ] about页，404页（公益）
 + [ ] 个人简历页(resume)
@@ -135,3 +136,10 @@ All Rights Reserved.
 + [ ] 修改主题风格 Github+Jekyll 搭建个人网站详细教程 <https://www.jianshu.com/p/9f71e260925d>
 + [ ] github action流
 + [ ] github project
+
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<div id="qrcode"></div>
+<script>
+    $('#qrcode').qrcode({width: 173,height: 173,text:"<%- url_for(page.permalink) %>"});
+</script>

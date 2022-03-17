@@ -18,6 +18,7 @@ custom_html_list:
   Feature: feature.html
   Donate: donate.html
   Game: game.html
+  music: music.html
 
 404page: toolkit.html
 
@@ -32,6 +33,7 @@ site_visit_tongji:
   flagcounter: <a href="https://info.flagcounter.com/tQfY"><img src="https://s11.flagcounter.com/mini/tQfY/bg_FFFFFF/txt_000000/border_CCCCCC/flags_0/" alt="Flag Counter" border="0"></a>
   _360fenxi: <script>(function(b,a,e,h,f,c,g,s){b[h]=b[h]||function(){(b[h].c=b[h].c||[]).push(arguments)};b[h].s=!!c;g=a.getElementsByTagName(e)[0];s=a.createElement(e);s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefore(s,g)})(window,document,"script","_qha",332983,false);</script>
   _51la: <script type="text/javascript" src="https://js.users.51.la/20526175.js" async></script>
+  busuanzi: <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
 
 
 
@@ -52,6 +54,30 @@ avatar:
   opacity: 1 #头像放缩指数
   # If true, the avatar would be rotated with the cursor.
   rotated: true #头像是否设为圆形，否则为矩形
+
+# 网站副标题，打字效果
+# 如果有符号 ‘ ，请在 ’ 前面加上 \
+subtitle: 
+  enable: true
+  loop: true # 是否循环
+  showCursor: true # 是否显示光标
+  startDelay: 300 # 开始延迟
+  typeSpeed: 100 # 打字速度
+  backSpeed: 50 # 删除速度
+  sub1: 解放思想，发展生产力
+  sub2: 为天地立心
+  sub3: 为生民立命
+  sub4: 为往圣继绝学
+  sub5: 为万世开太平
+  sub6: 知行合一
+  sub7: 天之道，利而不害；圣人之道，为而不争
+
+# 文章字数统计插件
+wordCount:
+  enable: true # 将这个值设置为 true 即可.
+  postWordCount: true
+  min2read: true
+  totalCount: true
 
 # Social Accounts
 #  http://www.fontawesome.com.cn/faicons/#web-application
@@ -186,7 +212,40 @@ canvas_ribbon:
   alpha: 0.6
   zIndex: -1
 
-
+menu:
+  Index:
+    url: /
+    icon: fas fa-home
+  Tags:
+    url: /tags
+    icon: fas fa-tags
+  Categories:
+    url: /categories
+    icon: fas fa-bookmark
+  Archives:
+    url: /archives
+    icon: fas fa-archive
+  About:
+    url: /about
+    icon: fas fa-user-circle-o
+  Friends:
+    url: /friends
+    icon: fas fa-address-book
+  Medias:
+    icon: fas fa-list
+    children:
+      - name: Musics
+        url: /musics
+        icon: fas fa-music
+      - name: Movies
+        url: /movies
+        icon: fas fa-film
+      - name: Books
+        url: /books
+        icon: fas fa-book
+      - name: Galleries
+        url: /galleries
+        icon: fas fa-image
  
 reward:
   enable: true

@@ -56,7 +56,14 @@
 
 
     <%- post.content %>
+    <br>
+    <div id="qrcode"></div>   
+    <script>
+      $('#qrcode').qrcode({width: 173,height: 173,text:"<%- url_for(page.permalink) %>"});
+
+    </script>
     
+
     <section id="References">
       <span id="References">References</span>
       <span id="References-content">
