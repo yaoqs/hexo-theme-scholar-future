@@ -104,6 +104,7 @@ class RewardImg
         var img=document.createElement("img");
         img.src=this.qrimg;
         img.alt=this.name;
+        img.style.maxHeight="13em";
         ddiv.appendChild(img)
         return ddiv;
     }
@@ -146,22 +147,22 @@ class RewardLnk
 }
 class Rewardtip{
     constructor(tip)
-    {        
-        var zanzhu=document.createElement("div")
+    {
+        var zanzhu=document.createElement("div");
         zanzhu.id="zanzhu_yaoqs"; 
         $("html")[0].appendChild(zanzhu);
-        $("#"+zanzhu.id).css("position","fixed").css("float","right").css("top","38.2%").css("width","10px").css("right","0").css("box-sizing", "content-box")
+        /*$("#"+zanzhu.id).css("position","fixed").css("float","right").css("top","38.2%").css("width","10px").css("right","0").css("box-sizing", "content-box")*/
         
         var donate_sider=document.createElement("div");
         donate_sider.id="donate_sider";
         donate_sider.className="donate_sider";
         donate_sider.onmouseover=function(){
-            $("#donate_sider")[0].className="donate_sider_large";
-            $("#donate_sider_large")[0].className="donate_sider_show";
+            $("#"+donate_sider.id)[0].className="donate_sider_large";
+            $("#"+donate_sider.id+"_large")[0].className="donate_sider_show";
         };
         donate_sider.onmouseout=function(){
-            $("#donate_sider")[0].className="donate_sider";
-            $("#donate_sider_large")[0].className="donate_sider_hide";
+            $("#"+donate_sider.id)[0].className="donate_sider";
+            $("#"+donate_sider.id+"_large")[0].className="donate_sider_hide";
         };
         zanzhu.appendChild(donate_sider)
         var donate_sider_large=document.createElement("div");
@@ -169,7 +170,7 @@ class Rewardtip{
         donate_sider_large.className="donate_sider_hide";
         $(donate_sider_large).appendTo(donate_sider);
 
-        var elementid="donate_sider_large";
+        var elementid=donate_sider_large.id;
         this.tiptext=tip.tiptext;
         ((text,t)=>{                    
             t.innerText=text;
@@ -184,75 +185,109 @@ class Rewardtip{
             $("#"+elementid)[0].appendChild(t);
         })(this.tiptext,document.createElement("div"));
         
-        var btn=document.createElement("div")
+        var btn=document.createElement("div");
         btn.id="donate_btn";
         $("#"+elementid)[0].appendChild(btn);
 
         var content=document.createElement("div")
         content.id="donate_content";                
         $("#"+elementid)[0].appendChild(content);
+        
+        this.tipimg=tip.tipimg;       
+        if(this.tipimg && this.tipimg.img)
+        {
+            let donate_sider_img=".donate_sider { background: url("+this.tipimg.img+");background-size:cover;background-color:transparent;";
+            if(this.tipimg.width)
+            {
+                donate_sider_img+="width:"+this.tipimg.width+";";
+            }
+            else{
+                donate_sider_img+="width:2em;";
+            }
+            if(this.tipimg.height)
+            {
+                donate_sider_img+="height:"+this.tipimg.height+";";
+            }
+            else{
+                donate_sider_img+="height:2em;";
+            }
+            donate_sider_img+="}";
+            addCSS(donate_sider_img);
+            //ChangClassAtoB(donate_sider.id,donate_sider.className,"donate_sider_img");
+        }
+        
 
+        this.tipshow=tip.tipshow;
         this.list=tip.list;
         this.link=tip.link;
         
 
         var arr=[];
-        arr["tip"]=document.createElement("div")
-        $("<a href='https://yaoqs.github.com/' alt='yaoqs'>LordYao</a>").appendTo(arr["tip"])
-        $("#"+content.id)[0].appendChild(arr["tip"])
-        var j=document.createElement("ul")  
+        arr["tip"]=document.createElement("div");
+        let str="<a href='https://yaoqs.github.com/' alt='yaoqs'>LordYao</a>";
+        if (this.tipshow)
+        {   str+="<div id='tipshow' class='donate_sider_show'>";
+            str+=this.tipshow;
+            str+="</div>";
+        }
+        $(str).appendTo(arr["tip"]);
 
+        $("#"+content.id)[0].appendChild(arr["tip"]);
         this.list.forEach(element => {
             //console.log(element)
-            var li=document.createElement("li")
-            li.innerText=element.name;
-            li.textContent=element.name;                    
-            li.onmouseenter=function(){
-                ChangClassAtoB(this.firstChild.nodeValue,"donate_sider_hide","donate_sider_show")
+            var div=document.createElement("div");
+            div.innerText=element.name;
+            div.textContent=element.name;                    
+            div.onmouseenter=function(){
+                ChangClassAtoB(this.firstChild.nodeValue,"donate_sider_hide","donate_sider_show");
+                ChangClassAtoB("tipshow","donate_sider_show","donate_sider_hide");
                 //$("#"+this.firstChild.nodeValue).removeClass("donate_sider_hide").addClass("donate_sider_show")
             }
             
-            li.onmouseleave=function(){
-                ChangClassAtoB(this.firstChild.nodeValue,"donate_sider_show","donate_sider_hide")
+            div.onmouseleave=function(){
+                ChangClassAtoB(this.firstChild.nodeValue,"donate_sider_show","donate_sider_hide");
+                ChangClassAtoB("tipshow","donate_sider_hide","donate_sider_show");
                 //$("#"+this.firstChild.nodeValue).removeClass("donate_sider_show").addClass("donate_sider_hide")
             }
 
-            $(li).appendTo(j)
+            $(div).appendTo(btn);
             
             
             arr[element.name]=new RewardImg(element).init();                   
             
-            $("#"+content.id)[0].appendChild(arr[element.name])
-            $("#"+element.name).addClass("donate_sider_hide")                      
+            $("#"+content.id)[0].appendChild(arr[element.name]);
+            $("#"+element.name).addClass("donate_sider_hide");            
         });
         
 
                         
         this.link.forEach(element => {
-            var li=document.createElement("li")
-            li.innerText=element.name;
-            li.textContent=element.name;                    
-            li.onmouseenter=function(){  
-                ChangClassAtoB(this.firstChild.nodeValue,"donate_sider_hide","donate_sider_show")                      
+            var div=document.createElement("div");
+            div.innerText=element.name;
+            div.textContent=element.name;                    
+            div.onmouseenter=function(){  
+                ChangClassAtoB(this.firstChild.nodeValue,"donate_sider_hide","donate_sider_show");
+                ChangClassAtoB("tipshow","donate_sider_show","donate_sider_hide");
                 //$("#"+this.firstChild.nodeValue).removeClass("donate_sider_hide").addClass("donate_sider_show")
             }
             
-            li.onmouseleave=function(){
-                ChangClassAtoB(this.firstChild.nodeValue,"donate_sider_show","donate_sider_hide")
+            div.onmouseleave=function(){
+                ChangClassAtoB(this.firstChild.nodeValue,"donate_sider_show","donate_sider_hide");
+                ChangClassAtoB("tipshow","donate_sider_hide","donate_sider_show");
                 //$("#"+this.firstChild.nodeValue).removeClass("donate_sider_show").addClass("donate_sider_hide")
             }
 
-            $(li).appendTo(j)
+            $(div).appendTo(btn);
 
             var a=new RewardLnk(element);
             arr[element.name]=a.init();
             
-            $("#"+content.id)[0].appendChild(arr[element.name])
-            $("#"+element.name).addClass("donate_sider_hide")
+            $("#"+content.id)[0].appendChild(arr[element.name]);
+            $("#"+element.name).addClass("donate_sider_hide");
             a.make_qrcode();
             
         });
-        $("#"+btn.id)[0].appendChild(j)                
+                       
     }
 }
 
@@ -332,36 +367,50 @@ $(function(){
         !window.jQuery && document.write(unescape('%3Cscript type="text/javascript" src="/lib/jquery-3.4.1.min.js"%3E%3C/script%3E'));
         !window.jQuery && document.write(unescape('%3Cscript type="text/javascript" src="/lib/jquery.qrcode.min.js"%3E%3C/script%3E'));
     }
-    let zanzhu=" #zanzhu { position: fixed; float: right; top: 38.2%; width: 10px; right: 0; box-sizing: content-box; }";
-    let donate_sider=".donate_sider { background-color: red; width: 10px; height: 30px;  }";
-    let donate_sider_large=".donate_sider_large { width: 300px;  margin-left: -290px; height: 300px; background-color: whitesmoke; padding:0;  }";
+    let zanzhu=" #zanzhu_yaoqs { position: fixed; float: right; top: 38.2vh;  right: 0; box-sizing: content-box;}";
+    /*色块 */
+    let colorblock=".donate_sider {  background-color: red;width: 0.7em; height: 2em;  }";
+    /* 图*/
+    let img=".donate_sider_img { background: url(/images/avatar.jpg);background-size:cover; width: 2em; height:2em;  }";/*linear-gradient(to bottom, rgba(255,255,0,0.5),rgba(0,0,255,0.5),background-image: url(/images/avatar.jpg));*/
+    let donate_sider=colorblock;
+        
+    let donate_sider_large=".donate_sider_large { width: 20em;  margin-left: -19.3em; height: 20em; background-color: whitesmoke; padding:0;  }";
     let donate_sider_hide=".donate_sider_hide {display: none;}";
     let donate_sider_show=".donate_sider_show {display: block;}";
-    let donate_btn="#donate_btn{ height:300px;float: left;}";
-    let donate_btn_ul="#donate_btn ul{margin-left: 0mm;vertical-align: middle;font-family: 微软雅黑,Tahoma,Verdana,Arial;}";
-    let donate_btn_ul_li="#donate_btn ul li{\
-        border: 1px solid #000;\
+    let donate_btn="#donate_btn{ height:20em;float: left;width:max-content;}";
+    let donate_btn_div="#donate_btn div{\
+        margin-left: 0.5em;\
         vertical-align: middle;\
+        font-family: 微软雅黑,Tahoma,Verdana,Arial;\
+        border: 1px solid #000;\
         text-align: center; \
         -ms-text-size-adjust: auto;\
-        border-radius: 12px; \
-        font-size: 10px;\
-        padding-top: 10px;\
-        padding-bottom: 10px;\
-        padding-left: 5px;\
-        padding-right: 5px;\
+        border-radius: 1em; \
+        font-size: 0.8em;\
+        padding-top: 0.5em;\
+        padding-bottom: 0.7em;\
+        padding-left: 0.5em;\
+        padding-right: 0.5em;\
+        margin-top:0.5em;\
+        margin-bottom:0.7em;\
     }";
     let donate_content="#donate_content{\
-        width: 200px;\
-        height: 280px;\
+        width: min-content;\
+        height: 18em;\
         background-color: white;\
-        /*margin-left: 80px;*/\
+        margin-left: 7em;\
         float: right;\
+        min-width:12em;\
+        max-height:18em;\
+        position:fixed;\
         }";
+    let donate_media="@only screen and (max-width:320px) {#zanzhu_yaoqs{ position: absolute;}  }";
     var css= zanzhu+donate_sider+donate_sider_large+
     donate_sider_hide+donate_sider_show+
-    donate_btn+donate_btn_ul+donate_btn_ul_li+
-    donate_content;
+    donate_btn+donate_btn_div+
+    donate_content+donate_media;
     
     addCSS(css);
 }());
+
+/*export module*/

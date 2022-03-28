@@ -1,9 +1,15 @@
 name: scholar-future
-description: A scholar magazine/journal like blog
-keywords: scholar-like blog
+description: A scholar magazine/journal like blog，FUTURE & CIVILIZATION，Natural/Social Philosophy & Infomation Sciences
+keywords: FUTURE & CIVILIZATION，Natural/Social Philosophy & Infomation Sciences
 logo: /images/githubavatar.png
-slogan: 解放思想，发展生产力
-slogan2: 为天地立心<br>为生民立命<br>为往圣继绝学<br>为万世开太平<br> &emsp;&emsp;&emsp;&emsp;--张载
+slogan: 
+  sub1: 解放思想，发展生产力
+  sub2: 为天地立心
+  sub3: 为生民立命
+  sub4: 为往圣继绝学
+  sub5: 为万世开太平
+  sub6: 知行合一
+  sub7: 天之道，利而不害；圣人之道，为而不争
 Email: 350788415@qq.com
 Author: Yao Qing-sheng
 githubname: yaoqs
@@ -33,14 +39,10 @@ site_visit_tongji:
   flagcounter: <a href="https://info.flagcounter.com/tQfY"><img src="https://s11.flagcounter.com/mini/tQfY/bg_FFFFFF/txt_000000/border_CCCCCC/flags_0/" alt="Flag Counter" border="0"></a>
   _360fenxi: <script>(function(b,a,e,h,f,c,g,s){b[h]=b[h]||function(){(b[h].c=b[h].c||[]).push(arguments)};b[h].s=!!c;g=a.getElementsByTagName(e)[0];s=a.createElement(e);s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefore(s,g)})(window,document,"script","_qha",332983,false);</script>
   _51la: <script type="text/javascript" src="https://js.users.51.la/20526175.js" async></script>
-  busuanzi: <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+  busuanzi: <script type="text/javascript"  src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><span id="busuanzi_container_site_pv"><a href="http://busuanzi.ibruce.info/">busuanzi:</a> site_pv:<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>; site_uv:<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>; page_pv:<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>. </span>
 
 
-
-
-
-favicon:
-  small: /images/robot_lite.jpg
+favicon: /images/robot_lite.jpg
 
 
 avatar:
@@ -54,23 +56,6 @@ avatar:
   opacity: 1 #头像放缩指数
   # If true, the avatar would be rotated with the cursor.
   rotated: true #头像是否设为圆形，否则为矩形
-
-# 网站副标题，打字效果
-# 如果有符号 ‘ ，请在 ’ 前面加上 \
-subtitle: 
-  enable: true
-  loop: true # 是否循环
-  showCursor: true # 是否显示光标
-  startDelay: 300 # 开始延迟
-  typeSpeed: 100 # 打字速度
-  backSpeed: 50 # 删除速度
-  sub1: 解放思想，发展生产力
-  sub2: 为天地立心
-  sub3: 为生民立命
-  sub4: 为往圣继绝学
-  sub5: 为万世开太平
-  sub6: 知行合一
-  sub7: 天之道，利而不害；圣人之道，为而不争
 
 # 文章字数统计插件
 wordCount:
@@ -86,7 +71,9 @@ Social_Accounts:
     name: weibo/微博
     href: http://weibo.com/lordyao
     class: fa fa-weibo fa-2x
-  weibostar: <wb:follow-button uid="1262655355" type="red_1" width="63" height="24" ></wb:follow-button>
+  weibostar: 
+    js: https://tjs.sjs.sinajs.cn/open/api/js/wb.js
+    button: <wb:follow-button uid="1262655355" type="red_2" width="86" height="24"></wb:follow-button>
   bilibili: 
     name: 哔哩哔哩/bilibili
     href: https://space.bilibili.com/19354848
@@ -100,6 +87,7 @@ Social_Accounts:
     href: 
     class: fa fa-qq fa-2x
 
+  github_follow: https://ghbtns.com/github-btn.html?user=yaoqs&type=follow&count=true
   github: 
     name: github
     href: https://github.com/yaoqs

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en">
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
 <!---->
 
 <head>
@@ -11,7 +11,32 @@
     page.category; } else if (is_tag()){ title='Tag: ' + page.tag; } %>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="<%- config.description %>">
+    <!--seo-->
+    <% if (page.keywords){ %>
+      <meta name="keywords" content="<%= config.keywords %>,<%= theme.keywords %>,<%= page.keywords %>,<%= page.title %>">
+      <% } else if (config.keywords){ %>
+      <meta name="keywords" content="<%= config.keywords %>,<%= theme.keywords %>">
+      <%} %>
+        <% if (page.description){ %>
+      <meta name="description" content="<%= theme.description %>,<%= page.description %>">
+      <% } else { %>
+      <meta name="description" content="<%= theme.description %>,<%= config.description %>">
+      <%} %>
+    
+    <script>
+      (function(){
+          var bp = document.createElement('script');
+          var curProtocol = window.location.protocol.split(':')[0];
+          if (curProtocol === 'https') {
+              bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+          }
+          else {
+              bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+          }
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(bp, s);
+      })();
+      </script>
     <link rel="shortcut icon" href="<%- theme.logo %>" />
     <link rel="alternate" type="application/rss+xml" title="<%- config.author %>" href="<%- theme.rss %>">
     <title>
@@ -19,7 +44,7 @@
         <%= title %> | <% } %>
             <%= config.title %>
     </title>
-    <meta name="description" content="{{meta_description}}">
+   
 
     <link href="https://cdn.staticfile.org/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
 
@@ -42,7 +67,7 @@
     
     <%- js("js/ax.js") %>
     <%- js("/js/zanzhu_yaoqs.js") %>
-
+  
 
 </head>
 
@@ -104,7 +129,9 @@
           new Rewardtip(
               {
                   "tiptext":"谢谢支持/Thanks...",
-                  "more":"./donate.html",
+                  "tipimg":{img:"/images/ali.gif",width:"50px",height:"50px"},
+                  "more":"/donate.html",
+                  "tipshow":"<img src='/images/ali.gif'/>",
                   "list":[
                       {name:"微信收款码",qrimg:"/images/微信收款码.png"},
                       {name:"微信打赏码",qrimg:"/images/微信打赏码.png"},

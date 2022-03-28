@@ -13,14 +13,12 @@
     <span id="repos">
         <span class="dropdown" onmouseenter="showList('dropdown-a')" onmouseleave="showList('dropdown-a')">
             <a id="a" href="javascript:void(0)" class="dropbtn">&#9776; Repositories Pages</a>
-            <div class="dropdown-content" id="dropdown-a">
-                
+            <div class="dropdown-content" id="dropdown-a">          
     
                 <script>
-
                     $(async function()
                     {
-                        jax("https://api.github.com/users/yaoqs/repos",
+                        jax("https://api.github.com/users/<%= theme.githubname %>/repos",
                         await function (dataString) {
                                 var div2 = document.querySelector("#dropdown-a");                                                
                                 for (var rep of dataString) {
@@ -30,14 +28,10 @@
                                     i.target = "_blank";
                                     i.innerText = rep.full_name;                                                    
                                     div2.appendChild(i);
-                                }                                                
+                                } 
                             },
-                            function(){
-                                var div2 = document.querySelector("#dropdown-a");
-                                var i = document.createElement('a');
-                                i.style.color="red";
-                                i.innerText = "当前无网络";
-                                div2.appendChild(i);
+                            function(){                                
+                                $("<div style='color:red;width: 9em;height: 2em;text-align: center;display: table-cell;vertical-align: middle;'>当前无网络</div>").appendTo($("#dropdown-a"));
                             })
                     })
                 </script>
