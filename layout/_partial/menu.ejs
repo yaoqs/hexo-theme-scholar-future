@@ -1,40 +1,48 @@
-
 <div id="Contents">Contents</div>
-<hr id="topline"/>
+<hr id="topline" />
 <% page.posts.each(function(post) { %>
-<section id="{{id}}" class="{{post_class}}">
-  <section> 
-  <h3 class="post-title">
-  <a href="<%- config.root %><%- post.path %>"><%- titlecase(truncate(post.title, {length: 25, omission: '... '})) %></a>
-  
-  <% if (post.tags && post.tags.length){ %>
-    <span class="separator"> &middot; </span>
-    <span class="taglist"> 
-    <% count = post.tags.length %>
-    <% post.tags.forEach(function(tag, index) { %>
-      <a href='<%= config.root + tag.path %>'><%- titlecase(tag.name) %></a> 
-    <% }); %>
-    </span>  
-    <span id="dot"></span>
+  <section id="{{id}}" class="{{post_class}}">
+    <section>
+      <h3 class="post-title">
+        <a href="<%- config.root %><%- post.path %>">
+          <%- titlecase(truncate(post.title, {length: 25, omission: '... ' })) %>
+        </a>
 
-  <% } %>
+        <% if (post.tags && post.tags.length){ %>
+          <span class="separator"> &middot; </span>
+          <span class="taglist">
+            <% count=post.tags.length %>
+              <% post.tags.forEach(function(tag, index) { %>
+                <a href='<%= config.root + tag.path %>'>
+                  <%- titlecase(tag.name) %>
+                </a>
+                <% }); %>
+          </span>
+          <span id="dot"></span>
 
-  <section id="dota"><!--  -->
-      <% for(var i=0; i < 20; i++) { %>
-          &middot;
-      <% } %>
-   <section id="author"><%- theme.journal.Author %>(<%= date(post.date, 'YYYYMMDD') %>)</section>
-   
+          <% } %>
+
+            <section id="dota">
+              <!--  -->
+              <% for(var i=0; i < 20; i++) { %>
+                &middot;
+                <% } %>
+                  <section id="author">
+                    <%- theme.journal.Author %>(<%= date(post.date, 'YYYYMMDD' ) %>)
+                  </section>
+
+            </section>
+      </h3>
+    </section>
   </section>
-   </h3>
-  </section>
-</section>
-<% }); %>
+  <% }); %>
 
 
-<hr id="topline"/>
-<nav class="pagination" role="pagination">
-  <% if (page.prev) { %><a class="newer-posts" href="<%- url_for(page.prev_link) %>">← Newer Posts</a><% } %>
-  <span class="page-number">Page <%- page.current %> of <%- page.total %></span>
-  <% if (page.next) { %><a class="older-posts" href="<%- url_for(page.next_link) %>">Older Posts →</a><% } %>
-</nav>
+    <hr id="topline" />
+    <nav class="pagination" role="pagination">
+      <% if (page.prev) { %><a class="newer-posts" href="<%- url_for(page.prev_link) %>">← Newer Posts</a>
+        <% } %>
+          <span class="page-number">Page <%- page.current %> of <%- page.total %></span>
+          <% if (page.next) { %><a class="older-posts" href="<%- url_for(page.next_link) %>">Older Posts →</a>
+            <% } %>
+    </nav>

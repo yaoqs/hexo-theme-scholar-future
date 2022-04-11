@@ -34,7 +34,7 @@
                 </a></h1>
             <div id="github-iframe"></div>
             <script type="text/javascript">
-                let netlinked=false;
+                let netlinked = false;
                 let url_github_follow = "<%- theme.Social_Accounts.github_follow %>";
                 $.ajax({
                     url: url_github_follow,
@@ -42,7 +42,7 @@
                     method: "GET",
                     crossDomain: true,
                     success: function (dataString) {
-                        netlinked=true;
+                        netlinked = true;
                         //async load github
                         var i = document.createElement("iframe");
                         i.src = url_github_follow;
@@ -61,69 +61,71 @@
                     }
                 });
 
-            </script>            
-                <% if (theme.Social_Accounts.weibostar) { -%>
-                    <div id="weibo"></div>
-                    <script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8" defer></script>
-                    <script type="text/javascript" defer>
-                        if (netlinked)
-                        {
-                            $("#weibo")[0].innerHTML='<%- theme.Social_Accounts.weibostar.button %>';
-                        }
-                        else{
-                            $("#weibo")[0].style.display="none";
-                        }
-                        
-                    </script> 
-                <% } -%>                
+            </script>
+            <% if (theme.Social_Accounts.weibostar) { -%>
+                <div id="weibo"></div>
+                <script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"
+                    defer></script>
+                <script type="text/javascript" defer>
+                    if (netlinked) {
+                        $("#weibo")[0].innerHTML = '<%- theme.Social_Accounts.weibostar.button %>';
+                    }
+                    else {
+                        $("#weibo")[0].style.display = "none";
+                    }
 
-            <%- partial('./follow') %>
+                </script>
+                <% } -%>
 
-                <span id="slogan">
-                    <% if (theme.slogan) { %>
-                        Slogan:
-                        <ul>
-                            <% for ( sub in theme.slogan ) { -%>                                
-                                <li>
-                                    <%- theme.slogan[sub] %>
-                                </li>                                   
-                              <% } -%>
-                        </ul>
-                        <% } -%>
-                </span>
-                
-                <span id="donate">
-                    <a href="<%- config.root %>donate" title="<%- theme.reward.comment %>">Donate & Reward </a>
-                </span>
+                    <%- partial('./follow') %>
 
-                <footer>
-                    <section id="footer-message">Copyright &copy;
-                        <% if(theme.copyright.since ) { -%>
-                            <%- theme.copyright.since %> -
+                        <span id="slogan">
+                            <% if (theme.slogan) { %>
+                                Slogan:
+                                <ul>
+                                    <% for ( sub in theme.slogan ) { -%>
+                                        <li>
+                                            <%- theme.slogan[sub] %>
+                                        </li>
+                                        <% } -%>
+                                </ul>
                                 <% } -%>
-                                    <span id="year">2021</span>
-                                    <a href="https://yaoqs.github.io" target="_blank">LordYao</a>.
-                                    <% if (theme.copyright.creative_commons.url){-%>
-                                        <img src="<%- theme.copyright.creative_commons.url %>" />
-                                        <% } else { %>
-                                            <%- theme.copyright.creative_commons.license %> .
-                                                <%} %> 
-                                                All Rights Reserved. <br />
-                                                    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                                                        href="https://pages.github.com/" target="_blank">Github
-                                                        Pages</a>.
-                                                    Theme <a href="https://github.com/yaoqs/hexo-theme-scholar-future"
-                                                        target="_blank">
-                                                        <%- theme.name %>
-                                                    </a> designed by <a href="https://yaoqs.github.io" target="_blank">
-                                                        LordYao
-                                                    </a>.
-                    </section>
-                    <script>
-                        var year = new Date(Date.now()).getFullYear();
-                        document.getElementById("year").innerText = year;
-                    </script>
-                <%- partial('./Statistics') %>
-                
-                    
+                        </span>
+
+                        <span id="donate">
+                            <a href="<%- config.root %>donate" title="<%- theme.reward.comment %>">Donate & Reward </a>
+                        </span>
+
+                        <footer>
+                            <section id="footer-message">Copyright &copy;
+                                <% if(theme.copyright.since ) { -%>
+                                    <%- theme.copyright.since %> -
+                                        <% } -%>
+                                            <span id="year">2021</span>
+                                            <a href="https://yaoqs.github.io" target="_blank">LordYao</a>.
+                                            <% if (theme.copyright.creative_commons.url){-%>
+                                                <img src="<%- theme.copyright.creative_commons.url %>" />
+                                                <% } else { %>
+                                                    <%- theme.copyright.creative_commons.license %> .
+                                                        <%} %>
+                                                            All Rights Reserved. <br />
+                                                            Powered by <a href="http://hexo.io/"
+                                                                target="_blank">Hexo</a> & <a
+                                                                href="https://pages.github.com/" target="_blank">Github
+                                                                Pages</a>.
+                                                            Theme <a
+                                                                href="https://github.com/yaoqs/hexo-theme-scholar-future"
+                                                                target="_blank">
+                                                                <%- theme.name %>
+                                                            </a> designed by <a href="https://yaoqs.github.io"
+                                                                target="_blank">
+                                                                LordYao
+                                                            </a>.
+                            </section>
+                            <script>
+                                var year = new Date(Date.now()).getFullYear();
+                                document.getElementById("year").innerText = year;
+                            </script>
+                            <%- partial('./Statistics') %>
+
 </header>

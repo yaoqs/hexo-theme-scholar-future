@@ -1,5 +1,5 @@
 /*!
-* zanzhu_yaoqs JavaScript Library v1.0.0
+* zanzhu_yaoqs slider JavaScript Library v1.0.0
 * http://github.com/yaoqs
 *
 * Copyright 2021-, yaoqs[LordYao]
@@ -86,6 +86,20 @@ function ChangClassAtoB(id,A,B)
     
 }
 
+function checkFileExist(urlToFile) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', urlToFile, false);
+    xhr.send();
+    //console.log(urlToFile)
+    //console.log(xhr.status)
+    if (xhr.status == "404") {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+/////////////////////////////////////
 class RewardImg
 {
     #name;
@@ -193,8 +207,10 @@ class Rewardtip{
         content.id="donate_content";                
         $("#"+elementid)[0].appendChild(content);
         
-        this.tipimg=tip.tipimg;       
-        if(this.tipimg && this.tipimg.img)
+        this.tipimg=tip.tipimg;
+        //+检查文件是否存在
+        var result = checkFileExist(this.tipimg.img);
+        if(this.tipimg && this.tipimg.img&&result)
         {
             let donate_sider_img=".donate_sider { background: url("+this.tipimg.img+");background-size:cover;background-color:transparent;";
             if(this.tipimg.width)

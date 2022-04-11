@@ -13,44 +13,11 @@ Journal:
 
 ## About
 
-基于[hexo](https://github.com/hexojs/hexo)的博客模板。A scholar magazine/journal like blog
+基于[hexo](https://github.com/hexojs/hexo)的博客模板主题。A scholar magazine/journal-like blog theme
 
 ## pre-view/Screenshot
 
 [Demo](https://yaoqs.github.io)
-
-## Contact
-
-### Social accounts
-
-#### 开发
-
-- github_page: <https://yaoqs.github.io/>
-+ github: <https://github.com/yaoqs>
-+ gitee: <https://gitee.com/yaoqs>
-+ dockerhub: <https://hub.docker.com/u/lordyao>
-+ Azure:
-+ StackOverflow:
-+ greasyfork: <https://greasyfork.org/zh-CN/users/806993-lordyao>
-+ csdn: <https://blog.csdn.net/yaokingson>
-+ cnblog:
-
-#### 学术/scholar
-
-#### 社交/social intercourse
-
-- weibo: <http://weibo.com/lordyao>
-+ 哔哩哔哩/bilibili：<https://space.bilibili.com/19354848>
-+ twitter: <http://twitter.com/Lord_Honor_Yao>
-
-#### IM
-
-- QQ: 350788415
-+ Telegram:
-
-#### Email list
-
-- Email: 350788415@qq.com
 
 ## Donate
 
@@ -65,7 +32,7 @@ Journal:
 
 [hexo](https://github.com/hexojs/hexo):A fast, simple & powerful blog framework, powered by Node.js. <https://hexo.io>
 
-部分代码参考自<https://github.com/guolin/crisp-hexo-theme>
+部分代码参考自<https://github.com/guolin/crisp-hexo-theme> 以及 <https://github.com/theme-next/hexo-theme-next>
 
 ## Contributing
 
@@ -75,17 +42,22 @@ Contribution is welcome, feel free to open an issue and fork. Waiting for your p
 
 ### Install
 
-```
+```shell
 git clone git@github.com:yaoqs/hexo-theme-scholar-future.git themes/scholar-future
 ```
 
 ### Enable
 
-Modify theme setting in _config.yml to scholar-future.
+Modify hexo theme setting in _config.yml to scholar-future. such as:
+
+```yml
+theme: scholar-future                                           #当前主题名称。值为false时禁用主题
+theme_config:                                                   #主题的配置文件。在这里放置的配置会覆盖主题目录下的 _config.yml 中的配置
+```
 
 ### Update
 
-```
+```shell
 cd themes/scholar-future
 git pull
 ```
@@ -100,7 +72,12 @@ git pull
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 All Rights Reserved.
 
-## Project plan
+## issue
+
++ <https://github.com/yaoqs/hexo-theme-scholar-future/issues>
++ weibo留言: <http://weibo.com/lordyao>
+
+## Project plan/Roadmap
 
 + [ ] azure
 + [ ] Bootstrap
@@ -112,7 +89,7 @@ All Rights Reserved.
 + [x] follow.ejs
 + [ ] journal-face.png journal-menu.png
 + [ ] 图片页图片轮播 参考jb51.net代码
-+ [x] 打赏功能tctip  <https://www.cnblogs.com/enjoy233/p/10328361.html> <https://github.com/greedying/tctip>
++ [x] 打赏功能 ~~tctip  <https://www.cnblogs.com/enjoy233/p/10328361.html> <https://github.com/greedying/tctip>~~已自编码实现 [Donate & Reward 大吉大利，今晚吃鸡](https://yaoqs.github.io/donate-plugin/)  github repo：[donate-plugin](https://github.com/yaoqs/donate-plugin)
 + [ ] 分享组件的嵌入(支持http/https/移动端访问)侧边悬挂式
 + [ ] 页面底部添加"回到顶部" + "收藏" + "快速评论"功能
 + [ ] stackoverflow，官方在StackExchange页面提供了flair，比如我的是: [User Bravo Yeung - Stack Exchange]?9<https://stackexchange.com/users/4637854/bravo-yeung?tab=flair>) ，页面中提供了可嵌入的html代码:

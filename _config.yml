@@ -1,8 +1,17 @@
+# ---------------------------------------------------------------
+# Theme Core Configuration Settings
+# See: https://yaoqs.github.io/hexo-theme-scholar-future
+# ---------------------------------------------------------------
+
+#https://hexo.io/zh-cn/docs/themes
+#主题的配置文件。和 Hexo 配置文件不同，主题配置文件修改时会自动更新，无需重启 Hexo Server。
+#https://hexo.io/zh-cn/docs/configuration#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
+#我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。
 name: scholar-future
 description: A scholar magazine/journal like blog，FUTURE & CIVILIZATION，Natural/Social Philosophy & Infomation Sciences
 keywords: FUTURE & CIVILIZATION，Natural/Social Philosophy & Infomation Sciences
 logo: /images/githubavatar.png
-slogan: 
+slogan:
   sub1: 解放思想，发展生产力
   sub2: 为天地立心
   sub3: 为生民立命
@@ -16,8 +25,8 @@ githubname: yaoqs
 Address: Department of Natural/Social Philosophy & Infomation Sciences, CHINA
 Repositories_Pages: https://yaoqs.github.io/
 rss: /atom.xml
-disqus: 
-custom_html_list: 
+disqus:
+custom_html_list:
   About: about.html
   Lab: Lab.html
   Navigator: navigator.html
@@ -44,6 +53,10 @@ site_visit_tongji:
 
 favicon: /images/robot_lite.jpg
 
+wechat_subscriber:
+  enabled: true
+  qcode:
+  description: 欢迎您扫一扫上面的微信公众号，订阅我的博客！
 
 avatar:
   # in theme directory(source/images): /images/avatar.gif
@@ -67,82 +80,82 @@ wordCount:
 # Social Accounts
 #  http://www.fontawesome.com.cn/faicons/#web-application
 Social_Accounts:
-  weibo: 
+  weibo:
     name: weibo/微博
     href: http://weibo.com/lordyao
     class: fa fa-weibo fa-2x
-  weibostar: 
+  weibostar:
     js: https://tjs.sjs.sinajs.cn/open/api/js/wb.js
     button: <wb:follow-button uid="1262655355" type="red_2" width="86" height="24"></wb:follow-button>
-  bilibili: 
+  bilibili:
     name: 哔哩哔哩/bilibili
     href: https://space.bilibili.com/19354848
     class: fa fa-share fa-2x
-  wechat: 
+  wechat:
     name: wechat/微信
-    href: 
+    href:
     class: fa fa-weixin fa-2x
-  QQ: 
+  QQ:
     name: QQ
-    href: 
+    href:
     class: fa fa-qq fa-2x
 
   github_follow: https://ghbtns.com/github-btn.html?user=yaoqs&type=follow&count=true
-  github: 
+  github:
     name: github
     href: https://github.com/yaoqs
     class: fa fa-github-square fa-2x
-  dockerhub: 
+  dockerhub:
     name: dockerhub
     href: https://hub.docker.com/u/lordyao
     class: fa fa-github-square fa-2x
-  gitee: 
+  gitee:
     name: gitee
     href: https://gitee.com/yaoqs
     class: fa fa-github-square fa-2x
-  csdn: 
+  csdn:
     name: csdn
     href: https://blog.csdn.net/yaokingson
-    class: fa fa-share fa-2x
-  StackOverflow: 
+    class: fab fa-csdn fa-2x
+  StackOverflow:
     name: StackOverflow
-    href: 
+    href:
     class: fa fa-stack-overflow fa-2x
-  Azure: 
+  Azure:
     name: Azure
-    href: 
+    href:
     class: fa fa-terminal fa-2x
-  dingding: 
+  dingding:
     name: dingding/钉钉
-    href: 
+    href:
     class: fa fa-comment fa-2x
   instagram:
     name: instagram
-    href: 
+    href:
     class: fa fa-instagram fa-2x
   pinterest:
     name: pinterest
-    href: 
+    href:
     class: fa fa-pinterest-square fa-2x
   facebook:
     name: facebook
-    href: 
+    href:
     class: fa fa-facebook-square fa-2x
-  twitter: 
+  twitter:
     name: twitter/推特
     href: http://twitter.com/Lord_Honor_Yao
     class: fa fa-twitter-square fa-2x
-  linkedin: 
+  linkedin:
     name: linkin/领英
-    href: 
+    href:
     class: fa fa-linkedin-square fa-2x
-  douban: 
+  douban:
     name: 豆瓣
-    href: 
+    href:
     class: fa fa-imdb fa-2x
   telegram:
     name: telegram
-    href: 
+    href:
     class: fa fa-telegram fa-2x
   youtube:
     name: yooutube
@@ -200,6 +213,14 @@ canvas_ribbon:
   alpha: 0.6
   zIndex: -1
 
+# hexo-tag-cloud
+tag_cloud:
+    textFont: Trebuchet MS, Helvetica
+    textColor: '#333'
+    textHeight: 25
+    outlineColor: '#E2E1D1'
+    maxSpeed: 0.1
+
 menu:
   Index:
     url: /
@@ -234,12 +255,12 @@ menu:
       - name: Galleries
         url: /galleries
         icon: fas fa-image
- 
+
 reward:
   enable: true
   comment: 大吉大利 今晚吃鸡
   wechatpay: /images/微信收款码.png
-  wechatreward: images/微信打赏码.png
+  wechatreward: /images/微信打赏码.png
   alipay: /images/支付宝收款码.jpg
   zhifubao_redpackage: /images/支付宝红包码.png
   paypal: paypal.me/LordYao
@@ -256,14 +277,14 @@ journal:
   Author-cn: 要庆生
   Original: true
 
-copyright: 
+copyright:
   since: 2019 #建站时间
   admin: LordYao #别填bool型，最后显示的东西是copyright || author，即左边没有设置的话就显示作者
   Statement: 版权声明：本文为「LordYao」的原创文章，遵循 CC 4.0 BY-NC-SA 版权协议，转载请附上原文出处链接及本声明。
   url: 原文链接：
   creative_commons:
     license: BY-NC-SA
-    url: 
+    url:
     sidebar: true
     post: true
   # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
@@ -274,3 +295,7 @@ copyright:
 
 
 theme: jekyll-theme-dinky
+
+
+
+#----------------- plugins config -------------------------

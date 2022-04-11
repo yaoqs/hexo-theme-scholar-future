@@ -1,0 +1,24 @@
+{
+  "name": "hexo-theme-scholar-future",
+  "version": "1.0.0",
+  "description": "A scholar magazine/journal-like blog theme,https://yaoqs.github.io/hexo-theme-scholar-future",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaoqs/hexo-theme-scholar-future.git"
+  },
+  "keywords": [
+    "scholar-future",
+    "hexo",
+    "theme"
+  ],
+  "author": "yaoqs (https://yaoqs.github.io)",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/yaoqs/hexo-theme-scholar-future/issues"
+  },
+  "homepage": "https://github.com/yaoqs/hexo-theme-scholar-future#readme"
+}

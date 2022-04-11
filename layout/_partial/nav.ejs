@@ -1,57 +1,74 @@
-<h6>
-    <span id = "custom_html_list"></span>
+<div class="navbar">
+    <h6>
+        <span id="custom_html_list"></span>
 
-    <% for (list in theme.custom_html_list){ %>
-        <% if (theme.custom_html_list[list]) { -%>
-            &middot;
-            <a href=" <%- config.root %><%- theme.custom_html_list[list] %> ">
-                <%- list %>
-            </a>
-        <% } -%>
-    <% }%>
+        <% for (list in theme.custom_html_list){ %>
+            <% if (theme.custom_html_list[list]) { -%>
+                &middot;
+                <a href=" <%- config.root %><%- theme.custom_html_list[list] %> ">
+                    <%- list %>
+                </a>
+                <% } -%>
+                    <% }%>
 
-    <span id="repos">
-        <span class="dropdown" onmouseenter="showList('dropdown-a')" onmouseleave="showList('dropdown-a')">
-            <a id="a" href="javascript:void(0)" class="dropbtn">&#9776; Repositories Pages</a>
-            <div class="dropdown-content" id="dropdown-a">          
-    
-                <script>
-                    $(async function()
-                    {
-                        jax("https://api.github.com/users/<%= theme.githubname %>/repos",
-                        await function (dataString) {
-                                var div2 = document.querySelector("#dropdown-a");                                                
-                                for (var rep of dataString) {
-                                    //console.log(rep.name);
-                                    var i = document.createElement('a');
-                                    i.href = "https://yaoqs.github.io/" + rep.name;
-                                    i.target = "_blank";
-                                    i.innerText = rep.full_name;                                                    
-                                    div2.appendChild(i);
-                                } 
-                            },
-                            function(){                                
-                                $("<div style='color:red;width: 9em;height: 2em;text-align: center;display: table-cell;vertical-align: middle;'>当前无网络</div>").appendTo($("#dropdown-a"));
-                            })
-                    })
-                </script>
-            </div>
-        </span>
+                        <span id="repos">
+                            <span class="dropdown" onmouseenter="showList('dropdown-a')"
+                                onmouseleave="showList('dropdown-a')">
+                                <a id="a" href="javascript:void(0)" class="dropbtn">&#9776; Repositories Pages</a>
+                                <div class="dropdown-content" id="dropdown-a">
+                                    <script>
+                                        $(async function () {
+                                            jax("https://api.github.com/users/<%= theme.githubname %>/repos",
+                                                await function (dataString) {
+                                                    var div2 = document.querySelector("#dropdown-a");
+                                                    for (var rep of dataString) {
+                                                        //console.log(rep.name);
+                                                        var i = document.createElement('a');
+                                                        i.href = "https://yaoqs.github.io/" + rep.name;
+                                                        i.target = "_blank";
+                                                        i.style.paddingLeft="1em";
+                                                        i.innerText = rep.full_name;
+                                                        div2.appendChild(i);
+                                                    }
+                                                },
+                                                function () {
+                                                    $("<div style='color:red;width: 9em;height: 2em;text-align: center;display: table-cell;vertical-align: middle;'>当前无网络</div>").appendTo($("#dropdown-a"));
+                                                });
+                                        });
 
-        <script name="text/javascript">
-            function showList(id) {                                
-                var drop = document.getElementById(id);
-                if (drop.classList.contains('show')) {
-                    drop.classList.remove('show');
-                } else {
-                    drop.classList.add('show');
-                }
-            }                      
+                                    </script>
+                                </div>
+                            </span>
 
-        </script>
+                            <script name="text/javascript">
+                                function showList(id) {
+                                    var drop = document.getElementById(id);
+                                    if (drop.classList.contains('show')) {
+                                        drop.classList.remove('show');
+                                    } else {
+                                        drop.classList.add('show');
+                                    }
+                                }
 
-        &middot;
-        <a href="<%- config.root %>">首页</a>
-    </span>
-</h6>
+                            </script>
 
+                            &middot;
+                            <span class="dropdown" onmouseenter="showList('dropdown-b')"
+                                onmouseleave="showList('dropdown-b')">
+                                <a href="<%- config.root %>" class="dropbtn">首页</a>
+                                <div class="dropdown-content" id="dropdown-b">
+                                    <script>
+                                        $("#dropdown-b").append("<a href='/tags'>标签/tags</a>")
+                                        $("#dropdown-b").append("<a href='/archives'>文档/archives</a>")
+                                        $("#dropdown-b").append("<a href='/categories'>归类/categories</a>")
+                                        $("#dropdown-b")[0].style+="height: 8em;text-align: center;vertical-align: middle;margin-left:-5em;width:10em;padding-left:1em;"
+                                    </script>
+                                </div>
+                            </span>
+                        </span>
+    </h6>
+
+    <script>
+        $(".navbar")[0].style.left = $('#header')[0].offsetWidth.toString() + "px";
+    </script>
+</div>
