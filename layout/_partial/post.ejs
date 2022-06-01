@@ -12,7 +12,7 @@
     </h1>
     <section id="post-author">
       <%- theme.Author %> <br />
-      <%- theme.Address %>
+        <%- theme.Address %>
     </section>
     <section class="post-content article-entry">
       <section id="Abstract">
@@ -33,7 +33,12 @@
                 </div>
               </div>
               <% } %>
-                <!--Table of Contents end -->
+                <% if (post.summary){ %>
+                  <div>
+                    <%- post.summary %>
+                  </div>
+                  <% } %>
+                    <!--Table of Contents end -->
         </span>
 
 
@@ -93,15 +98,14 @@
         </section>
     </section>
     <footer class="post-footer">
-
-      <hr id="footerline" />
-      <section class="author"><br />
+      <hr id="footerline" /><br>
+      <section class="author">
         *Corresponding Author: <%- theme.Author %> &lt;Email: <%- mail_to(theme.Email) %>&gt;
-            <% if (theme.copyright.creative_commons.url){-%>
+            <% if (theme.copyright.creative_commons.url){ -%>
               <img src="<%- theme.copyright.creative_commons.url %>" />
-              <% } else { %>
+              <% } else { -%>
                 <%- theme.copyright.creative_commons.license %> .
-                  <%} %>
+                  <%} -%>
                     <p>
                       <%- theme.bio %>
                     </p>
@@ -133,18 +137,18 @@
 
   </article>
 
-  <nav class="pagination" role="pagination">
+  <div class="pagination">
     <% if (page.prev) { %>
       <a class="newer-posts" href="<%- url_for(page.prev.path) %>">
-        ← prev
-        <!--<%- page.prev.title %>-->
+        ← <%- page.prev.title %>
       </a>
       <% } %>
-        <span class="page-number">•</span>
+
         <% if (page.next) { %>
           <a class="older-posts" href="<%- url_for(page.next.path) %>">
-            <!--<%- page.next.title %>--> next →
+            <%- page.next.title %> →
           </a>
           <% } %>
-            <a id="toTop" href="#top" title="回顶部" style="float: right;">Top</a>
-  </nav>
+            <br>
+            <a id="toTop" href="#top" title="回顶部">Top</a>
+  </div>

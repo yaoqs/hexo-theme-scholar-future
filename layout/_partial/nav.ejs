@@ -1,4 +1,4 @@
-<div class="navbar">
+<nav class="navbar">
     <h6>
         <span id="custom_html_list"></span>
 
@@ -27,7 +27,7 @@
                                                         i.href = "https://yaoqs.github.io/" + rep.name;
                                                         i.target = "_blank";
                                                         i.style.paddingLeft="1em";
-                                                        i.innerText = rep.full_name;
+                                                        i.innerText = '§ '+rep.full_name;
                                                         div2.appendChild(i);
                                                     }
                                                 },
@@ -40,29 +40,14 @@
                                 </div>
                             </span>
 
-                            <script name="text/javascript">
-                                function showList(id) {
-                                    var drop = document.getElementById(id);
-                                    if (drop.classList.contains('show')) {
-                                        drop.classList.remove('show');
-                                    } else {
-                                        drop.classList.add('show');
-                                    }
-                                }
-
-                            </script>
-
                             &middot;
                             <span class="dropdown" onmouseenter="showList('dropdown-b')"
                                 onmouseleave="showList('dropdown-b')">
                                 <a href="<%- config.root %>" class="dropbtn">首页</a>
                                 <div class="dropdown-content" id="dropdown-b">
-                                    <script>
-                                        $("#dropdown-b").append("<a href='/tags'>标签/tags</a>")
-                                        $("#dropdown-b").append("<a href='/archives'>文档/archives</a>")
-                                        $("#dropdown-b").append("<a href='/categories'>归类/categories</a>")
-                                        $("#dropdown-b")[0].style+="height: 8em;text-align: center;vertical-align: middle;margin-left:-5em;width:10em;padding-left:1em;"
-                                    </script>
+                                    <% for (index in theme.menu) { %>
+                                        <a href='<%- theme.menu[index].url %>' ><i class="<%- theme.menu[index].icon %>" aria-hidden="true"></i><span style="text-align: center;">&#x0009;<%- theme.menu[index].name %></span></a>
+                                        <% } %>
                                 </div>
                             </span>
                         </span>
@@ -71,4 +56,4 @@
     <script>
         $(".navbar")[0].style.left = $('#header')[0].offsetWidth.toString() + "px";
     </script>
-</div>
+</nav>

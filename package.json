@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/yaoqs/hexo-theme-scholar-future/issues"
   },
-  "homepage": "https://github.com/yaoqs/hexo-theme-scholar-future#readme"
+  "homepage": "https://github.com/yaoqs/hexo-theme-scholar-future#readme",
+  "dependencies": {
+    "hexo-tag-cloud": "^2.1.2"
+  }
 }

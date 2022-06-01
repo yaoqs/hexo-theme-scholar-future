@@ -1,12 +1,12 @@
-# scholar-future
+# scholar-future [gh-page](https://yaoqs.github.io/hexo-theme-scholar-future/)
 
 Journal:
 
-+ title: *FUTURE*
-+ subtitle: Natural Philosophy & Infomation Sciences
++ Title: **FUTURE**
++ Subtitle: Natural Philosophy & Infomation Sciences
 + Author: Yao Qing-sheng
 + Author-cn: 要庆生
-+ slogan: 解放思想，发展生产力
++ Slogan: 解放思想，发展生产力
 + Address: Department of Natural Philosophy & Infomation Sciences, CHINA
 
 ---
@@ -36,7 +36,7 @@ Journal:
 
 ## Contributing
 
-Contribution is welcome, feel free to open an issue and fork. Waiting for your pull request.
+Contribution is welcome, free to open an issue and fork. Waiting for your pull request.
 
 ## Installation
 
@@ -82,17 +82,22 @@ All Rights Reserved.
 + [ ] azure
 + [ ] Bootstrap
 + [ ] 注册域名
-+ [ ] about页，404页（公益）
++ [ ] about页，404页(公益)
 + [ ] 个人简历页(resume)
 + [ ] lab.html实验示例代码
++ [ ] layout布局
++ [ ] 主题相关插件
 + [x] 统计页statistics.ejs
-+ [x] follow.ejs
++ [x] 关注页follow.ejs
++ [x] 导航页nav.ejs
++ [x] tag cloud
++ [ ] editorAnnotate批注插件
 + [ ] journal-face.png journal-menu.png
 + [ ] 图片页图片轮播 参考jb51.net代码
-+ [x] 打赏功能 ~~tctip  <https://www.cnblogs.com/enjoy233/p/10328361.html> <https://github.com/greedying/tctip>~~已自编码实现 [Donate & Reward 大吉大利，今晚吃鸡](https://yaoqs.github.io/donate-plugin/)  github repo：[donate-plugin](https://github.com/yaoqs/donate-plugin)
++ [x] 打赏功能 widget/donate.ejs ~~tctip  <https://www.cnblogs.com/enjoy233/p/10328361.html> <https://github.com/greedying/tctip>~~已自编码实现 [Donate & Reward 大吉大利，今晚吃鸡](https://yaoqs.github.io/donate-plugin/)  github repo：[donate-plugin](https://github.com/yaoqs/donate-plugin)
 + [ ] 分享组件的嵌入(支持http/https/移动端访问)侧边悬挂式
 + [ ] 页面底部添加"回到顶部" + "收藏" + "快速评论"功能
-+ [ ] stackoverflow，官方在StackExchange页面提供了flair，比如我的是: [User Bravo Yeung - Stack Exchange]?9<https://stackexchange.com/users/4637854/bravo-yeung?tab=flair>) ，页面中提供了可嵌入的html代码:
++ [ ] stackoverflow，官方在StackExchange页面提供了flair，比如: [User Bravo Yeung - Stack Exchange](https://stackexchange.com/users/4637854/bravo-yeung?tab=flair) ，页面中提供了可嵌入的html代码:
 
     ```html
     Language:  HTML
@@ -113,6 +118,8 @@ All Rights Reserved.
 + [ ] 修改主题风格 Github+Jekyll 搭建个人网站详细教程 <https://www.jianshu.com/p/9f71e260925d>
 + [ ] github action流
 + [ ] github project
+
+## 以下代码用于在GitHub page 中显示
 
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
