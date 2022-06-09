@@ -82,8 +82,14 @@ All Rights Reserved.
 + [ ] azure
 + [ ] Bootstrap
 + [ ] 注册域名
-+ [ ] about页，404页(公益)
-+ [ ] 个人简历页(resume)
++ [ ] 配置英文说明/双语；加小图标，并解决大小写不敏感问题
+  + [ ] About页/个人简历页(resume)
+  + [ ] 404页
+  + [ ] 捐献Donate.md
+  + [ ] 导航页Navigator.md
+  + [ ] 游戏Game.md
+  + [ ] 音乐Music.md
+  + [ ] Feature.md
 + [ ] lab.html实验示例代码
 + [ ] layout布局
 + [ ] 主题相关插件
