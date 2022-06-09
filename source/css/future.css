@@ -479,13 +479,13 @@ section.author {
   margin-top: 2em;
 }
 .pagination .newer-posts {
-  float: inline-start;
+  float: left;
 }
 .pagination .page-number {
   text-align: center;
 }
 .pagination .older-posts {
-  float: inline-end;
+  float: right;
 }
 #toTop {
   position: fixed;
