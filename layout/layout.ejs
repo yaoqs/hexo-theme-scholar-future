@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
-<!---->
 
 <head>
+  <!--[if lt IE 9]>
+    <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="<%- theme.favicon %>" />
+  <link rel="alternate" type="application/rss+xml" title="<%- config.author %>" href="<%- theme.rss %>">
 
   <% var title=page.title; if (is_archive()){ title='Archives' ; if (is_month()){ title +=': ' + page.year + '/' +
     page.month; } else if (is_year()){ title +=': ' + page.year; } } else if (is_category()){ title='Category: ' +
     page.category; } else if (is_tag()){ title='Tag: ' + page.tag; } %>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <!--seo-->
+
+    <!--SEO-->
     <% if (page.keywords){ %>
       <meta name="keywords"
         content="<%= config.keywords %>,<%= theme.keywords %>,<%= page.keywords %>,<%= page.title %>">
@@ -38,8 +44,7 @@
                     s.parentNode.insertBefore(bp, s);
                   })();
                 </script>
-                <link rel="shortcut icon" href="<%- theme.logo %>" />
-                <link rel="alternate" type="application/rss+xml" title="<%- config.author %>" href="<%- theme.rss %>">
+
                 <title>
                   <% if (title){ %>
                     <%= title %> | <% } %>
@@ -56,11 +61,9 @@
 
                 <%- css('css/future.css') %>
                   <%- css('css/main') %>
-                    <meta name="HandheldFriendly" content="True" />
-                    <meta name="MobileOptimized" content="320" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
                     <!--引用cdn服务的时候，怎么做到cdn加载不到之后用本地的-->
-                    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+                    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
                     <script>!window.jQuery && document.write(unescape('%3Cscript type="text/javascript" src="/lib/jquery-3.4.1.min.js"%3E%3C/script%3E'))</script>
                     <!--<%- js("lib/jquery-3.4.1.min.js") %>-->
                     <script type="text/javascript"
@@ -77,7 +80,7 @@
 <body>
 
 
-  <%- partial('./_partial/header.ejs') %>
+  <%- partial('./_partial/aside.ejs') %>
     <%- include('./_partial/nav.ejs') %>
 
 
@@ -117,10 +120,8 @@
 
             </script>
             <% } %>
+
+
+              <%- include('./widget/donate') %>
 </body>
-
-
-
-<%- include('./widget/donate') %>
-
 </html>

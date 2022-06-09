@@ -6,13 +6,13 @@
             <% if (theme.custom_html_list[list]) { -%>
                 &middot;
                 <a href=" <%- config.root %><%- theme.custom_html_list[list] %> ">
-                    <%- list %>
+                    <%- theme.custom_html_list[list] %>
                 </a>
                 <% } -%>
                     <% }%>
 
-                        <span id="repos">
-                            <span class="dropdown" onmouseenter="showList('dropdown-a')"
+                        <div id="repos">
+                            <div class="dropdown" onmouseenter="showList('dropdown-a')"
                                 onmouseleave="showList('dropdown-a')">
                                 <a id="a" href="javascript:void(0)" class="dropbtn">&#9776; Repositories Pages</a>
                                 <div class="dropdown-content" id="dropdown-a">
@@ -26,8 +26,8 @@
                                                         var i = document.createElement('a');
                                                         i.href = "https://yaoqs.github.io/" + rep.name;
                                                         i.target = "_blank";
-                                                        i.style.paddingLeft="1em";
-                                                        i.innerText = '§ '+rep.full_name;
+                                                        i.style.paddingLeft = "1em";
+                                                        i.innerText = '§ ' + rep.full_name;
                                                         div2.appendChild(i);
                                                     }
                                                 },
@@ -38,22 +38,24 @@
 
                                     </script>
                                 </div>
-                            </span>
+                            </div>
 
                             &middot;
-                            <span class="dropdown" onmouseenter="showList('dropdown-b')"
+                            <div class="dropdown" onmouseenter="showList('dropdown-b')"
                                 onmouseleave="showList('dropdown-b')">
                                 <a href="<%- config.root %>" class="dropbtn">首页</a>
                                 <div class="dropdown-content" id="dropdown-b">
                                     <% for (index in theme.menu) { %>
-                                        <a href='<%- theme.menu[index].url %>' ><i class="<%- theme.menu[index].icon %>" aria-hidden="true"></i><span style="text-align: center;">&#x0009;<%- theme.menu[index].name %></span></a>
+                                        <a href='<%- theme.menu[index].url %>'><i class="<%- theme.menu[index].icon %>"
+                                                aria-hidden="true"></i><span style="text-align: center;">&#x0009;<%-
+                                                    theme.menu[index].name %></span></a>
                                         <% } %>
                                 </div>
-                            </span>
-                        </span>
+                            </div>
+                        </div>
     </h6>
 
     <script>
-        $(".navbar")[0].style.left = $('#header')[0].offsetWidth.toString() + "px";
+        $(".navbar")[0].style.left = $('#aside')[0].offsetWidth.toString() + "px";
     </script>
 </nav>

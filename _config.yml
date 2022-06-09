@@ -25,32 +25,24 @@ Address: Department of Natural/Social Philosophy & Infomation Sciences, CHINA
 Repositories_Pages: https://yaoqs.github.io/
 rss: /atom.xml
 disqus:
-custom_html_list:
-  About: about.html
-  Lab: Lab.html
-  Navigator: navigator.html
-  Feature: feature.html
-  Donate: donate.html
-  Game: game.html
-  Music: music.html
-
-404page: toolkit.html
-
+custom_html_list: [About,Lab,Navigator,  Feature,  Donate,  Game,  Music]
 
 
 site_visit_tongji:
   google_analytics:
+  baidu: <script type="text/javascript">var _hmt = _hmt || [];(function() {  var hm = document.createElement("script");  hm.src = "https://hm.baidu.com/hm.js?2023f967cb85513ede1b6a3d58177776";  var s = document.getElementsByTagName("script")[0];   s.parentNode.insertBefore(hm, s);})();</script>
   cnzz: <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" :"http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278269244'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278269244%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
   umengplus: <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" :"http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278269244'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278269244%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
   qq_ta: <script type="text/javascript" src="https://tajs.qq.com/stats?sId=66496804" charset="UTF-8" async></script>
-  bdtj: <script type="text/javascript">var _hmt = _hmt || [];(function() {  var hm = document.createElement("script");  hm.src = "https://hm.baidu.com/hm.js?2023f967cb85513ede1b6a3d58177776";  var s = document.getElementsByTagName("script")[0];   s.parentNode.insertBefore(hm, s);})();</script>
   flagcounter: <a href="https://info.flagcounter.com/tQfY"><img src="https://s11.flagcounter.com/mini/tQfY/bg_FFFFFF/txt_000000/border_CCCCCC/flags_0/" alt="Flag Counter" border="0"></a>
   _360fenxi: <script>(function(b,a,e,h,f,c,g,s){b[h]=b[h]||function(){(b[h].c=b[h].c||[]).push(arguments)};b[h].s=!!c;g=a.getElementsByTagName(e)[0];s=a.createElement(e);s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefore(s,g)})(window,document,"script","_qha",332983,false);</script>
-  _51la: <script type="text/javascript" src="https://js.users.51.la/20526175.js" async></script>
-  busuanzi: <script type="text/javascript"  src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><span id="busuanzi_container_site_pv"><a href="http://busuanzi.ibruce.info/">busuanzi:</a> site_pv:<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>; site_uv:<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>; page_pv:<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>. </span>
+  _51la_v5: <script type="text/javascript" src="//js.users.51.la/21341261.js"></script>
+  _51la_v6: <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js?id=JhwXbvPO5Ijy6W6x&ck=JhwXbvPO5Ijy6W6x"></script><script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/JhwXbvPO5Ijy6W6x/quote.js?theme=0&f=12&display=0,0,0,1,0,0,0,1"></script><a target="_blank" title="51la网站统计" href="https://v6.51.la/land/JhwXbvPO5Ijy6W6x"><img src="https://sdk.51.la/icon/4-5.png"></a>
+  _51la_lingque: <script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script><script>new LingQue.Monitor().init({id:"JhwYVlJAdB7w0kYc"});</script>
+  busuanzi: <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_pv" ><a href="https://busuanzi.ibruce.info/" title="不蒜子">总访问量:<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></a> <!--<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>; SUV:<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>; PPV:<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>-->. </span>
 
 
-favicon: /images/robot_lite.jpg
+favicon: favicon-fish.ico
 
 wechat_subscriber:
   enabled: true
@@ -69,12 +61,7 @@ avatar:
   # If true, the avatar would be rotated with the cursor.
   rotated: true #头像是否设为圆形，否则为矩形
 
-# 文章字数统计插件
-wordCount:
-  enable: true # 将这个值设置为 true 即可.
-  postWordCount: true
-  min2read: true
-  totalCount: true
+
 
 # Social Accounts
 # http://www.fontawesome.com.cn/faicons/#web-application
@@ -115,7 +102,7 @@ Social_Accounts:
     class: fab fa-git fa-2x
   github_follow:
     href: https://ghbtns.com/github-btn.html?user=yaoqs&type=follow&count=true
-    code: <iframe src="https://ghbtns.com/github-btn.html?user=yaoqs&amp;type=follow&amp;count=true" scrolling="no" width="150px" height="20px" frameborder="0"></iframe>
+    code: <iframe src="https://ghbtns.com/github-btn.html?user=yaoqs&amp;type=follow&amp;count=true" scrolling="no" width="150" height="20" frameborder="0"></iframe>
   github:
     name: github
     href: https://github.com/yaoqs
@@ -176,8 +163,8 @@ Social_Accounts:
     name: 加关注
     js: https://tjs.sjs.sinajs.cn/open/api/js/wb.js
     button: <wb:follow-button uid="1262655355" type="red_2" width="86" height="24"></wb:follow-button>
-    href: http://widget.weibo.com/relationship/followbutton.php?btn=red&amp;style=2&amp;uid=1262655355&amp;width=86&amp;height=24&amp;language=zh_cn
-    code: <iframe src="http://widget.weibo.com/relationship/followbutton.php?btn=red&amp;style=2&amp;uid=1262655355&amp;width=86&amp;height=24&amp;language=zh_cn" scrolling="no" marginheight="0" width="86" height="24" frameborder="0"></iframe>
+    href: https://widget.weibo.com/relationship/followbutton.php?btn=red&amp;style=2&amp;uid=1262655355&amp;width=86&amp;height=24&amp;language=zh_cn
+    code: <iframe src="https://widget.weibo.com/relationship/followbutton.php?btn=red&amp;style=2&amp;uid=1262655355&amp;width=86&amp;height=24&amp;language=zh_cn" scrolling="no" marginheight="0" width="86" height="24" frameborder="0"></iframe>
   whatsapp:
     name: whatsapp
     href:
@@ -193,39 +180,6 @@ Social_Accounts:
     name: 知乎
     href:
     class: fab fa-zhihu fa-2x
-
-
-# Canvas-nest
-# Dependencies: https://github.com/theme-next/theme-next-canvas-nest
-canvas_nest: # 网络背景
-  enable: true
-  onmobile: true # display on mobile or not
-  color: '0,0,0' # RGB values, use ',' to separate
-  opacity: 0.5 # the opacity of line: 0~1
-  zIndex: -1 # z-index property of the background
-  count: 150 # the number of lines
-
-# JavaScript 3D library.
-# Dependencies: https://github.com/theme-next/theme-next-three
-# three_waves
-three_waves: false
-# canvas_lines
-canvas_lines: false
-# canvas_sphere
-canvas_sphere: false
-
-# Canvas-ribbon
-# Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
-# size: The width of the ribbon.
-# alpha: The transparency of the ribbon.
-# zIndex: The display level of the ribbon.
-canvas_ribbon:
-  enable: false
-  size: 300
-  alpha: 0.6
-  zIndex: -1
-
-
 
 menu:
   Index:
@@ -256,7 +210,9 @@ reward:
   wechatreward: /images/微信打赏码.png
   alipay: /images/支付宝收款码.jpg
   zhifubao_redpackage: /images/支付宝红包码.png
-  paypal: paypal.me/LordYao
+  paypal:
+    name: paypal.me/LordYao
+    href: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=243292490@qq.com&currency_code=USD&amount=1&return=http://yaoqs.github.com/about&item_name=LordYao%27s%20Blog&undefined_quantity=1
   #bitcoin: /images/bitcoin.jpg
 
 #————————————————
@@ -314,3 +270,41 @@ highlight:
   wrap: true
   hljs: false
 
+# 文章字数统计插件
+wordCount:
+  enable: true # 将这个值设置为 true 即可.
+  postWordCount: true
+  min2read: true
+  totalCount: true
+
+
+
+# Canvas-nest
+# Dependencies: https://github.com/theme-next/theme-next-canvas-nest
+canvas_nest: # 网络背景
+  enable: true
+  onmobile: true # display on mobile or not
+  color: '0,0,0' # RGB values, use ',' to separate
+  opacity: 0.5 # the opacity of line: 0~1
+  zIndex: -1 # z-index property of the background
+  count: 150 # the number of lines
+
+# JavaScript 3D library.
+# Dependencies: https://github.com/theme-next/theme-next-three
+# three_waves
+three_waves: false
+# canvas_lines
+canvas_lines: false
+# canvas_sphere
+canvas_sphere: false
+
+# Canvas-ribbon
+# Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
+# size: The width of the ribbon.
+# alpha: The transparency of the ribbon.
+# zIndex: The display level of the ribbon.
+canvas_ribbon:
+  enable: false
+  size: 300
+  alpha: 0.6
+  zIndex: -1

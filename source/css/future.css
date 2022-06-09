@@ -10,6 +10,16 @@
   padding: 0;
   margin: 0;
 }
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+  display: block;
+}
 /* Basic Typography */
 html,
 body {
@@ -43,8 +53,8 @@ hr {
   background: #000000;
 }
 /*		index		*/
-/*		header		*/
-header {
+/*		aside		*/
+aside {
   border-right: 1px #eee solid;
   padding: 2em;
   position: fixed;
@@ -57,22 +67,22 @@ header {
   /* Footer */
   /* Sidebar end */
 }
-header h1 {
+aside h1 {
   font-size: 1.9em;
   margin-top: 0.8em;
   margin-bottom: 0.6em;
 }
-header h1 a {
+aside h1 a {
   color: #444;
 }
-header h1 a:hover {
+aside h1 a:hover {
   text-decoration: none;
 }
-header h6 {
+aside h6 {
   margin-top: 0em;
   margin-bottom: 0em;
 }
-header #avatar img {
+aside #avatar img {
   margin-top: 4em;
   margin-bottom: -1.73em;
   width: 10em;
@@ -82,12 +92,12 @@ header #avatar img {
   -webkit-border-radius: 4.5em;
   border: none;
 }
-header div#fork_me_on_github {
+aside div#fork_me_on_github {
   margin-top: -2em;
   margin-left: -2em;
   margin-bottom: -5em;
 }
-header .github-corner:hover .octo-arm {
+aside .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;
 }
 @keyframes octocat-wave {
@@ -105,65 +115,65 @@ header .github-corner:hover .octo-arm {
   }
 }
 @media (max-width: 500px) {
-  header .github-corner:hover .octo-arm {
+  aside .github-corner:hover .octo-arm {
     animation: none;
   }
-  header .github-corner .octo-arm {
+  aside .github-corner .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
   }
 }
-header span#donate {
+aside span#donate {
   font-size: 1em;
   margin-bottom: -2em;
 }
-header #rss {
+aside #rss {
   transition: all 2s;
 }
-header #rss:hover {
+aside #rss:hover {
   transform: rotate(360deg);
 }
-header #follow-icons {
+aside #follow-icons {
   font-size: 0.7em;
   margin-top: -0.7em;
   margin-bottom: 0em;
 }
-header #follow-icons a {
+aside #follow-icons a {
   color: #ccc;
 }
-header #follow-icons span {
+aside #follow-icons span {
   vertical-align: top;
   margin-left: -0.15em;
   margin-right: -0.15em;
 }
-header #follow-icons span .fa-stack-1x {
+aside #follow-icons span .fa-stack-1x {
   font-size: 1.05em;
   line-height: 1.9em;
 }
-header span#slogan {
+aside span#slogan {
   font-size: 0.8em;
 }
-header span#slogan ul > li {
+aside span#slogan ul > li {
   text-align: center;
 }
-header span#donate > a {
+aside span#donate > a {
   font-size: 0.8em;
 }
-header footer {
+aside footer {
   padding: 1em 0em 2.5em 0em;
   font-size: 0.8em;
   line-height: 1.5em;
   color: #000000;
 }
-header footer a {
+aside footer a {
   font-weight: 300;
   color: cornflowerblue;
   text-decoration: underline;
 }
-header footer a:hover {
+aside footer a:hover {
   color: #444;
   text-decoration: none;
 }
-/*		header end		*/
+/*		aside end		*/
 /*		navbar			*/
 .navbar {
   border-bottom: 1px #eee solid;
@@ -259,11 +269,11 @@ span.taglist a {
   font-weight: lighter;
   text-transform: none;
 }
-section#dota {
+span#dota {
   float: right;
   color: #000;
 }
-section#author {
+span#author {
   float: right;
   margin-left: 2em;
   font-size: 0.8em;
@@ -290,7 +300,7 @@ h1.post-title {
   margin-bottom: 0.6em;
   text-align: center;
 }
-section#post-author {
+div#post-author {
   text-align: center;
   font-size: 0.8em;
   font-family: "Times New Roman", "微软雅黑", serif;
@@ -314,22 +324,22 @@ section#Abstract {
   font-family: "Times New Roman", "微软雅黑", serif;
   word-break: break-all;
 }
-hr#Abstract {
+section#Abstract hr.AbstractLine {
   width: 85%;
   float: left;
 }
-span#Abstract {
+section#Abstract span.Abstract {
   margin-top: -1em;
   margin-bottom: -1em;
   font-weight: bold;
   line-height: 1.1em;
 }
-span#Abstract-content {
+section#Abstract span.Abstract-content {
   padding-top: 1em;
   padding-bottom: 1em;
   font-weight: lighter;
 }
-span#keywords-content {
+section#Abstract span.keywords-content {
   padding-left: 1.2em;
   font-size: 0.8em;
   font-weight: lighter;
@@ -460,6 +470,7 @@ section.author {
   position: absolute;
   text-align: left;
   margin-top: 0em;
+  font-size: 0.8em;
 }
 /* Page Elements end */
 .pagination {
@@ -476,8 +487,16 @@ section.author {
 .pagination .older-posts {
   float: inline-end;
 }
-.pagination #toTop {
-  float: inline-end;
+#toTop {
+  position: fixed;
+  float: right;
+  right: 10px;
+  top: 90vh;
+}
+#qrcode {
+  display: grid;
+  position: relative;
+  margin-top: 2em;
 }
 /*************** other device screen adaptive ****************/
 /* Large Screens */

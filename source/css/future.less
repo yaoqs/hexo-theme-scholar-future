@@ -11,6 +11,18 @@
     margin: 0;
 }
 
+// html5 support
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+    display: block;
+}
+
 /* Basic Typography */
 
 html,
@@ -55,8 +67,8 @@ hr {
 }
 
 /*		index		*/
-/*		header		*/
-header {
+/*		aside		*/
+aside {
     border-right: 1px #eee solid;
     padding: 2em;
     position: fixed;
@@ -73,8 +85,6 @@ header {
 
         a {
             color: #444;
-
-
         }
 
         a:hover {
@@ -171,12 +181,13 @@ header {
         }
     }
 
-    span#slogan{
+    span#slogan {
         font-size: 0.8em;
+
         ul>li {
-        text-align: center;
+            text-align: center;
+        }
     }
-}
 
     span#donate>a {
         font-size: 0.8em;
@@ -205,7 +216,7 @@ header {
     /* Sidebar end */
 }
 
-/*		header end		*/
+/*		aside end		*/
 
 /*		navbar			*/
 .navbar {
@@ -319,12 +330,12 @@ span.taglist a {
     text-transform: none;
 }
 
-section#dota {
+span#dota {
     float: right;
     color: #000;
 }
 
-section#author {
+span#author {
     float: right;
     margin-left: 2em;
     font-size: 0.8em;
@@ -357,7 +368,7 @@ h1.post-title {
     text-align: center;
 }
 
-section#post-author {
+div#post-author {
     text-align: center;
     font-size: 0.8em;
     font-family: "Times New Roman", "微软雅黑", serif;
@@ -381,31 +392,32 @@ section#Abstract {
     font-size: 1em;
     font-family: "Times New Roman", "微软雅黑", serif;
     word-break: break-all;
-}
 
-hr#Abstract {
-    width: 85%;
-    float: left;
-}
 
-span#Abstract {
-    margin-top: -1em;
-    margin-bottom: -1em;
-    font-weight: bold;
-    line-height: 1.1em;
-}
+    hr.AbstractLine {
+        width: 85%;
+        float: left;
+    }
 
-span#Abstract-content {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    font-weight: lighter;
-}
+    span.Abstract {
+        margin-top: -1em;
+        margin-bottom: -1em;
+        font-weight: bold;
+        line-height: 1.1em;
+    }
 
-span#keywords-content {
-    padding-left: 1.2em;
-    font-size: 0.8em;
-    font-weight: lighter;
-    line-height: 1.2em;
+    span.Abstract-content {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        font-weight: lighter;
+    }
+
+    span.keywords-content {
+        padding-left: 1.2em;
+        font-size: 0.8em;
+        font-weight: lighter;
+        line-height: 1.2em;
+    }
 }
 
 /*		abstract end		*/
@@ -551,6 +563,7 @@ section.author {
     position: absolute;
     text-align: left;
     margin-top: 0em;
+    font-size: 0.8em;
 }
 
 /* Page Elements end */
@@ -559,18 +572,30 @@ section.author {
     display: block;
     margin-bottom: 1em;
     margin-top: 2em;
-    .newer-posts{
+
+    .newer-posts {
         float: inline-start;
     }
-    .page-number{
+
+    .page-number {
         text-align: center;
     }
-    .older-posts{
+
+    .older-posts {
         float: inline-end;
     }
-    #toTop{
-        float: inline-end;
-    }
+}
+
+#toTop {
+    position: fixed;
+    float: right;
+    right: 10px;
+    top: 90vh;
+}
+#qrcode{
+    display: grid;
+    position: relative;
+    margin-top: 2em;
 }
 
 /*************** other device screen adaptive ****************/

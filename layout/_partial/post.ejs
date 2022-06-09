@@ -10,15 +10,15 @@
     <h1 class="post-title">
       <%- titlecase( post.title) %>
     </h1>
-    <section id="post-author">
+    <div id="post-author">
       <%- theme.Author %> <br />
         <%- theme.Address %>
-    </section>
+    </div>
     <section class="post-content article-entry">
       <section id="Abstract">
-        <hr id="Abstract" />
-        <span id="Abstract">Abstract</span>
-        <span id="Abstract-content">
+        <hr class="AbstractLine" />
+        <span class="Abstract">Abstract</span>
+        <span class="Abstract-content">
           <%- page.excerpt %>
             <!--Table of Contents begin-->
             <% if ( post.toc || ( theme.toc && post.toc) && !index ){ %>
@@ -42,8 +42,8 @@
         </span>
 
 
-        <span id="Abstract">Keywords
-          <span id="keywords-content">
+        <span class="Abstract">Keywords
+          <span class="keywords-content">
             <% if (post.tags && post.tags.length){ %>
               <% count=post.tags.length %>
                 <% post.tags.forEach(function(tag, index) { %>
@@ -57,85 +57,88 @@
                               <% } %>
           </span>
         </span>
-        <hr id="Abstract" />
-        <span id="Abstract">Citation
-          <span id="keywords-content">
+        <hr class="AbstractLine" />
+        <span class="Abstract">Citation
+          <span class="keywords-content">
             <%- theme.Author %>&period;&nbsp; <%- titlecase( post.title) %>&period;&nbsp; <%- theme.journal.title %>
                   &nbsp; <%- theme.journal.subtitle %>&comma;&nbsp; <%= date(post.date, 'YYYY:MMDD' ) %>&comma;&nbsp;
                       <%- url_for(page.permalink) %>
           </span>
         </span>
-        <hr id="Abstract" />
+        <hr class="AbstractLine" />
+      </section>
+
+
+      <section>
+        <%- post.content %>
       </section>
 
 
 
-      <%- post.content %>
-        <br>
-        <div id="qrcode"></div>
-        <script>
-          $('#qrcode').qrcode({ width: 173, height: 173, text: "<%- url_for(page.permalink) %>" });
-        </script>
+      <section class="References">
+        <span id="References">References</span>
+        <span id="References-content">
+          <ol id="list">
+            <li>
+              <%- theme.Author %>&period;&nbsp; <%- titlecase( post.title) %>&period;&nbsp; <%- theme.journal.title %>
+                    &nbsp; <%- theme.journal.subtitle %>&comma;&nbsp; <%= date(post.date, 'YYYY:MMDD' ) %>
+                        &comma;&nbsp; <%- url_for(page.permalink) %>
+            </li>
+            <li>
+              <%- theme.copyright.Statement %> <br />
+                <%- theme.copyright.url %>
+                  <%- url_for(page.permalink) %>
+            </li>
+          </ol>
+        </span>
+
+      </section>
 
 
-        <section id="References">
-          <span id="References">References</span>
-          <span id="References-content">
-            <ol id="list">
-              <li>
-                <%- theme.Author %>&period;&nbsp; <%- titlecase( post.title) %>&period;&nbsp; <%- theme.journal.title %>
-                      &nbsp; <%- theme.journal.subtitle %>&comma;&nbsp; <%= date(post.date, 'YYYY:MMDD' ) %>
-                          &comma;&nbsp; <%- url_for(page.permalink) %>
-              </li>
-              <li>
-                <%- theme.copyright.Statement %> <br />
-                  <%- theme.copyright.url %>
-                    <%- url_for(page.permalink) %>
-              </li>
-            </ol>
-          </span>
-
+      <section class="post-footer">
+        <hr id="footerline" /><br>
+        <section class="author">
+          *Corresponding Author: <%- theme.Author %> &lt;Email: <%- mail_to(theme.Email) %>&gt;
+              <% if (theme.copyright.creative_commons.url){ -%>
+                <img src="<%- theme.copyright.creative_commons.url %>" />
+                <% } else { -%>
+                  <%- theme.copyright.creative_commons.license %> .
+                    <%} -%>
+                      <p>
+                        <%- theme.bio %>
+                      </p>
         </section>
-    </section>
-    <footer class="post-footer">
-      <hr id="footerline" /><br>
-      <section class="author">
-        *Corresponding Author: <%- theme.Author %> &lt;Email: <%- mail_to(theme.Email) %>&gt;
-            <% if (theme.copyright.creative_commons.url){ -%>
-              <img src="<%- theme.copyright.creative_commons.url %>" />
-              <% } else { -%>
-                <%- theme.copyright.creative_commons.license %> .
-                  <%} -%>
-                    <p>
-                      <%- theme.bio %>
-                    </p>
+
       </section>
+      <script>//复制加版权
+        jQuery(document).on('copy', function (e) {
+          var selected = window.getSelection();
+          var selectedText = selected.toString().replace(/\n/g, '<br>');  // Solve the line breaks conversion issue 处理换行转换的问题
+          var copyFooter = '<br>---------------------<br>著作权归作者所有。<br>'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。<br>'
+            + '<br>作者：' + document.getElementById('author').innerText
+            + '<br>复制时间: ' + Date.now()
+            + '<br>原文链接：' + document.location.href
+            + '<br>© 版权声明：本文为「' + document.getElementById('author').innerText + '」的原创文章，遵循 CC 4.0 BY-NC-SA 版权协议，转载请附上原文出处链接及本声明。';
 
-    </footer>
-    <script text="script/javascript">//复制加版权
-      jQuery(document).on('copy', function (e) {
-        var selected = window.getSelection();
-        var selectedText = selected.toString().replace(/\n/g, '<br>');  // Solve the line breaks conversion issue 处理换行转换的问题
-        var copyFooter = '<br>---------------------<br>著作权归作者所有。<br>'
-          + '商业转载请联系作者获得授权，非商业转载请注明出处。<br>'
-          + '<br>作者：' + document.getElementById('author').innerText
-          + '<br>复制时间: ' + Date.now()
-          + '<br>原文链接：' + document.location.href
-          + '<br>© 版权声明：本文为「' + document.getElementById('author').innerText + '」的原创文章，遵循 CC 4.0 BY-NC-SA 版权协议，转载请附上原文出处链接及本声明。';
+          var copyHolder = $('<div>', { id: 'temp', html: selectedText + copyFooter, style: { position: 'absolute', left: '-99999px' } });
 
-        var copyHolder = $('<div>', { id: 'temp', html: selectedText + copyFooter, style: { position: 'absolute', left: '-99999px' } });
+          $('body').append(copyHolder);
+          selected.selectAllChildren(copyHolder[0]);
+          window.setTimeout(function () {
+            copyHolder.remove();
+          }, 0);
+        });
 
-        $('body').append(copyHolder);
-        selected.selectAllChildren(copyHolder[0]);
-        window.setTimeout(function () {
-          copyHolder.remove();
-        }, 0);
-      });
-
-    </script>
-
+      </script>
+    </section>
 
   </article>
+
+  <div id="qrcode"></div>
+  <script>
+    $('#qrcode').qrcode({ width: 173, height: 173, text: "<%- url_for(page.permalink) %>" });
+  </script>
 
   <div class="pagination">
     <% if (page.prev) { %>
@@ -149,6 +152,6 @@
             <%- page.next.title %> →
           </a>
           <% } %>
-            <br>
-            <a id="toTop" href="#top" title="回顶部">Top</a>
+            <br />
   </div>
+  <a id="toTop" href="#top" title="回顶部">Top</a>

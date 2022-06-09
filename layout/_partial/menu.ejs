@@ -1,8 +1,7 @@
 <div id="Contents">Contents</div>
 <hr id="topline" />
 <% page.posts.each(function(post) { %>
-  <section id="{{id}}" class="{{post_class}}">
-    <section>
+    <div>
       <h3 class="post-title">
         <a href="<%- config.root %><%- post.path %>">
           <% if (post.top) { %>
@@ -10,27 +9,26 @@
             <% } %>
               <%- titlecase(truncate(post.title, {length: 25, omission: '... ' })) %>
         </a>
-        <section id="dota">
+        <span id="dota">
           <!--  -->
           <% for(var i=0; i < 30; i++) { %>
             &middot;
             <% } %>
-              <section id="author">
+              <span id="author">
                 <%- post.author %>(<%= date(post.date, 'YYYYMMDD' ) %>)
-              </section>
+              </span>
 
-        </section>
+        </span>
       </h3>
-    </section>
-  </section>
+    </div>
   <% }); %>
 
 
     <hr id="topline" />
-    <nav class="pagination" role="pagination">
+    <div class="pagination" role="pagination">
       <% if (page.prev) { %><a class="newer-posts" href="<%- url_for(page.prev_link) %>">← Newer Posts</a>
         <% } %>
           <span class="page-number">Page <%- page.current %> of <%- page.total %></span>
           <% if (page.next) { %><a class="older-posts" href="<%- url_for(page.next_link) %>">Older Posts →</a>
             <% } %>
-    </nav>
+    </div>
