@@ -45,10 +45,10 @@
                                 onmouseleave="showList('dropdown-b')">
                                 <a href="<%- config.root %>" class="dropbtn">Home</a>
                                 <div class="dropdown-content" id="dropdown-b">
-                                    <% for (index in theme.menu) { %>
-                                        <a href='<%- theme.menu[index].url %>'><i class="<%- theme.menu[index].icon %>"
+                                    <% for (index in theme.Menu) { %>
+                                        <a href='<%- theme.Menu[index].url %>'><i class="<%- theme.Menu[index].icon %>"
                                                 aria-hidden="true"></i><span style="text-align: center;">&#x0009;<%-
-                                                    theme.menu[index].name %></span></a>
+                                                    theme.Menu[index].name %></span></a>
                                         <% } %>
                                 </div>
                             </div>

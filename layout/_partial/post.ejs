@@ -60,8 +60,8 @@
         <hr class="AbstractLine" />
         <span class="Abstract">Citation
           <span class="keywords-content">
-            <%- theme.Author %>&period;&nbsp; <%- titlecase( post.title) %>&period;&nbsp; <%- theme.journal.title %>
-                  &nbsp; <%- theme.journal.subtitle %>&comma;&nbsp; <%= date(post.date, 'YYYY:MMDD' ) %>&comma;&nbsp;
+            <%- theme.Author %>&period;&nbsp; <%- titlecase( post.title) %>&period;&nbsp; <%- theme.Journal.title %>
+                  &nbsp; <%- theme.Journal.subtitle %>&comma;&nbsp; <%= date(post.date, 'YYYY:MMDD' ) %>&comma;&nbsp;
                       <%- url_for(page.permalink) %>
           </span>
         </span>
@@ -80,13 +80,13 @@
         <span id="References-content">
           <ol id="list">
             <li>
-              <%- theme.Author %>&period;&nbsp; <%- titlecase( post.title) %>&period;&nbsp; <%- theme.journal.title %>
-                    &nbsp; <%- theme.journal.subtitle %>&comma;&nbsp; <%= date(post.date, 'YYYY:MMDD' ) %>
+              <%- theme.Author %>&period;&nbsp; <%- titlecase( post.title) %>&period;&nbsp; <%- theme.Journal.title %>
+                    &nbsp; <%- theme.Journal.subtitle %>&comma;&nbsp; <%= date(post.date, 'YYYY:MMDD' ) %>
                         &comma;&nbsp; <%- url_for(page.permalink) %>
             </li>
             <li>
-              <%- theme.copyright.Statement %> <br />
-                <%- theme.copyright.url %>
+              <%- theme.Copyright.Statement %> <br />
+                <%- theme.Copyright.url %>
                   <%- url_for(page.permalink) %>
             </li>
           </ol>
@@ -99,10 +99,10 @@
         <hr id="footerline" /><br>
         <section class="author">
           *Corresponding Author: <%- theme.Author %> &lt;Email: <%- mail_to(theme.Email) %>&gt;
-              <% if (theme.copyright.creative_commons.url){ -%>
+              <% if (theme.Copyright.creative_commons.url){ -%>
                 <img src="<%- theme.copyright.creative_commons.url %>" />
                 <% } else { -%>
-                  <%- theme.copyright.creative_commons.license %> .
+                  <%- theme.Copyright.creative_commons.license %> .
                     <%} -%>
                       <p>
                         <%- theme.bio %>
