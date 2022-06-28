@@ -13,11 +13,13 @@ keywords: FUTURE & CIVILIZATION，Natural/Social Philosophy & Infomation Science
 logo: /images/githubavatar.png
 slogan:
   sub1: 解放思想，发展生产力
-  sub2: 为天地立心，<br>为生民立命，<br>为往圣继绝学，<br>为万世开太平。
+  sub2: 为天地立心，<br/>为生民立命，<br/>为往圣继绝学，<br/>为万世开太平。
   sub3: 知行合一
   sub4: 凡事预则立，不预则废
   sub5: 茍日新，日日新，又日新
-  sub6: 天之道，利而不害；<br>圣人之道，为而不争
+  sub6: 天之道，利而不害；<br/>圣人之道，为而不争
+  sub7: 吾尝终日而思矣，不如须臾之所学也。<br/>吾尝跂而望矣，不如登高之博见也。<br/>君子生非异也，善假于物也。
+  sub8: 练得身形似鹤形，千株松下两函经。<br/>我来问道无馀说，云在青霄水在瓶。
 Email: 350788415@qq.com
 Author: Yao Qing-sheng
 githubname: yaoqs
@@ -25,7 +27,7 @@ Address: Department of Natural/Social Philosophy & Infomation Sciences, CHINA
 Repositories_Pages: https://yaoqs.github.io/
 rss: /atom.xml
 disqus:
-custom_html_list: [About,Lab,Navigator,Feature,Doante,Game,Music]
+custom_html_list: [About,Lab,Navigator,Feature,Donante,Game,Music]
 
 
 Site_visit_tongji:
@@ -266,14 +268,6 @@ highlight:
   wrap: true
   hljs: false
 
-# 文章字数统计插件
-wordCount:
-  enable: true # 将这个值设置为 true 即可.
-  postWordCount: true
-  min2read: true
-  totalCount: true
-
-
 
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
@@ -304,3 +298,11 @@ canvas_ribbon:
   size: 300
   alpha: 0.6
   zIndex: -1
+
+
+# 文章字数统计插件 $ npm i hexo-wordcount
+wordCount:
+  enable: true # 将这个值设置为 true 即可.
+  postWordCount: true
+  min2read: true
+  totalCount: true

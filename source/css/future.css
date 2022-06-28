@@ -483,6 +483,7 @@ section.author {
 }
 .pagination .page-number {
   text-align: center;
+  display: inline-block;
 }
 .pagination .older-posts {
   float: right;
@@ -511,7 +512,7 @@ section.author {
   body {
     padding: 0;
   }
-  header {
+  aside {
     border-right: none;
     border-bottom: 1px #eee solid;
     position: relative;
@@ -520,7 +521,7 @@ section.author {
     text-align: center;
     padding-bottom: 1em;
   }
-  .navbar {
+  nav {
     position: inherit;
   }
   #content {
@@ -534,10 +535,10 @@ section.author {
 }
 /* Tiny Screens */
 @media only screen and (max-width: 320px) {
-  header {
+  aside {
     padding: 1.2em 1.2em 0.6em 1.2em;
   }
-  .navbar {
+  nav {
     position: inherit;
   }
   #content {

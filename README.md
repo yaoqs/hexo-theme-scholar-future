@@ -77,7 +77,7 @@ All Rights Reserved.
 + <https://github.com/yaoqs/hexo-theme-scholar-future/issues>
 + weibo留言: <http://weibo.com/lordyao>
 
-## Project plan/Roadmap
+## Todo/Roadmap
 
 + [ ] azure
 + [ ] Bootstrap
@@ -86,20 +86,37 @@ All Rights Reserved.
   + [ ] About页/个人简历页(resume)
   + [ ] 404页
   + [ ] 捐献Donate.md
-  + [ ] 导航页Navigator.md
+  + [ ] 导航Navigator.md
   + [ ] 游戏Game.md
   + [ ] 音乐Music.md
   + [ ] Feature.md
 + [ ] lab.html实验示例代码
 + [ ] layout布局
 + [ ] 主题相关插件
+  + [ ] hexo-wordcount 字数统计
+  + [ ] hexo-git-backup
+  + [x] hexo-tag-cloud
+  + [x] highlight
+  + [x] hexo-renderer-markdown-it
+  + [ ] hexo-generator-searchdb
+  + [x] hexo-permalink-pinyin
+  + [ ] hexo_submit_urls_to_search_engine
+  + [ ] hexo-generator-sitemap
+  + [ ] baidusitemap
+  + [ ] aplayer/music
+  + [ ] post_wordcount
+  + [ ] hexo-generator-feed
+  + [ ] hexo-blog-encrypt
 + [x] 统计页statistics.ejs
 + [x] 关注页follow.ejs
 + [x] 导航页nav.ejs
 + [x] tag cloud
++ [x] 侧边栏 Donate
 + [ ] editorAnnotate批注插件
 + [ ] journal-face.png journal-menu.png
 + [ ] 图片页图片轮播 参考jb51.net代码
++ [ ] 底边栏/侧边栏/下拉列表日历、天气
++ [ ] 站内搜索
 + [x] 打赏功能 widget/donate.ejs ~~tctip  <https://www.cnblogs.com/enjoy233/p/10328361.html> <https://github.com/greedying/tctip>~~已自编码实现 [Donate & Reward 大吉大利，今晚吃鸡](https://yaoqs.github.io/donate-plugin/)  github repo：[donate-plugin](https://github.com/yaoqs/donate-plugin)
 + [ ] 分享组件的嵌入(支持http/https/移动端访问)侧边悬挂式
 + [ ] 页面底部添加"回到顶部" + "收藏" + "快速评论"功能
@@ -111,11 +128,11 @@ All Rights Reserved.
     ---------------------
     著作权归作者所有。
     商业转载请联系作者获得授权，非商业转载请注明出处。
-    作者：Bravo Yeung
-    Email: legege007@126.com
-    源地址：https://www.cnblogs.com/enjoy233/p/10328361.html#%E5%A4%8D%E5%88%B6%E6%AD%A3%E6%96%87%E6%96%87%E5%AD%97%E6%97%B6%E8%87%AA%E5%8A%A8%E5%8A%A0%E7%89%88%E6%9D%83
-    复制时间: 2019-12-02 15:39:24
-    来源：博客园cnblogs
+    作者：
+    Email:
+    源地址：
+    复制时间:
+    来源：
     © 版权声明：本文为博主原创文章，转载请附上博文链接！
     ```
 
@@ -124,12 +141,14 @@ All Rights Reserved.
 + [ ] 修改主题风格 Github+Jekyll 搭建个人网站详细教程 <https://www.jianshu.com/p/9f71e260925d>
 + [ ] github action流
 + [ ] github project
++ [ ]
+  + [ ] three.js <https://threejs.org/> <https://github.com/mrdoob/three.js> <http://www.webgl3d.cn/>
+  + [ ] Babylon.js
+  + [ ] d3.js
 
 ## 以下代码用于在GitHub page 中显示
 
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 <div id="qrcode"></div>
-<script>
-    $('#qrcode').qrcode({width: 173,height: 173,text:"<%- url_for(page.permalink) %>"});
-</script>
+<script>$('#qrcode').qrcode({width: 173,height: 173,text:"https://yaoqs.github.io/hexo-theme-scholar-future"});</script>

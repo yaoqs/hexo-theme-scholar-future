@@ -89,6 +89,20 @@
                 <%- theme.Copyright.url %>
                   <%- url_for(page.permalink) %>
             </li>
+
+            <% if(theme.wordCount.postWordCount && theme.wordCount.enable){ %>
+              <li>
+                <span class="post-count">
+                  post word count: <%= wordcount(post.content) %> words.&nbsp;
+                </span>
+                <% }%>
+                  <% if(theme.wordCount.min2read && theme.wordCount.enable){ %>
+                    <span class="post-count">
+                      post estimate read time: <%= min2read(post.content) %> min
+                    </span>
+              </li>
+              <% }%>
+
           </ol>
         </span>
 

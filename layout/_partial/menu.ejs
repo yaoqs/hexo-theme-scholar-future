@@ -1,29 +1,36 @@
 <div id="Contents">Contents</div>
 <hr id="topline" />
 <% page.posts.each(function(post) { %>
-    <div>
-      <h3 class="post-title">
-        <a href="<%- config.root %><%- post.path %>">
-          <% if (post.top) { %>
-            <span>*</span>
+  <div>
+    <h3 class="post-title">
+      <a href="<%- config.root %><%- post.path %>">
+        <% if (post.top) { %>
+          <span>*</span>
+          <% } %>
+          <% var title=post.title; if (title.charCodeAt(0)>255){ %>
+            <%- titlecase(truncate(post.title, {length: 20, omission: '... ' })) %>
+            <% } else { %>
+              <%- titlecase(truncate(post.title, {length: 28, omission: '... ' })) %>
             <% } %>
-              <%- titlecase(truncate(post.title, {length: 25, omission: '... ' })) %>
-        </a>
-        <span id="dota">
-          <!--  -->
-          <% for(var i=0; i < 30; i++) { %>
-            &middot;
-            <% } %>
-              <span id="author">
-                <%- post.author %>(<%= date(post.date, 'YYYYMMDD' ) %>)
-              </span>
-
-        </span>
-      </h3>
-    </div>
+      </a>
+      <span id="dota">
+        <!--  -->
+        <% for(var i=0; i < 30; i++) { %>
+          &middot;
+          <% } %>
+            <span id="author">
+              <%- post.author %> (
+                <% if (post.updated) { %>
+                  <%= date(post.updated, 'YYYYMMDD' ) %>
+                    <% } else { %>
+                      <%= date(post.date, 'YYYYMMDD' ) %>
+                        <% } %>
+                          )
+            </span>
+      </span>
+    </h3>
+  </div>
   <% }); %>
-
-
     <hr id="topline" />
     <div class="pagination" role="pagination">
       <% if (page.prev) { %><a class="newer-posts" href="<%- url_for(page.prev_link) %>">← Newer Posts</a>
