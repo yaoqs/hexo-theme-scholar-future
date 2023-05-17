@@ -1,3 +1,11 @@
+<!--
+ * @Author: yaoqs 243292490@qq.com
+ * @Date: 2022-03-09 11:11:52
+ * @LastEditors: yaoqs 243292490@qq.com
+ * @LastEditTime: 2023-05-12 14:30:27
+ * @FilePath: \YaoGit\hexo\themes\scholar-future\layout\_partial\nav.ejs
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <nav class="navbar">
     <h6>
         <span id="custom_html_list"></span>
@@ -20,16 +28,17 @@
                                         $(async function () {
                                             jax("https://api.github.com/users/<%= theme.githubname %>/repos",
                                                 await function (dataString) {
-                                                    var div2 = document.querySelector("#dropdown-a");
-                                                    for (var rep of dataString) {
+                                                    /*var div2 = document.querySelector("#dropdown-a");
+                                                     for (var rep of dataString) {
                                                         //console.log(rep.name);
                                                         var i = document.createElement('a');
-                                                        i.href = "https://yaoqs.github.io/" + rep.name;
+                                                        i.href = "https://<%= theme.githubname %>.github.io/" + rep.name;
                                                         i.target = "_blank";
                                                         i.style.paddingLeft = "1em";
                                                         i.innerText = '§ ' + rep.full_name;
                                                         div2.appendChild(i);
-                                                    }
+                                                    }*/
+                                                    var da=d3.select("body").select("#dropdown-a").selectAll("a").data(dataString).enter().append("a").attr("target","_blank").style("padding-left","1em").text((rep)=>{return '§ ' + rep.full_name}).attr("href",(rep)=>{return "https://<%= theme.githubname %>.github.io/" + rep.name});
                                                 },
                                                 function () {
                                                     $("<div style='color:red;width: 9em;height: 2em;text-align: center;display: table-cell;vertical-align: middle;'>当前无网络</div>").appendTo($("#dropdown-a"));

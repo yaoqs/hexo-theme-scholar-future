@@ -79,7 +79,7 @@ All Rights Reserved.
 
 ## Todo/Roadmap
 
-+ [ ] azure
++ [ ] azure/aws
 + [ ] Bootstrap
 + [ ] 注册域名
 + [ ] 配置英文说明/双语；加小图标，并解决大小写不敏感问题
@@ -107,6 +107,8 @@ All Rights Reserved.
   + [ ] post_wordcount
   + [ ] hexo-generator-feed
   + [ ] hexo-blog-encrypt
+  + [ ] [Hexo主题开发](https://www.cnblogs.com/yyhh/p/11058985.html)
+  + [ ] [Hexo主题(EJS模板)自定义页面扩展](https://cloud.tencent.com/developer/beta/article/1558677)
 + [x] 统计页statistics.ejs
 + [x] 关注页follow.ejs
 + [x] 导航页nav.ejs
@@ -145,6 +147,8 @@ All Rights Reserved.
   + [ ] three.js <https://threejs.org/> <https://github.com/mrdoob/three.js> <http://www.webgl3d.cn/>
   + [ ] Babylon.js
   + [ ] d3.js
+  + [ ] [Underscore.js](https://underscorejs.org/)
+  + [ ] Apache ECharts
 
 ## 以下代码用于在GitHub page 中显示
 
@@ -152,3 +156,21 @@ All Rights Reserved.
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 <div id="qrcode"></div>
 <script>$('#qrcode').qrcode({width: 173,height: 173,text:"https://yaoqs.github.io/hexo-theme-scholar-future"});</script>
+
+## References
+
+### js
+
++ [JavaScript 教程](https://www.runoob.com/js/js-tutorial.html "菜鸟教程")
++ [JavaScript 应用实例](https://www.runoob.com/js/js-examples.html)
++ [JavaScript 教程](https://www.w3school.com.cn/js/index.asp "w3school")
++ [AJAX 教程](https://www.runoob.com/ajax/ajax-tutorial.html)
++ [XMLHttpRequest Level 2 使用指南](https://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html)
++ [jQuery之家](http://www.htmleaf.com/) 自由分享jQuery、html5和css3的插件库
++ [jQuery查找标签和操作标签](https://www.cnblogs.com/zgf-666/p/9164719.html)
++ [jquery绑定元素id事件_JQuery绑定click事件的3种写法](https://blog.csdn.net/weixin_35998457/article/details/113537618)
+
+### css
+
++ [CSS Conditional Rules Module Level 3](https://drafts.csswg.org/css-conditional-3/)
++ [Font Awesome](https://www.thinkcmf.com/font/font_awesome/examples.html)
