@@ -61,18 +61,15 @@
                   <%- css('css/main') %>
 
                     <!--引用cdn服务的时候，怎么做到cdn加载不到之后用本地的-->
-                    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.6.4/jquery.min.js"></script>
-                    <script>!window.jQuery && document.write(unescape('%3Cscript type="text/javascript" src="/lib/jquery-3.4.1.min.js"%3E%3C/script%3E'))</script>
-                    <!--<%- js("lib/jquery-3.4.1.min.js") %>-->
+                    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.7.0/jquery.min.js"></script>
+
                     <script type="text/javascript"
                       src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
                     <script>!window.jQuery && document.write(unescape('%3Cscript type="text/javascript" src="/lib/jquery.qrcode.min.js"%3E%3C/script%3E'))</script>
 
-                    <script src="https://d3js.org/d3.v7.min.js"></script>
-
                     <%- js("js/ax.js") %>
-                      <%- js("/js/zanzhu_yaoqs.js") %>
-                        <%- js("/js/main.js") %>
+                    <%- js("/js/zanzhu_yaoqs.js") %>
+                    <%- js("/js/main.js") %>
 </head>
 
 <body>
