@@ -1,1 +1,6 @@
 <%- partial('_partial/menu') %>
+<div id="calendar">
+    <% if (theme.postCalendar) { %>
+      <%- partial('widget/post-calendar') %>
+    <% } %>
+</div>

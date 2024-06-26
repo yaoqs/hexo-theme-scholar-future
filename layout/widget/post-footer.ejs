@@ -1,0 +1,305 @@
+<style>
+    .article-licensing {
+        position: relative;
+        z-index: 1;
+        box-shadow: none;
+        background: #f5f5f5;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .article-licensing:after {
+        position: absolute;
+        z-index: -1;
+        right: -50px;
+        top: -87.87px;
+        content: '\f25e';
+        font-size: 200px;
+        font-family: 'Font Awesome 5 Brands';
+        opacity: 0.1;
+    }
+
+    .article-licensing .level-left {
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
+
+    .article-licensing .licensing-title {
+        line-height: 1.2;
+    }
+
+    .article-licensing .licensing-meta .icon {
+        width: 1.2em;
+        height: 1.2em;
+        font-size: 1.2em;
+        vertical-align: bottom;
+    }
+
+    .article-licensing .licensing-meta a {
+        color: inherit;
+    }
+
+    .level {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .level code {
+        border-radius: 4px;
+    }
+
+    .level img {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .level.is-mobile {
+        display: flex;
+    }
+
+    .level.is-mobile .level-left,
+    .level.is-mobile .level-right {
+        display: flex;
+    }
+
+    .level.is-mobile .level-left+.level-right {
+        margin-top: 0;
+    }
+
+    .level.is-mobile .level-item:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 0.75rem;
+    }
+
+    .level.is-mobile .level-item:not(.is-narrow) {
+        flex-grow: 1;
+    }
+
+    @media screen and (min-width: 769px),
+    print {
+        .level {
+            display: flex;
+        }
+
+        .level>.level-item:not(.is-narrow) {
+            flex-grow: 1;
+        }
+    }
+
+    .level-item {
+        align-items: center;
+        display: flex;
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+        justify-content: center;
+    }
+
+    .level-item .title,
+    .level-item .subtitle {
+        margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        .level-item:not(:last-child) {
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    .level-left,
+    .level-right {
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+
+    .level-left .level-item.is-flexible,
+    .level-right .level-item.is-flexible {
+        flex-grow: 1;
+    }
+
+    @media screen and (min-width: 769px),
+    print {
+
+        .level-left .level-item:not(:last-child),
+        .level-right .level-item:not(:last-child) {
+            margin-right: 0.75rem;
+        }
+    }
+
+    .level-left {
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    @media screen and (max-width: 768px) {
+        .level-left+.level-right {
+            margin-top: 1.5rem;
+        }
+    }
+
+    @media screen and (min-width: 769px),
+    print {
+        .level-left {
+            display: flex;
+        }
+    }
+
+    .level-right {
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    @media screen and (min-width: 769px),
+    print {
+        .level-right {
+            display: flex;
+        }
+    }
+</style>
+<div class="article-licensing box">
+    <div class="licensing-title">
+        <p><%- titlecase( post.title) %></p>
+        <p><a href="<%- url_for(page.permalink) %>"><%- url_for(page.permalink) %></a>
+        </p>
+    </div>
+    <div class="licensing-meta level is-mobile">
+        <div class="level-left">
+            <div class="level-item is-narrow">
+                <div>
+                    <h6>Author</h6>
+                    <p><%- config.author %></p>
+                </div>
+            </div>
+            <div class="level-item is-narrow">
+                <div>
+                    <h6>Posted on</h6>
+                    <p>
+                        <%= date(post.date, 'YYYY-MM-DD' ) %>
+                    </p>
+                </div>
+            </div>
+            <div class="level-item is-narrow">
+                <div>
+                    <h6>Updated on</h6>
+                    <p>
+                        <%= date(post.update, 'YYYY-MM-DD' ) %>
+                    </p>
+                </div>
+            </div>
+            <div class="level-item is-narrow">
+                <div>
+                    <h6>Licensed under</h6>
+                    <p><a class="icon" rel="noopener" target="_blank" title="Creative Commons"
+                            href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a>
+                        <a class="icon" rel="noopener" target="_blank" title="Attribution"
+                            href="https://creativecommons.org/licenses/by/4.0/"><i
+                                class="fab fa-creative-commons-by"></i></a>
+                        <a class="icon" rel="noopener" target="_blank" title="Noncommercial"
+                            href="https://creativecommons.org/licenses/by-nc/4.0/"><i
+                                class="fab fa-creative-commons-nc"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
+        color: #4a4a4a;
+        max-width: 100%;
+        position: relative;
+    }
+
+    .card-header {
+        background-color: transparent;
+        align-items: stretch;
+        box-shadow: 0 0.125em 0.25em rgba(10, 10, 10, 0.1);
+        display: flex;
+    }
+
+    .card-header-title {
+        align-items: center;
+        color: #363636;
+        display: flex;
+        flex-grow: 1;
+        font-weight: 700;
+        padding: 0.75rem 1rem;
+    }
+
+    .card-header-title.is-centered {
+        justify-content: center;
+    }
+
+    .card-header-icon {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+    }
+
+    .card-image {
+        display: block;
+        position: relative;
+    }
+
+    .card-content {
+        background-color: transparent;
+        padding: 1.5rem;
+    }
+
+    .card-footer {
+        background-color: transparent;
+        border-top: 1px solid #ededed;
+        align-items: stretch;
+        display: flex;
+    }
+
+    .card-footer-item {
+        align-items: center;
+        display: flex;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 0;
+        justify-content: center;
+        padding: 0.75rem;
+    }
+
+    .card-footer-item:not(:last-child) {
+        border-right: 1px solid #ededed;
+    }
+
+    .card .media:not(:last-child) {
+        margin-bottom: 0.75rem;
+    }
+</style>
+<div class="card"
+    style="transition: opacity 0.3s ease-out, transform 0.3s ease-out; opacity: 1; transform-origin: center top 0px;">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            <a class="button donate" data-type="alipay">
+                <span class="icon is-small">
+                    <i class="fab fa-alipay"></i>
+                </span>
+                <span>Alipay</span>
+                <span class="qrcode">
+                    <img src="/alipay.jpg" alt="Alipay">
+                </span>
+            </a>
+            <a class="button donate" data-type="wechat">
+                <span class="icon is-small">
+                    <i class="fab fa-weixin"></i>
+                </span>
+                <span>Wechat</span>
+                <span class="qrcode">
+                    <img src="/wepay.png" alt="Wechat">
+                </span>
+            </a>
+        </div>
+    </div>
+</div>

@@ -5,7 +5,8 @@
     //https://github.blog/wp-content
     //https://tholman.com/github-corners/
     -->
-            <a href="https://github.com/yaoqs" class="github-corner" aria-label="View source on GitHub">
+            <a href="https://github.com/<%- config.githubname %>" class="github-corner"
+                aria-label="View source on GitHub">
                 <svg width="8em" height="8em" viewBox="0 0 250 250"
                     style="fill:#151515; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);"
                     aria-hidden="true">
@@ -46,7 +47,7 @@
                             <%- theme.Social_Accounts.weibostar.code %>
                                 <% } -%>
 
-                                    <%- partial('./follow') %>
+                                    <%- partial('widget/follow') %>
 
                                         <span id="slogan">
                                             <% if (theme.slogan) { %>
@@ -105,6 +106,6 @@
                                         var year = new Date(Date.now()).getFullYear();
                                         document.getElementById("year").innerText = year;
                                     </script>
-                                    <%- partial('./Statistics') %>
+                                    <%- partial('widget/Statistics') %>
     </footer>
 </aside>
