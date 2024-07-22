@@ -1,2 +1,6 @@
+<% if (is_category()){ %>
+	<h1 class="post-title">
+		<%= page.category%>
+	</h1>
+	<% } %>
 <%- partial('_partial/menu') %>
-<%- partial('widget/category-radar') %>

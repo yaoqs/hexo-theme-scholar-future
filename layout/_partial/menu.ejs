@@ -7,11 +7,11 @@
         <% if (post.top) { %>
           <span>*</span>
           <% } %>
-          <% var title=post.title; if (title.charCodeAt(0)>255){ %>
-            <%- titlecase(truncate(post.title, {length: 20, omission: '... ' })) %>
-            <% } else { %>
-              <%- titlecase(truncate(post.title, {length: 28, omission: '... ' })) %>
-            <% } %>
+            <% var title=post.title; if (title.charCodeAt(0)>255){ %>
+              <%- titlecase(truncate(post.title, {length: 20, omission: '... ' })) %>
+                <% } else { %>
+                  <%- titlecase(truncate(post.title, {length: 28, omission: '... ' })) %>
+                    <% } %>
       </a>
       <span id="dota">
         <!--  -->

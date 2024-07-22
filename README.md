@@ -115,7 +115,7 @@ git submodule update --remote #update theme
   + [ ] 音乐Music.md
   + [ ] Feature.md
 + [ ] lab.html实验示例代码
-+ [ ] ArtPlayer.js
+~~+ [ ] ArtPlayer.js~~
 
 ```js
  <!-- jsdelivr -->
@@ -131,28 +131,30 @@ var art = new Artplayer({
 ```
 
 + [ ] layout布局
-+ [ ] 主题相关插件
++ [ ] Tailwind
++ [ ] 相关插件
+  + [ ] hexo-abbrlink
+  + [x] hexo-deployer-git
+  + [ ] hexo-deployer-rsync
   + [ ] [hexo-wordcount](https://github.com/willin/hexo-wordcount) 字数统计
-  + [ ] hexo-tag-mmedia 是 MonoLogueChi 自用的一个媒体插入插件
-    + [ ] [hexo-tag-aplayer](https://github.com/MoePlayer/hexo-tag-aplayer) 是 APlayer播放器的 Hexo 标签插件，可以十分方便地在文章内插入音乐播放器。
-    + [ ] [hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer)是 APlayer 播放器的 Hexo 标签插件，可以十分方便地在文章内插入视频播放器。
-  + [ ] hexo-git-backup
+  + [ ] ~~hexo-tag-mmedia 是 MonoLogueChi 自用的一个媒体插入插件~~
+    + [ ] ~~[hexo-tag-aplayer](https://github.com/MoePlayer/hexo-tag-aplayer) 是 APlayer播放器的 Hexo 标签插件，可以十分方便地在文章内插入音乐播放器。~~
+    + [ ] ~~[hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer)是 APlayer 播放器的 Hexo 标签插件，可以十分方便地在文章内插入视频播放器。~~
+  + [x] hexo-git-backup
+  + [ ] hexo-browsersync
   + [x] hexo-tag-cloud
   + [ ] hexo-tag-chart:在 Hexo 站点中插入 Chartjs 动态图表;Chartjs 是一款简单优雅的数据可视化工具，对比其他图表库如 echarts 、 highcharts 、 c3 、 flot 、 amchart 等，它的画面效果、动态效果都更精致，它的 文档首页 (opens new window) 就透出一股小清新，基于 HTML5 Canvas，它拥有更好的性能且响应式，基本满足了一般数据展示的需要，包括折线图，条形图，饼图，散点图，雷达图，极地图，甜甜圈图等。
   + [ ] hexo-filter-mathjax 是一个用于在 Hexo 渲染 MathJax (opens new window)（数学公式）的插件
-  + [ ] hexo-renderer-marked-lazy
+  + [ ] ~~hexo-renderer-marked-lazy~~
   + [x] highlight
-  + [x] hexo-renderer-markdown-it
   + [ ] [hexo-tipue-search-db](https://github.com/rqh656418510/hexo-tipue-search-db)
-  + [ ] hexo-generator-searchdb
+  + [ ] [hexo-generator-searchdb](https://github.com/next-theme/hexo-generator-searchdb)
   + [ ] [hexo-generator-search](https://github.com/wzpan/hexo-generator-search)
-  + [x] hexo-permalink-pinyin
   + [ ] [hexo_submit_urls_to_search_engine](https://easyhexo.com/3-Plugins-use-and-config/3-6-hexo-submit-urls-to-search-engine/#%E4%BD%BF%E7%94%A8)
-  + [ ] [hexo-generator-sitemap](https://github.com/hexojs/hexo-generator-sitemap)
+  + [x] [hexo-generator-sitemap](https://github.com/hexojs/hexo-generator-sitemap)
   + [ ] baidusitemap
-  + [ ] aplayer/music
+  + [ ] ~~aplayer/music~~
   + [ ] post_wordcount
-  + [ ] hexo-generator-feed
   + [ ] 主页网站副标题及打字效果
   + [ ] [Hexo主题开发 - ﹏猴子请来的救兵 - 博客园](https://www.cnblogs.com/yyhh/p/11058985.html)
   + [ ] [hexo-blog-encrypt](https://github.com/MikeCoder/hexo-blog-encrypt)
@@ -161,19 +163,49 @@ var art = new Artplayer({
   + [ ] [hexo（sakura）仿gitee添加文章贡献度日历图（echarts）](https://blog.csdn.net/cungudafa/article/details/106420842)
   + [ ] [Hexo主题美化 | 给你的博客加上GITHUB日历云和分类雷达图](https://blog.csdn.net/u013854486/article/details/104777219)
   + [ ] <https://karobben.github.io/2021/03/22/Blog/hexo-sitemap/>
+  + [x] hexo-generator-index
+  + [ ] hexo-generator-index-pin-top
+  + [ ] hexo-generator-archive
+  + [ ] hexo-generator-category
+  + [ ] hexo-generator-tag
+  + [ ] hexo-generator-feed
+  + [ ] hexo-renderer-pug
+  + [ ] hexo-renderer-stylus
+  + [ ] hexo-renderer-sass
+  + [ ] hexo-renderer-less
+  + [ ] hexo-renderer-marked
+  + [ ] hexo-renderer-ejs
+  + [ ] hexo-renderer-coffeescript
+  + [ ] hexo-renderer-marked-plus
+  + [ ] hexo-renderer-markdown-it
+  + [ ] hexo-generator-tipue-search-json
+  + [ ] hexo-filter-nofollow
+  + [ ] hexo-toc
+  + [ ] hexo-html-minifier
+  + [ ] hexo-pdf
+  + [x] hexo-permalink-pinyin
+  + [x] hexo-statistics-charts
+  + [ ] hexo-auto-issue
+  + [ ] hexo-bridge
+  + [ ] hexo-coliru: A hexo plugin to run code via coliru.
+  + [ ] [hexo-console-zhihu](https://github.com/chen-qingyu/hexo-console-zhihu):这是一个命令行插件，用来根据 Hexo posts 生成方便发布到知乎的文章。
+  + [ ] hexo-daily-news: 每日新闻插件.这是一个 Hexo 插件，用于从 ALapi 获取每日新闻数据并在你的 Hexo 博客中生成新的文章。
+  + [ ] hexo-include-markdown: 一个 Hexo 插件，可以让你在 Markdown 文件中包含其他 Markdown 文件的内容。This plugin for Hexo can easily load another markdown files in markdown file . ```$ npm install hexo-include-markdown --save```
+  + [ ] Hexo Info Api:Generate Restful Api for Hexo ```npm install hexo-info-api --save```
 + [x] 统计页statistics.ejs
 + [x] 关注页follow.ejs
 + [x] 导航页nav.ejs
-+ [x] tag cloud
 + [x] 侧边栏 Donate
++ [ ] ScrollProgress
 + [ ] editorAnnotate批注插件
 + [ ] [Naranja](https://github.com/e1016/naranja):Pure JS, HTML, and CSS Notifications with a great look – [Live demo](http://demo.jb51.net/js/2018/js_notification_prompt/)
 + [ ] journal-face.png journal-menu.png
 + [ ] 图片页图片轮播 参考jb51.net代码
 + [ ] 底边栏/侧边栏/下拉列表日历、天气
 + [ ] 站内搜索
++ [x] 分享[social-share.min.js](https://www.jsdelivr.com/package/npm/social-share.js)
 + [x] 打赏功能 widget/donate.ejs ~~tctip  <https://www.cnblogs.com/enjoy233/p/10328361.html> <https://github.com/greedying/tctip>~~已自编码实现 [Donate & Reward 大吉大利，今晚吃鸡](https://yaoqs.github.io/donate-plugin/)  github repo：[donate-plugin](https://github.com/yaoqs/donate-plugin)
-+ [ ] 分享组件的嵌入(支持http/https/移动端访问)侧边悬挂式
++ [x] 分享组件的嵌入(支持http/https/移动端访问)侧边悬挂式
 + [ ] 页面底部添加"回到顶部" + "收藏" + "快速评论"功能
 + [ ] stackoverflow，官方在StackExchange页面提供了flair，比如: [User Bravo Yeung - Stack Exchange](https://stackexchange.com/users/4637854/bravo-yeung?tab=flair) ，页面中提供了可嵌入的html代码:
 
@@ -197,7 +229,7 @@ var art = new Artplayer({
 + [x] 在页面顶部添加"Fork me on Github"图标
 + [ ] 修改主题风格 Github+Jekyll 搭建个人网站详细教程 <https://www.jianshu.com/p/9f71e260925d>
 + [ ] [文章统计图](https://liutianyi123.github.io/about/) [hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery)
-+ [ ] github action流
++ [x] github action流
 + [ ] github project
 + [ ]
   + [ ] three.js <https://threejs.org/> <https://github.com/mrdoob/three.js> <http://www.webgl3d.cn/>

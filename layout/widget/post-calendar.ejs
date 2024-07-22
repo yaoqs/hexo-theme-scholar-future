@@ -1,3 +1,6 @@
+<!--pnpm install --save hexo-statistics-charts-->
+<!--<div id="posts-calendar"></div>-->
+
 <div class="container archive-calendar">
     <div class="card">
         <div id="post-calendar" class="card-content"></div>
@@ -12,8 +15,8 @@
         background-color: rgb(255, 255, 255,0.5);
     }
 </style>
-
-<script type="text/javascript">
+<%- theme.CDN.echarts %>
+<script type="text/javascript" async>
     let myChart = echarts.init(document.getElementById('post-calendar'));
 
     <%
@@ -58,7 +61,7 @@
             borderWidth: 1,
             formatter: function (obj) {
                 var value = obj.value;
-                return '<div style="font-size: 14px;">' + value[0] + '：' + value[1] + '</div>';
+                return '<div style="font-size: 14px;color:#ffffff;">' + value[0] + '：' + value[1] + '</div>';
             }
         },
         visualMap: {

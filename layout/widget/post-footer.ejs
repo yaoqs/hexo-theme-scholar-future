@@ -1,18 +1,24 @@
 <style>
     .article-licensing {
         position: relative;
-        z-index: 1;
+        z-index: 0;
         box-shadow: none;
         background: #f5f5f5;
         border-radius: 4px;
         overflow: hidden;
     }
 
+    .article-licensing p {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 0.8em;
+    }
+
     .article-licensing:after {
         position: absolute;
         z-index: -1;
-        right: -50px;
-        top: -87.87px;
+        right: 50px;
+        top: 30.9px;
         content: '\f25e';
         font-size: 200px;
         font-family: 'Font Awesome 5 Brands';
@@ -25,13 +31,15 @@
     }
 
     .article-licensing .licensing-title {
-        line-height: 1.2;
+        line-height: 1.2em;
+        margin-left: 10px;
+    }
+
+    .article-licensing .licensing-meta {
+        margin-left: 10px;
     }
 
     .article-licensing .licensing-meta .icon {
-        width: 1.2em;
-        height: 1.2em;
-        font-size: 1.2em;
         vertical-align: bottom;
     }
 
@@ -158,22 +166,21 @@
     }
 </style>
 <div class="article-licensing box">
+    <div class="licensing-title"><a href="<%- url_for(page.permalink) %>"><%- titlecase( post.title) %></a></div>
     <div class="licensing-title">
-        <p><%- titlecase( post.title) %></p>
-        <p><a href="<%- url_for(page.permalink) %>"><%- url_for(page.permalink) %></a>
-        </p>
+        <p><a href="<%- url_for(page.permalink) %>"><%- url_for(page.permalink) %></a></p>
     </div>
     <div class="licensing-meta level is-mobile">
         <div class="level-left">
             <div class="level-item is-narrow">
                 <div>
-                    <h6>Author</h6>
-                    <p><%- config.author %></p>
+                    <p>Author</p>
+                    <p><%- theme.Author %></p>
                 </div>
             </div>
             <div class="level-item is-narrow">
                 <div>
-                    <h6>Posted on</h6>
+                    <p>Posted on</p>
                     <p>
                         <%= date(post.date, 'YYYY-MM-DD' ) %>
                     </p>
@@ -181,7 +188,7 @@
             </div>
             <div class="level-item is-narrow">
                 <div>
-                    <h6>Updated on</h6>
+                    <p>Updated on</p>
                     <p>
                         <%= date(post.update, 'YYYY-MM-DD' ) %>
                     </p>
@@ -189,7 +196,7 @@
             </div>
             <div class="level-item is-narrow">
                 <div>
-                    <h6>Licensed under</h6>
+                    <p>Licensed under</p>
                     <p><a class="icon" rel="noopener" target="_blank" title="Creative Commons"
                             href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a>
                         <a class="icon" rel="noopener" target="_blank" title="Attribution"
@@ -203,7 +210,13 @@
             </div>
         </div>
     </div>
+    <div class="licensing-title">
+        <p>转载或引用本文时请遵守许可协议，注明出处、不得用于商业用途！</p>
+    </div>
 </div>
+
+<%- theme.CDN.socialshare %>
+<div class="social-share share-component"></div>
 
 <style>
     .card {
@@ -212,6 +225,9 @@
         color: #4a4a4a;
         max-width: 100%;
         position: relative;
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        opacity: 1;
+        transform-origin: center top 0px;
     }
 
     .card-header {
@@ -249,7 +265,14 @@
 
     .card-content {
         background-color: transparent;
-        padding: 1.5rem;
+        padding: 1.5em;
+        font-size: 1.2em;
+    }
+
+    .buttons.is-centered {
+        justify-content: center;
+        display: flex;
+        font-size: 0.8em;
     }
 
     .card-footer {
@@ -276,11 +299,152 @@
     .card .media:not(:last-child) {
         margin-bottom: 0.75rem;
     }
+
+    .donate {
+        position: relative;
+        padding: 10px 10px 10px 10px;
+        margin-left:1em;
+        border-radius:0.5em;
+    }
+
+    .donate .qrcode {
+        display: none;
+        position: absolute;
+        z-index: 99;
+        bottom: 2.5em;
+        line-height: 0;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+    }
+
+    .donate .qrcode img {
+        max-width: 280px;
+    }
+
+    .donate:hover .qrcode {
+        display: block;
+    }
+
+    .donate:first-child:not(:last-child) .qrcode {
+        left: -0.75rem;
+    }
+
+    .donate:last-child:not(:first-child) .qrcode {
+        right: -0.75rem;
+    }
+
+    .donate[data-type="alipay"] {
+        color: #fff;
+        background-color: #00a0e8;
+        border-color: transparent;
+    }
+
+    .donate[data-type="alipay"]:active {
+        background-color: #008ecf;
+    }
+
+    .donate[data-type="alipay"]:hover {
+        background-color: #0097db;
+    }
+
+    .donate[data-type="alipay"]:focus:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(0, 160, 232, 0.25);
+    }
+
+    .donate[data-type="buymeacoffee"] {
+        color: rgba(0, 0, 0, 0.7);
+        background-color: #fd0;
+        border-color: transparent;
+    }
+
+    .donate[data-type="buymeacoffee"]:active {
+        background-color: #e6c700;
+    }
+
+    .donate[data-type="buymeacoffee"]:hover {
+        background-color: #f2d200;
+    }
+
+    .donate[data-type="buymeacoffee"]:focus:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(255, 221, 0, 0.25);
+    }
+
+    .donate[data-type="paypal"] {
+        color: rgba(0, 0, 0, 0.7);
+        background-color: #feb700;
+        border-color: transparent;
+    }
+
+    .donate[data-type="paypal"]:active {
+        background-color: #e5a500;
+    }
+
+    .donate[data-type="paypal"]:hover {
+        background-color: #f1ae00;
+    }
+
+    .donate[data-type="paypal"]:focus:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(254, 183, 0, 0.25);
+    }
+
+    .donate[data-type="patreon"] {
+        color: #fff;
+        background-color: #ff424d;
+        border-color: transparent;
+    }
+
+    .donate[data-type="patreon"]:active {
+        background-color: #ff2835;
+    }
+
+    .donate[data-type="patreon"]:hover {
+        background-color: #ff3541;
+    }
+
+    .donate[data-type="patreon"]:focus:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(255, 66, 77, 0.25);
+    }
+
+    .donate[data-type="wechat"] {
+        color: #fff;
+        background-color: #1aad19;
+        border-color: transparent;
+    }
+
+    .donate[data-type="wechat"]:active {
+        background-color: #179716;
+    }
+
+    .donate[data-type="wechat"]:hover {
+        background-color: #18a217;
+    }
+
+    .donate[data-type="wechat"]:focus:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(26, 173, 25, 0.25);
+    }
+
+    .donate[data-type="GitHub Sponsor"] {
+        color: #fff;
+        background-color: #000000;
+        border-color: transparent;
+    }
+
+    .donate[data-type="GitHub Sponsor"]:active {
+        background-color: #000000;
+    }
+
+    .donate[data-type="GitHub Sponsor"]:hover {
+        background-color: #000000;
+    }
+
+    .donate[data-type="GitHub Sponsor"]:focus:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(0, 160, 232, 0.25);
+    }
 </style>
-<div class="card"
-    style="transition: opacity 0.3s ease-out, transform 0.3s ease-out; opacity: 1; transform-origin: center top 0px;">
+<div class="card">
     <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <p>Like this article? Support the author with</p>
         <div class="buttons is-centered">
             <a class="button donate" data-type="alipay">
                 <span class="icon is-small">
@@ -288,7 +452,7 @@
                 </span>
                 <span>Alipay</span>
                 <span class="qrcode">
-                    <img src="/alipay.jpg" alt="Alipay">
+                    <img width="200px" src="<%- theme.Reward.alipay %>" alt="Alipay">
                 </span>
             </a>
             <a class="button donate" data-type="wechat">
@@ -297,8 +461,29 @@
                 </span>
                 <span>Wechat</span>
                 <span class="qrcode">
-                    <img src="/wepay.png" alt="Wechat">
+                    <img src="<%- theme.Reward.wechatpay %>" alt="Wechat">
                 </span>
+            </a>
+            <a class="button donate" data-type="paypal">
+                <span class="icon is-small">
+                    <i class="fab fa-paypal"></i>
+                </span>
+                <span>PayPal</span>
+                <span class="qrcode">
+                    <img src="<%- theme.Reward.paypal.img %>" alt="PayPal">
+                </span>
+            </a>
+            <a class="button donate" data-type="GitHub Sponsor" href="<%- theme.Reward.GitHubSponsor %>">
+                <span class="icon is-small">
+                    <i class="fab fa-GitHub"></i>
+                </span>
+                <span>GitHub Sponsor</span>
+            </a>
+            <a class="button donate" data-type="buymeacoffee" href="<%- theme.Reward.BuyMeaCoffee %>">
+                <span class="icon is-small">
+                    <i class="fab fa-buymeacoffee"></i>
+                </span>
+                <span>Buy Me a Coffee</span>
             </a>
         </div>
     </div>

@@ -26,7 +26,9 @@ Email: 350788415@qq.com
 Author: Yao Qing-sheng
 githubname: yaoqs
 Address: Department of Natural/Social Philosophy & Infomation Sciences, CHINA
+bio: <a href="https://github.com/yaoqs#biography">Biography...</a>
 Repositories_Pages: https://yaoqs.github.io/
+url: https://yaoqs.github.io/
 rss: /atom.xml
 disqus:
 custom_html_list: [About,Lab,Navigator,Feature,Donate,Game,Music]
@@ -141,7 +143,7 @@ Social_Accounts:
     class: fab fa-slack fa-2x
   StackOverflow:
     name: StackOverflow
-    href:
+    href: https://stackexchange.com/users/5986345/francisco
     class: fab fa-stack-overflow fa-2x
   telegram:
     name: telegram
@@ -182,7 +184,7 @@ Social_Accounts:
     class: fab fa-alipay fa-2x
   zhihu:
     name: 知乎
-    href:
+    href: https://www.zhihu.com/people/yaoqs
     class: fab fa-zhihu fa-2x
 
 Menu:
@@ -206,13 +208,17 @@ Menu:
 Reward:
   enable: true
   comment: 大吉大利 今晚吃鸡
+  tipimg: /images/ali.gif
   wechatpay: /images/微信收款码.png
   wechatreward: /images/微信打赏码.png
   alipay: /images/支付宝收款码.jpg
-  zhifubao_redpackage: /images/支付宝红包码.png
+  zhifubao_redpackage: /images/支付宝红包码.jpg
+  GitHubSponsor: https://github.com/sponsors/yaoqs
+  BuyMeaCoffee: https://buymeacoffee.com/yaoqs
   paypal:
     name: paypal.me/LordYao
     href: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=243292490@qq.com&currency_code=USD&amount=1&return=http://yaoqs.github.com/about&item_name=LordYao%27s%20Blog&undefined_quantity=1
+    img: /images/paypal.png
   #bitcoin: /images/bitcoin.jpg
 
 #————————————————
@@ -353,3 +359,21 @@ jsDelivr:
 # Whether to display post-calender in the `archive` page
 # 设置在归档页面achive中是否显示'文章日历'控件
 postCalendar: true
+
+CDN:
+  bootstrap: <link href="https://cdn.staticfile.org/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  fontawesome: <link href="https://cdn.staticfile.org/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"><script async src="https://use.fontawesome.com/f2ad64ea31.js"></script>
+  jquery: <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.7.0/jquery.min.js"></script>
+  qrcode: <script type="text/javascript" src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+  d3js: <script src="https://d3js.org/d3.v7.min.js"></script>
+  donateplugin: <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yaoqs/donate-plugin/zanzhu_yaoqs.min.js"></script>
+  echarts: <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
+  moment: 
+  momenttimezone:
+  socialshare: <script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js" integrity="sha256-fGPu+icKh985TLPhO2v68U7i0CW0dE4kiR06RN4O6jo=" crossorigin="anonymous"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"integrity="sha256-0EDwznjUTDEicOuZhOL03fpflUqzhkByvhwol8YGkp4=" crossorigin="anonymous">
+  typed: <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+  ciu: <p class="ciu_embed" data-feature="css-variables" data-periods="current">  <a href="http://caniuse.com/#feat=css-variables">Can I Use css-variables?</a> Data on support for the css-variables feature across the major browsers from caniuse.com.</p><script async src="//cdn.jsdelivr.net/caniuse-embed/1.1.0/caniuse-embed.min.js"></script>
+  TailWind: 
+  Materialize: 
+    js: <!-- Compiled and minified JavaScript --><script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    css: <!-- Compiled and minified CSS --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">

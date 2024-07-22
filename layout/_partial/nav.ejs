@@ -10,6 +10,9 @@
                 </a>
                 <% } -%>
                     <% }%>
+                        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+                            <span id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></span>
+                        </a>
 
                         <div id="repos">
                             <div class="dropdown" onmouseenter="showList('dropdown-a')"
@@ -30,7 +33,7 @@
                                                         i.innerText = '§ ' + rep.full_name;
                                                         div2.appendChild(i);
                                                     }*/
-                                                    var da=d3.select("body").select("#dropdown-a").selectAll("a").data(dataString).enter().append("a").attr("target","_blank").style("padding-left","1em").text((rep)=>{return '§ ' + rep.full_name}).attr("href",(rep)=>{return "https://<%= theme.githubname %>.github.io/" + rep.name});
+                                                    var da = d3.select("body").select("#dropdown-a").selectAll("a").data(dataString).enter().append("a").attr("target", "_blank").style("padding-left", "1em").text((rep) => { return '§ ' + rep.full_name }).attr("href", (rep) => { return "https://<%= theme.githubname %>.github.io/" + rep.name });
                                                 },
                                                 function () {
                                                     $("<div style='color:red;width: 9em;height: 2em;text-align: center;display: table-cell;vertical-align: middle;'>当前无网络</div>").appendTo($("#dropdown-a"));
