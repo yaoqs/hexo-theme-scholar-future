@@ -3,24 +3,5 @@
 		<%= page.tag %>
 	</h1>
 	<% } %>
+
 		<%- partial('_partial/menu') %>
-
-
-			<div>
-				<span>Tag Cloud:</span>
-				<% if (site.tags.length) { %>
-					<script type="text/javascript" charset="utf-8" src="<%- url_for('/js/tagcloud.js') %>"></script>
-					<script type="text/javascript" charset="utf-8" src="<%- url_for('/js/tagcanvas.js') %>"></script>
-					<div class="widget-wrap" style="position: inherit;float: left;">
-						<div id="myCanvasContainer" class="widget tagcloud">
-							<canvas id="resCanvas" width="500%" height="400%">
-								<p>need hexo-tag-cloud</p>
-								<%- tagcloud() %>
-							</canvas>
-						</div>
-					</div>
-					<% } %>
-						<div id="taglist" style="position: relative;/*! float: right; */">
-							<%- tagcloud() %>
-						</div>
-			</div>

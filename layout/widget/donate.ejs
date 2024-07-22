@@ -1,19 +1,20 @@
+<%- theme.CDN.donateplugin %>
 <script>
     $(function () {
         new Rewardtip(
             {
                 "tiptext": "谢谢支持/Thanks...",
-                "tipimg": { img: "/images/ali.gif", width: "50px", height: "50px" },  //可选
+                "tipimg": { img: "<%= theme.Reward.tipimg %>", width: "50px", height: "50px" },  //可选
                 "more": "/Donate",
-                "tipshow": "<img src='/images/ali.gif'/>",                     //可选
+                "tipshow": "<img src='<%= theme.Reward.tipimg %>'/>",                     //可选
                 "list": [
-                    { name: "微信收款码", qrimg: "/images/微信收款码.png" },
-                    { name: "微信打赏码", qrimg: "/images/微信打赏码.png" },
-                    { name: "支付宝收款码", qrimg: "/images/支付宝收款码.jpg" },
-                    { name: "支付宝红包码", qrimg: "/images/支付宝红包码.jpg" }
+                    { name: "微信收款码", qrimg: "<%= theme.Reward.wechatpay %>"},
+                    { name: "微信打赏码", qrimg: "<%= theme.Reward.wechatreward %>" },
+                    { name: "支付宝收款码", qrimg: "<%= theme.Reward.alipay %>" },
+                    { name: "支付宝红包码", qrimg: "<%- theme.Reward.zhifubao_redpackage %>" }
                 ],
                 "link": [
-                    { name: "paypal", desc: "paypal.me/LordYao", link: "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=243292490@qq.com&currency_code=USD&amount=1&return=http://yaoqs.github.com/about&item_name=LordYao%27s%20Blog&undefined_quantity=1" }
+                    { name: "paypal", desc: "<%= theme.Reward.paypal.name %>", link: "<%= theme.Reward.paypal.href %>" }
                 ]/*,
                     fn:(function(){
                         return alert("解放思想，发展生产力");

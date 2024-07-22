@@ -1,0 +1,16 @@
+<meta http-equiv="refresh" content="10;url= <%- theme.url %>">
+
+祝贺您发现了一块处女地
+Congratulations on your discovery of a virgin territory!
+
+页面将在<span id="jmp">10</span>s后跳转到[主页](<%- theme.url %>)
+<script>
+var int=self.setInterval("clock()",1000);
+var t=10;
+function clock()
+{
+    t--;
+    //console.log(t)
+    document.getElementById("jmp").innerText=t;
+}
+</script>

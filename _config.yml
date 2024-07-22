@@ -20,11 +20,15 @@ slogan:
   sub6: 天之道，利而不害；<br/>圣人之道，为而不争
   sub7: 吾尝终日而思矣，不如须臾之所学也。<br/>吾尝跂而望矣，不如登高之博见也。<br/>君子生非异也，善假于物也。
   sub8: 练得身形似鹤形，千株松下两函经。<br/>我来问道无馀说，云在青霄水在瓶。
+  sub9: 寇可往，我亦可往
+  sub10: 我的思想是全人类的财富
 Email: 350788415@qq.com
 Author: Yao Qing-sheng
 githubname: yaoqs
 Address: Department of Natural/Social Philosophy & Infomation Sciences, CHINA
+bio: <a href="https://github.com/yaoqs#biography">Biography...</a>
 Repositories_Pages: https://yaoqs.github.io/
+url: https://yaoqs.github.io/
 rss: /atom.xml
 disqus:
 custom_html_list: [About,Lab,Navigator,Feature,Donate,Game,Music]
@@ -139,7 +143,7 @@ Social_Accounts:
     class: fab fa-slack fa-2x
   StackOverflow:
     name: StackOverflow
-    href:
+    href: https://stackexchange.com/users/5986345/francisco
     class: fab fa-stack-overflow fa-2x
   telegram:
     name: telegram
@@ -180,7 +184,7 @@ Social_Accounts:
     class: fab fa-alipay fa-2x
   zhihu:
     name: 知乎
-    href:
+    href: https://www.zhihu.com/people/yaoqs
     class: fab fa-zhihu fa-2x
 
 Menu:
@@ -204,13 +208,17 @@ Menu:
 Reward:
   enable: true
   comment: 大吉大利 今晚吃鸡
+  tipimg: /images/ali.gif
   wechatpay: /images/微信收款码.png
   wechatreward: /images/微信打赏码.png
   alipay: /images/支付宝收款码.jpg
-  zhifubao_redpackage: /images/支付宝红包码.png
+  zhifubao_redpackage: /images/支付宝红包码.jpg
+  GitHubSponsor: https://github.com/sponsors/yaoqs
+  BuyMeaCoffee: https://buymeacoffee.com/yaoqs
   paypal:
     name: paypal.me/LordYao
     href: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=243292490@qq.com&currency_code=USD&amount=1&return=http://yaoqs.github.com/about&item_name=LordYao%27s%20Blog&undefined_quantity=1
+    img: /images/paypal.png
   #bitcoin: /images/bitcoin.jpg
 
 #————————————————
@@ -303,6 +311,69 @@ canvas_ribbon:
 # 文章字数统计插件 $ npm i hexo-wordcount
 wordCount:
   enable: true # 将这个值设置为 true 即可.
-  postWordCount: true
-  min2read: true
-  totalCount: true
+  postWordCount: true # 文章字数统计
+  min2read: true # 文章阅读时长
+  totalCount: true # 站点总文章字数
+  readCount: true # 文章阅读次数
+  date: true # 发布日期
+  update: true # 更新日期
+
+mathjax:
+  tags: none # 或 'ams' 或 'all'
+  single_dollars: true # 启用单个美元符号作为内联（行内）数学公式定界符
+  cjk_width: 0.9 # 相对 CJK 字符宽度
+  normal_width: 0.6 # 相对正常（等宽）宽度
+  append_css: true # 将 CSS 添加到每个页面
+  every_page: true # 如果为 true，那么无论每篇文章的前题中的 `mathjax` 设置如何，每页都将由 mathjax 呈现
+
+# 打字效果副标题.
+# 如果有符号 ‘ ，请在 ’ 前面加上 \
+subtitle:
+  enable: true
+  loop: true # 是否循环
+  showCursor: true # 是否显示光标
+  startDelay: 300 # 开始延迟
+  typeSpeed: 100 # 打字速度
+  backSpeed: 50 # 删除速度
+  sub:
+    - 从来没有真正的绝境, 只有心灵的迷途.
+    - Never really desperate, only the lost of the soul.
+    - 如果放弃太早，你永远都不知道自己会错过什么.
+
+marked:
+    lazyAttr: data-echo
+    blankSrc: blankSrc.gif
+
+# CDN访问加速
+# 第一次使用本功能，一定要先配置url，再`hexo cl && hexo g && hexo d`部署到GitHub的仓库，注意！必须是GitHub的仓库！
+# 如果必须要使用国内的coding或者gitee，可以采用双部署，同时将网站部署到两个仓库（其中一个必须是GitHub的仓库）
+# URL配置规则（例子如下）： https://cdn.jsdelivr.net/gh/你的GitHub用户名/你的仓库名
+# 如果想关闭此功能，将 url地址 注释或删除即可！
+#
+# 注：配置了此项，就代表着本地调试的时候，网站依然会去GitHub请求资源（原来的资源），本地调试的时候记得将 此项配置 注释或者删除掉
+# 更多关于访问速度优化，请查看：https://blog.sky03.cn/posts/42790.html
+# 注：jsdelivr可以自动帮你生成.min版的js和css，所以你在上面设置js及css路径中可以直接写.min.xxx
+jsDelivr:
+  url: # https://cdn.jsdelivr.net/gh/yaoqs/yaoqs.github.io
+
+# Whether to display post-calender in the `archive` page
+# 设置在归档页面achive中是否显示'文章日历'控件
+postCalendar: true
+
+CDN:
+  bootstrap: <link href="https://cdn.staticfile.org/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  fontawesome: <link href="https://cdn.staticfile.org/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"><script async src="https://use.fontawesome.com/f2ad64ea31.js"></script>
+  jquery: <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.7.0/jquery.min.js"></script>
+  qrcode: <script type="text/javascript" src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+  d3js: <script src="https://d3js.org/d3.v7.min.js"></script>
+  donateplugin: <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yaoqs/donate-plugin/zanzhu_yaoqs.min.js"></script>
+  echarts: <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
+  moment: 
+  momenttimezone:
+  socialshare: <script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js" integrity="sha256-fGPu+icKh985TLPhO2v68U7i0CW0dE4kiR06RN4O6jo=" crossorigin="anonymous"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"integrity="sha256-0EDwznjUTDEicOuZhOL03fpflUqzhkByvhwol8YGkp4=" crossorigin="anonymous">
+  typed: <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+  ciu: <p class="ciu_embed" data-feature="css-variables" data-periods="current">  <a href="http://caniuse.com/#feat=css-variables">Can I Use css-variables?</a> Data on support for the css-variables feature across the major browsers from caniuse.com.</p><script async src="//cdn.jsdelivr.net/caniuse-embed/1.1.0/caniuse-embed.min.js"></script>
+  TailWind: 
+  Materialize: 
+    js: <!-- Compiled and minified JavaScript --><script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    css: <!-- Compiled and minified CSS --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">

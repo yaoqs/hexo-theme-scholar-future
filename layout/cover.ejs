@@ -5,11 +5,31 @@
             <%- theme.Journal.title %><br>
                 <%- theme.Journal.subtitle %>
         </div>
+        <div class="description center-align">
+            <% if (theme.subtitle.enable) { %>
+                <span id="subtitle"></span>
+                <%- theme.CDN.typed %>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [
+                            <% theme.subtitle.sub.forEach(function(item){ %>
+                            "<%= item %>",
+                            <% }) %>
+                        ],
+                        startDelay: <%= theme.subtitle.startDelay %>,
+                        typeSpeed: <%= theme.subtitle.typeSpeed %>,
+                        loop: <%= theme.subtitle.loop %>,
+                        backSpeed: <%= theme.subtitle.backSpeed %>,
+                        showCursor: <%= theme.subtitle.showCursor %>
+                    });
+                </script>
+            <% } else { %>
+                <%= config.description %>
+            <% } %>
+        </div>
         <div id="xingkong">
             <div id="test">Your browser can not support canvas</div>
         </div>
-
-        <!-- <canvas id="canvas" style="position:absolute;z-index:-2;">Your browser can not support canvas</canvas> -->
 
         <%- js('js/star.js') %>
     </div>
@@ -37,9 +57,4 @@
         }
 
     </script>
-    <!--
-        <script type="text/javascript" src="js/canvas-nest.js"></script>
-        <script type="text/javascript" src="js/canvas-nest.umd.js"></script>
-        <script type="text/javascript" color="255,0,0" opacity='0.7' zIndex="-2" count="100"  src="https://cdn.staticfile.org/canvas-nest.js/2.0.4/canvas-nest.js"></script>
-        -->
 </div>

@@ -22,6 +22,21 @@
   },
   "homepage": "https://github.com/yaoqs/hexo-theme-scholar-future#readme",
   "dependencies": {
-    "hexo-tag-cloud": "^2.1.2"
+    "hexo-filter-mathjax": "^0.9.0",
+    "hexo-renderer-marked-lazy": "^1.0.2",
+    "hexo-submit-urls-to-search-engine": "^2.1.0",
+    "hexo-tag-cloud": "^1.0.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "braces@<2.3.1": ">=2.3.1",
+      "highlight.js@>=9.0.0 <10.4.1": ">=10.4.1",
+      "marked@>=0.3.14 <0.6.2": ">=0.6.2",
+      "striptags@<3.2.0": ">=3.2.0",
+      "glob-parent@<5.1.2": ">=5.1.2",
+      "marked@<4.0.10": ">=4.0.10",
+      "braces@<3.0.3": ">=3.0.3",
+      "tough-cookie@<4.1.3": ">=4.1.3"
+    }
   }
 }
