@@ -26,13 +26,18 @@ Journal:
 <image alt="alipay" src="https://yaoqs.github.io/images/支付宝收款码.jpg" width="200"/><br>
 <image alt="alipay" src="https://yaoqs.github.io/images/支付宝红包码.jpg" width="200"/><br>
 <image alt="wechat" src="https://yaoqs.github.io/images/微信收款码.png" width="200"/><br>
-<image alt="wechat" src="https://yaoqs.github.io/images/微信打赏码.png" width="200"/>
+<image alt="wechat" src="https://yaoqs.github.io/images/微信打赏码.png" width="200"/><br>
+<image alt="PayPal" src="https://yaoqs.github.io/images/paypal.png" width="200"/><br>
 
 ## 感谢/Thanks
 
 [hexo](https://github.com/hexojs/hexo):A fast, simple & powerful blog framework, powered by Node.js. <https://hexo.io>
 
-部分代码参考自<https://github.com/guolin/crisp-hexo-theme> 以及 <https://github.com/theme-next/hexo-theme-next>
+部分代码参考自
++ <https://github.com/guolin/crisp-hexo-theme>
++ <https://github.com/theme-next/hexo-theme-next>
++ <https://github.com/blinkfox/hexo-theme-matery>
++ etc.
 
 ## Contributing
 
@@ -40,7 +45,7 @@ Contribution is welcome, free to open an issue and fork. Waiting for your pull r
 
 ## Installation
 
-### Clone
+### Clone/Fork
 
 This is not necessary(~~!Deprecated~~).
 
@@ -85,8 +90,28 @@ git submodule update --remote #update theme
 
 ## Configuration
 
-+ logo - Your website logo
-+ ...
+根据需求自定义修改相关配置hexo站点根目录（_config.yml）->theme_config: {}下进行覆盖，主要包括但不限于：
+```yml
+theme: scholar-future                                           #当前主题名称。值为false时禁用主题
+theme_config:                                                   #主题的配置文件。在这里放置的配置会覆盖主题目录下的 _config.yml 中的配置
+  logo: 
+  slogan:
+  Email: 350788415@qq.com
+  Author: Yao Qing-sheng
+  githubname: yaoqs
+  Address: Department of Natural/Social Philosophy & Infomation Sciences, CHINA
+  bio: <a href="https://github.com/yaoqs#biography">Biography...</a>
+  Repositories_Pages: https://yaoqs.github.io/
+  url: https://yaoqs.github.io/
+  Site_visit_tongji:
+  favicon: 
+  wechat_subscriber:
+  Social_Accounts:
+  Reward:
+  Journal:
+  Copyright:
+```
+
 
 ## License & Copyright
 
@@ -116,82 +141,23 @@ git submodule update --remote #update theme
   + [ ] Feature.md
 + [ ] lab.html实验示例代码
 ~~+ [ ] ArtPlayer.js~~
-
-```js
- <!-- jsdelivr -->
-<script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
-
-<!-- unpkg -->
-<script src="https://unpkg.com/artplayer/dist/artplayer.js"></script>
-<div class="artplayer-app"></div>
-var art = new Artplayer({
-    container: '.artplayer-app',
-    url: 'path/to/video.mp4',
-});
-```
-
++ [ ] 评论功能
++ [x] 增加搜索功能
++ [x] 增加分类功能
++ [x] 增加标签功能
++ [x] 增加归档功能
++ [ ] 增加友链功能
++ [ ] 增加音乐功能
++ [ ] 增加游戏功能
++ [ ] 增加相册功能
++ [ ] 增加视频功能
++ [ ] 增加留言功能
++ [x] 增加统计功能
++ [ ] 增加广告功能
 + [ ] layout布局
-+ [ ] Tailwind
-+ [ ] 相关插件
-  + [ ] hexo-abbrlink
-  + [x] hexo-deployer-git
-  + [ ] hexo-deployer-rsync
-  + [ ] [hexo-wordcount](https://github.com/willin/hexo-wordcount) 字数统计
-  + [ ] ~~hexo-tag-mmedia 是 MonoLogueChi 自用的一个媒体插入插件~~
-    + [ ] ~~[hexo-tag-aplayer](https://github.com/MoePlayer/hexo-tag-aplayer) 是 APlayer播放器的 Hexo 标签插件，可以十分方便地在文章内插入音乐播放器。~~
-    + [ ] ~~[hexo-tag-dplayer](https://github.com/MoePlayer/hexo-tag-dplayer)是 APlayer 播放器的 Hexo 标签插件，可以十分方便地在文章内插入视频播放器。~~
-  + [x] hexo-git-backup
-  + [ ] hexo-browsersync
-  + [x] hexo-tag-cloud
-  + [ ] hexo-tag-chart:在 Hexo 站点中插入 Chartjs 动态图表;Chartjs 是一款简单优雅的数据可视化工具，对比其他图表库如 echarts 、 highcharts 、 c3 、 flot 、 amchart 等，它的画面效果、动态效果都更精致，它的 文档首页 (opens new window) 就透出一股小清新，基于 HTML5 Canvas，它拥有更好的性能且响应式，基本满足了一般数据展示的需要，包括折线图，条形图，饼图，散点图，雷达图，极地图，甜甜圈图等。
-  + [ ] hexo-filter-mathjax 是一个用于在 Hexo 渲染 MathJax (opens new window)（数学公式）的插件
-  + [ ] ~~hexo-renderer-marked-lazy~~
-  + [x] highlight
-  + [ ] [hexo-tipue-search-db](https://github.com/rqh656418510/hexo-tipue-search-db)
-  + [ ] [hexo-generator-searchdb](https://github.com/next-theme/hexo-generator-searchdb)
-  + [ ] [hexo-generator-search](https://github.com/wzpan/hexo-generator-search)
-  + [ ] [hexo_submit_urls_to_search_engine](https://easyhexo.com/3-Plugins-use-and-config/3-6-hexo-submit-urls-to-search-engine/#%E4%BD%BF%E7%94%A8)
-  + [x] [hexo-generator-sitemap](https://github.com/hexojs/hexo-generator-sitemap)
-  + [ ] baidusitemap
-  + [ ] ~~aplayer/music~~
-  + [ ] post_wordcount
-  + [ ] 主页网站副标题及打字效果
-  + [ ] [Hexo主题开发 - ﹏猴子请来的救兵 - 博客园](https://www.cnblogs.com/yyhh/p/11058985.html)
-  + [ ] [hexo-blog-encrypt](https://github.com/MikeCoder/hexo-blog-encrypt)
-  + [ ] [Hexo主题开发](https://www.cnblogs.com/yyhh/p/11058985.html)
-  + [ ] [Hexo主题(EJS模板)自定义页面扩展](https://cloud.tencent.com/developer/beta/article/1558677)
-  + [ ] [hexo（sakura）仿gitee添加文章贡献度日历图（echarts）](https://blog.csdn.net/cungudafa/article/details/106420842)
-  + [ ] [Hexo主题美化 | 给你的博客加上GITHUB日历云和分类雷达图](https://blog.csdn.net/u013854486/article/details/104777219)
-  + [ ] <https://karobben.github.io/2021/03/22/Blog/hexo-sitemap/>
-  + [x] hexo-generator-index
-  + [ ] hexo-generator-index-pin-top
-  + [ ] hexo-generator-archive
-  + [ ] hexo-generator-category
-  + [ ] hexo-generator-tag
-  + [ ] hexo-generator-feed
-  + [ ] hexo-renderer-pug
-  + [ ] hexo-renderer-stylus
-  + [ ] hexo-renderer-sass
-  + [ ] hexo-renderer-less
-  + [ ] hexo-renderer-marked
-  + [ ] hexo-renderer-ejs
-  + [ ] hexo-renderer-coffeescript
-  + [ ] hexo-renderer-marked-plus
-  + [ ] hexo-renderer-markdown-it
-  + [ ] hexo-generator-tipue-search-json
-  + [ ] hexo-filter-nofollow
-  + [ ] hexo-toc
-  + [ ] hexo-html-minifier
-  + [ ] hexo-pdf
-  + [x] hexo-permalink-pinyin
-  + [x] hexo-statistics-charts
-  + [ ] hexo-auto-issue
-  + [ ] hexo-bridge
-  + [ ] hexo-coliru: A hexo plugin to run code via coliru.
-  + [ ] [hexo-console-zhihu](https://github.com/chen-qingyu/hexo-console-zhihu):这是一个命令行插件，用来根据 Hexo posts 生成方便发布到知乎的文章。
-  + [ ] hexo-daily-news: 每日新闻插件.这是一个 Hexo 插件，用于从 ALapi 获取每日新闻数据并在你的 Hexo 博客中生成新的文章。
-  + [ ] hexo-include-markdown: 一个 Hexo 插件，可以让你在 Markdown 文件中包含其他 Markdown 文件的内容。This plugin for Hexo can easily load another markdown files in markdown file . ```$ npm install hexo-include-markdown --save```
-  + [ ] Hexo Info Api:Generate Restful Api for Hexo ```npm install hexo-info-api --save```
++ [ ] Tailwindcss
++ [ ] 增加多语言支持
++ [ ] 主页网站副标题及打字效果 
 + [x] 统计页statistics.ejs
 + [x] 关注页follow.ejs
 + [x] 导航页nav.ejs
@@ -202,7 +168,8 @@ var art = new Artplayer({
 + [ ] journal-face.png journal-menu.png
 + [ ] 图片页图片轮播 参考jb51.net代码
 + [ ] 底边栏/侧边栏/下拉列表日历、天气
-+ [ ] 站内搜索
++ [x] [hexo（sakura）仿gitee添加文章贡献度日历图（echarts）](https://blog.csdn.net/cungudafa/article/details/106420842) hexo-statistics-charts
++ [x] [Hexo主题美化 -  给你的博客加上GITHUB日历云和分类雷达图](https://blog.csdn.net/u013854486/article/details/104777219) hexo-statistics-charts
 + [x] 分享[social-share.min.js](https://www.jsdelivr.com/package/npm/social-share.js)
 + [x] 打赏功能 widget/donate.ejs ~~tctip  <https://www.cnblogs.com/enjoy233/p/10328361.html> <https://github.com/greedying/tctip>~~已自编码实现 [Donate & Reward 大吉大利，今晚吃鸡](https://yaoqs.github.io/donate-plugin/)  github repo：[donate-plugin](https://github.com/yaoqs/donate-plugin)
 + [x] 分享组件的嵌入(支持http/https/移动端访问)侧边悬挂式
@@ -212,26 +179,28 @@ var art = new Artplayer({
     ```html
     Language:  HTML
     <a href="https://stackexchange.com/users/4637854/bravo-yeung"><img src="https://stackexchange.com/users/flair/4637854.png" width="208" height="58" alt="profile for Bravo Yeung on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Bravo Yeung on Stack Exchange, a network of free, community-driven Q&amp;A sites" /></a>
-    ---------------------
-    著作权归作者所有。
-    商业转载请联系作者获得授权，非商业转载请注明出处。
-    作者：
-    Email:
-    源地址：
-    复制时间:
-    来源：
-    © 版权声明：本文为博主原创文章，转载请附上博文链接！
     ```
-
++ [x] 转载声明
+```
+---------------------
+著作权归作者所有。
+商业转载请联系作者获得授权，非商业转载请注明出处。
+作者：
+Email:
+源地址：
+复制时间:
+来源：
+© 版权声明：本文为博主原创文章，转载请附上博文链接！
+```
 + [ ] 在公告栏添加滚动文字 使用marquee标签即能实现文字的滚动
 + [ ] gulp:静态资源压缩
 + [ ] CDN访问加速：# 注：jsdelivr可以自动帮你生成.min版的js和css，所以你在上面设置js及css路径中可以直接写.min.xxx
 + [x] 在页面顶部添加"Fork me on Github"图标
 + [ ] 修改主题风格 Github+Jekyll 搭建个人网站详细教程 <https://www.jianshu.com/p/9f71e260925d>
-+ [ ] [文章统计图](https://liutianyi123.github.io/about/) [hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery)
++ [x] [文章统计图](https://liutianyi123.github.io/about/) [hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery)
 + [x] github action流
 + [ ] github project
-+ [ ]
++ [ ] js插件
   + [ ] three.js <https://threejs.org/> <https://github.com/mrdoob/three.js> <http://www.webgl3d.cn/>
   + [ ] Babylon.js
   + [ ] d3.js
@@ -247,13 +216,31 @@ var art = new Artplayer({
 
 ## References
 
-### theme
+### [theme](https://hexo.io/zh-cn/docs/themes)
 
-+ [主题](https://hexo.io/zh-cn/docs/themes)
-  + [«NexT»](https://github.com/theme-next/hexo-theme-next) is a high quality elegant Hexo theme. It is crafted from scratch with love.
-  + [hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery):A beautiful hexo blog theme with material design and responsive design.一个基于材料设计和响应式设计而成的全面、美观的Hexo主题。国内访问：<http://blinkfox.com>
-  + [ ] [Hexo主题开发](https://www.cnblogs.com/yyhh/p/11058985.html)
-  + [ ] [Hexo主题(EJS模板)自定义页面扩展](https://cloud.tencent.com/developer/beta/article/1558677)
++ [«NexT»](https://github.com/theme-next/hexo-theme-next) is a high quality elegant Hexo theme. It is crafted from scratch with love.
++ [hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery):A beautiful hexo blog theme with material design and responsive design.一个基于材料设计和响应式设计而成的全面、美观的Hexo主题。国内访问：<http://blinkfox.com>
++ [Hexo主题开发](https://www.cnblogs.com/yyhh/p/11058985.html)
++ [Hexo主题(EJS模板)自定义页面扩展](https://cloud.tencent.com/developer/beta/article/1558677)
++ [hexo博客搭建及主题优化(一)](https://blog.csdn.net/u013044713/article/details/120250802)
++ [【持续更新】最全Hexo博客搭建+主题优化+插件配置+常用操作+错误分析 -遇见西门](https://www.simon96.online/2018/10/12/hexo-tutorial/)
++ [自定义hexo创建文章的模板](https://www.mad-coding.cn/2019/08/02/%E8%87%AA%E5%AE%9A%E4%B9%89hexo%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0%E7%9A%84%E6%A8%A1%E6%9D%BF/#0x02-%E4%BF%AE%E6%94%B9%E6%AD%A5%E9%AA%A4)
++ [第三方服务集成 - NexT 使用文档](http://theme-next.iissnan.com/third-party-services.html#share-system)
++ [Hexo 搭建个人博客系列：进阶设置篇](http://yearito.cn/posts/hexo-advanced-settings.html)
++ [Hexo 博客搭建](https://blog.csdn.net/qq_36759224/category_9285510.html)
++ [Hexo百度主动提交链接](https://www.jianshu.com/p/f37452d4978e)
++ [hexo笔记六：next主题添加字数统计和阅读时长估计](https://blog.csdn.net/Awt_FuDongLai/article/details/107425490)
++ [hexo搭建静态博客(五)——其他一些DIY](https://liutianyi123.github.io/posts/d7f7.html)
++ [从零开始制作 Hexo 主题](https://www.cnblogs.com/mmzuo-798/p/10451385.html)
++ [hexo博客优化之next主题美化](https://blog.csdn.net/nightmare_dimple/article/details/86661502)
++ [hexo+github搭建博客(超级详细版，精细入微)](https://segmentfault.com/a/1190000021614307)
++ [个人博客搭建笔记----hexo根目录下的_config.yml配置解释](https://blog.csdn.net/zemprogram/article/details/104288872)
++ [个人博客搭建笔记----hexo初始化目录结构和打包文件](https://blog.csdn.net/zemprogram/article/details/96638820)
++ [个人博客搭建笔记----hexo自定义主题搭建](https://blog.csdn.net/zemprogram/article/details/104412386)
++ [Hexo建站过程总结](https://www.cnblogs.com/manastudent/p/10190746.html)
++ [手把手教你github actions 部署 pages，动态网页，静态网页，缓存优化，多分支部署等](https://juejin.cn/post/7334714350899642407)
++ [【Hexo自动部署】优雅的使用 Github Actions 进行 Hexo 静态博客的持续集成与部署](https://cloud.tencent.com/developer/article/2369534)
++ [hexo引入tailwindcss的操作方式](https://www.youdiandongxi.com/article/hexo-coding-with-tailwind.html)
 
 ### js
 
@@ -271,8 +258,15 @@ var art = new Artplayer({
 + [粒子倒计时](http://demo.jb51.net/js/2021/HTML5_Canvas_lzdjs/)
 + [Naranja](https://github.com/e1016/naranja):Pure JS, HTML, and CSS Notifications with a great look – [Live demo](http://demo.jb51.net/js/2018/js_notification_prompt/)
 + [WinBox.js](http://demo.jb51.net/js/2022/html5.WinBox_ymtc/) – Modern HTML5 Window Manager
++ [social-share.js](https://www.jsdelivr.com/package/npm/social-share.js):一键分享到微博、QQ空间、QQ好友、微信、腾讯微博、豆瓣、Facebook、Twitter、Linkedin、Google+、点点等社交网站。
+
++ Moment.js : a lightweight JavaScript date library for parsing, validating, manipulating, and formatting dates. <https://momentjs.com/>
+
 
 ### css
 
 + [CSS Conditional Rules Module Level 3](https://drafts.csswg.org/css-conditional-3/)
 + [Font Awesome](https://www.thinkcmf.com/font/font_awesome/examples.html)
++ [Tailwind CSS](https://tailwindcss.com/): Rapidly build modern websites without ever leaving your HTML. A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
++ [bootstrap](https://getbootstrap.com/): Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins. 
++ Materialize: a modern responsive front-end framework based on Material Design <https://materializecss.com/>

@@ -428,9 +428,10 @@ pre .javascript .function {
   cursor: pointer;
   transition: all 0.5s;
 }
+/*
 .post img:hover {
-  transform: scale(1.3);
-}
+    transform: scale(1.3);
+}*/
 /*		markdown content end		*/
 span#References {
   font-weight: bold;
