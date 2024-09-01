@@ -248,9 +248,6 @@ Copyright:
     enable: false #是否显示网站备案信息
     icp:
 
-
-theme: jekyll-theme-dinky
-
 #========================theme-about plugins config======================
 # hexo-tag-cloud
 # https://github.com/D0n9X1n/hexo-tag-cloud

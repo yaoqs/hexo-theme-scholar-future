@@ -54,7 +54,7 @@ hr {
 }
 /*		index		*/
 /*		aside		*/
-aside {
+#aside {
   border-right: 1px #eee solid;
   padding: 2em;
   position: fixed;
@@ -67,22 +67,22 @@ aside {
   /* Footer */
   /* Sidebar end */
 }
-aside h1 {
+#aside h1 {
   font-size: 1.9em;
   margin-top: 0.8em;
   margin-bottom: 0.6em;
 }
-aside h1 a {
+#aside h1 a {
   color: #444;
 }
-aside h1 a:hover {
+#aside h1 a:hover {
   text-decoration: none;
 }
-aside h6 {
+#aside h6 {
   margin-top: 0em;
   margin-bottom: 0em;
 }
-aside #avatar img {
+#aside #avatar img {
   margin-top: 4em;
   margin-bottom: -1.73em;
   width: 10em;
@@ -106,54 +106,54 @@ aside #avatar img {
     transform: rotate(10deg);
   }
 }
-aside span#donate {
+#aside span#donate {
   font-size: 1em;
   margin-bottom: -2em;
 }
-aside #rss {
+#aside #rss {
   transition: all 2s;
 }
-aside #rss:hover {
+#aside #rss:hover {
   transform: rotate(360deg);
 }
-aside #follow-icons {
+#aside #follow-icons {
   font-size: 0.7em;
   margin-top: -0.7em;
   margin-bottom: 0em;
 }
-aside #follow-icons a {
+#aside #follow-icons a {
   color: #ccc;
 }
-aside #follow-icons span {
+#aside #follow-icons span {
   vertical-align: top;
   margin-left: -0.15em;
   margin-right: -0.15em;
 }
-aside #follow-icons span .fa-stack-1x {
+#aside #follow-icons span .fa-stack-1x {
   font-size: 1.05em;
   line-height: 1.9em;
 }
-aside span#slogan {
+#aside span#slogan {
   font-size: 0.8em;
 }
-aside span#slogan ul > li {
+#aside span#slogan ul > li {
   text-align: center;
 }
-aside span#donate > a {
+#aside span#donate > a {
   font-size: 0.8em;
 }
-aside footer {
+#aside footer {
   padding: 1em 0em 2.5em 0em;
   font-size: 0.8em;
   line-height: 1.5em;
   color: #000000;
 }
-aside footer a {
+#aside footer a {
   font-weight: 300;
   color: cornflowerblue;
   text-decoration: underline;
 }
-aside footer a:hover {
+#aside footer a:hover {
   color: #444;
   text-decoration: none;
 }
@@ -163,7 +163,7 @@ aside footer a:hover {
   border-bottom: 1px #eee solid;
   margin-bottom: 0;
   position: fixed;
-  left: 0;
+  left: max(25%, 15em);
   right: 0;
   top: 0;
   height: 3em;
@@ -308,8 +308,6 @@ section#Abstract hr.AbstractLine {
   float: left;
 }
 section#Abstract span.Abstract {
-  margin-top: -1em;
-  margin-bottom: -1em;
   font-weight: bold;
   line-height: 1.1em;
 }
@@ -492,7 +490,7 @@ section.author {
   body {
     padding: 0;
   }
-  aside {
+  #aside {
     border-right: none;
     border-bottom: 1px #eee solid;
     position: relative;
@@ -500,9 +498,10 @@ section.author {
     width: auto;
     text-align: center;
     padding-bottom: 1em;
+    top: 3em;
   }
-  nav {
-    position: inherit;
+  .navbar {
+    left: 0;
   }
   #content {
     margin-left: 0;
@@ -515,11 +514,12 @@ section.author {
 }
 /* Tiny Screens */
 @media only screen and (max-width: 320px) {
-  aside {
+  #aside {
     padding: 1.2em 1.2em 0.6em 1.2em;
+    top: 3em;
   }
-  nav {
-    position: inherit;
+  .navbar {
+    left: 0;
   }
   #content {
     padding: 1.2em 1.2em 0.6em 1.2em;
