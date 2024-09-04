@@ -72,11 +72,11 @@
 <body>
   <%- partial('./_partial/aside.ejs') %>
     <%- include('./_partial/nav.ejs') %>
-    
+
       <% if (page.title=="" ){ %>
         <%- body %>
           <% } else { %>
-            <div>
+            <div id="journal">
               <div id="journal-name">
                 <%- theme.Journal.title %> <br>
                   <%- theme.Journal.subtitle %>
@@ -94,17 +94,6 @@
               </div>
 
             </div>
-
-            <script>
-              if ($("#journal-name")[0].style.display != "none") {
-                $("#journal-name")[0].style.marginTop = $('.navbar')[0].offsetHeight.toString() + "px";
-              }
-              else {
-                $("#face")[0].style.marginTop = $('.navbar')[0].offsetHeight.toString() + "px";
-                $("#journal-name")[0].style.marginTop = $('.navbar')[0].offsetHeight.toString() + "px";
-              }
-
-            </script>
             <% } %>
 
               <%- include('./widget/donate') %>

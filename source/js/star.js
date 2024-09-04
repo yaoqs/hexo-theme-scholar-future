@@ -15,8 +15,8 @@ function background() {
     $("#xingkong").prepend('<canvas id="canvas" style="position:absolute;z-index:-2;">Your browser can not support canvas</canvas>');
     //在body中插入canvas画布，并置于底层
     var o = document.getElementById("xingkong");
-    var title = document.getElementById("title");
-    var titleheight = parseFloat(window.getComputedStyle(title).getPropertyValue('height'));
+    //var title = document.getElementById("title");
+    //var titleheight = parseFloat(window.getComputedStyle(title).getPropertyValue('height'));
     var offset = $("#xingkong").offset().top;
 
     var canvas = document.getElementById('canvas'),

@@ -206,7 +206,7 @@ hr {
     border-bottom: 1px #eee solid;
     margin-bottom: 0;
     position: fixed;
-    left: max(25%,15em);
+    left: max(25%, 15em);
     right: 0;
     top: 0;
     height: 3em;
@@ -276,16 +276,26 @@ hr {
 /*		navbar end			*/
 /*       index end			*/
 
+#journal{
+    left: max(25%, 15em);
+    margin-top: 3em;
+    position: absolute;
+    margin-left: 2em;
+    margin-right: 2em;
+    right:0;
+}
+
 #journal-name {
     font-size: 1.5em;
     text-align: center;
-    margin-top: 0px;
 }
 
 /*		cover		*/
-#title {
-    font-size: 1.5em;
-    padding: 0.5em;
+#face{
+    display: block;
+}
+#blog{
+    display:none;
 }
 
 /*menu*/
@@ -605,6 +615,9 @@ section.author {
     .navbar {
         left:0;
     }
+    #journal{
+        left: 0;
+    }
 
     #content {
         margin-left: 0;
@@ -626,6 +639,9 @@ section.author {
 
     .navbar {
         left:0;
+    }
+    #journal{
+        left: 0;
     }
 
     #content {

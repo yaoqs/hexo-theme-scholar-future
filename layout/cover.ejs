@@ -1,10 +1,6 @@
-<div onload="showmenu()">
-    <div id="face" onclick="change()">
+<div>
+    <div id="face" onclick="showmenu(true)">
         <!--   封面   -->
-        <div id="title" title="Click me to show menu!">
-            <%- theme.Journal.title %><br>
-                <%- theme.Journal.subtitle %>
-        </div>
         <div class="description center-align">
             <% if (theme.subtitle.enable) { %>
                 <span id="subtitle"></span>
@@ -27,32 +23,23 @@
                 <%= config.description %>
             <% } %>
         </div>
-        <div id="xingkong">
+        <div id="xingkong"  title="Click me to show menu!">
             <div id="test">Your browser can not support canvas</div>
         </div>
 
         <%- js('js/star.js') %>
     </div>
     <!--   menu   -->
-    <div id="blog" style="display: none;">
+    <div id="blog">
         <%- partial('_partial/menu') %>
     </div>
     <script>
-        document.getElementById("journal-name").style.display = 'none';
-        var showed = false;
-        function change() {
-            showed = true;
-            showmenu();
-        }
-        function showmenu() {
-            //if(showed)
-            var url = window.location.pathname;
-            if (url.search("page") != -1 || showed) {
-                document.getElementById("title").style.display = 'none';
+        $(document).ready(function() {showmenu(false);
+        });
+        function showmenu(showed) {
+            if (window.location.pathname.search("page") != -1 ||showed) {
                 document.getElementById("blog").style.display = 'block';
-                document.getElementById("journal-name").style.display = 'block';/*注意inline和block的区别*/
-                document.getElementById("title").innerHTML += "<br/><p>";
-                document.getElementById("xingkong").style.display = 'none';
+                document.getElementById("face").style.display = 'none';
             }
         }
 
