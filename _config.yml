@@ -333,9 +333,7 @@ subtitle:
   typeSpeed: 100 # 打字速度
   backSpeed: 50 # 删除速度
   sub:
-    - 从来没有真正的绝境, 只有心灵的迷途.
-    - Never really desperate, only the lost of the soul.
-    - 如果放弃太早，你永远都不知道自己会错过什么.
+    - Your Future is Defined by What You Do Today, Not Tomorrow.
 
 marked:
     lazyAttr: data-echo
