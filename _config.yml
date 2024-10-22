@@ -333,7 +333,7 @@ subtitle:
   typeSpeed: 100 # 打字速度
   backSpeed: 50 # 删除速度
   sub:
-    - Your Future is Defined by What You Do Today, Not Tomorrow.
+    - Your Future is Defined by What You Do Today Not Tomorrow.
 
 marked:
     lazyAttr: data-echo

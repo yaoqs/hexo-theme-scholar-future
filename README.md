@@ -94,7 +94,7 @@ git submodule update --remote #update theme
 ```yml
 theme: scholar-future                                           #当前主题名称。值为false时禁用主题
 theme_config:                                                   #主题的配置文件。在这里放置的配置会覆盖主题目录下的 _config.yml 中的配置
-  logo: 
+  logo:
   slogan:
   Email: 350788415@qq.com
   Author: Yao Qing-sheng
@@ -104,7 +104,7 @@ theme_config:                                                   #主题的配置
   Repositories_Pages: https://yaoqs.github.io/
   url: https://yaoqs.github.io/
   Site_visit_tongji:
-  favicon: 
+  favicon:
   wechat_subscriber:
   Social_Accounts:
   Reward:
@@ -128,18 +128,8 @@ theme_config:                                                   #主题的配置
 
 ## Todo/Roadmap
 
-+ [ ] azure/aws
 + [ ] Bootstrap
-+ [ ] 注册域名
 + [ ] 配置英文说明/双语；加小图标，并解决大小写不敏感问题
-  + [ ] About页/个人简历页(resume)
-  + [ ] 404页
-  + [ ] 捐献Donate.md
-  + [ ] 导航Navigator.md
-  + [ ] 游戏Game.md
-  + [ ] 音乐Music.md
-  + [ ] Feature.md
-+ [ ] lab.html实验示例代码
 ~~+ [ ] ArtPlayer.js~~
 + [ ] 评论功能
 + [x] 增加搜索功能
@@ -157,11 +147,11 @@ theme_config:                                                   #主题的配置
 + [ ] layout布局
 + [ ] Tailwindcss
 + [ ] 增加多语言支持
-+ [ ] 主页网站副标题及打字效果 
++ [x] 主页网站副标题及打字效果
 + [x] 统计页statistics.ejs
 + [x] 关注页follow.ejs
 + [x] 导航页nav.ejs
-+ [x] 侧边栏 Donate
++ [x] 侧边 Donate 捐赠插件
 + [ ] ScrollProgress
 + [ ] editorAnnotate批注插件
 + [ ] [Naranja](https://github.com/e1016/naranja):Pure JS, HTML, and CSS Notifications with a great look – [Live demo](http://demo.jb51.net/js/2018/js_notification_prompt/)
@@ -268,5 +258,5 @@ Email:
 + [CSS Conditional Rules Module Level 3](https://drafts.csswg.org/css-conditional-3/)
 + [Font Awesome](https://www.thinkcmf.com/font/font_awesome/examples.html)
 + [Tailwind CSS](https://tailwindcss.com/): Rapidly build modern websites without ever leaving your HTML. A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
-+ [bootstrap](https://getbootstrap.com/): Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins. 
++ [bootstrap](https://getbootstrap.com/): Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.
 + Materialize: a modern responsive front-end framework based on Material Design <https://materializecss.com/>
