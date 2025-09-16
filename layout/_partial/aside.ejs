@@ -1,86 +1,69 @@
 <aside id="aside">
-    <header>
-        <%- partial('widget/fork_me_on_github') %>
+  <header>
+    <%- partial('widget/fork_me_on_github') %> <% if (theme.avatar.url) { %>
+    <a id="avatar" href="<%- config.root %>"
+      ><img
+        id="avatar_img"
+        src="<%- theme.avatar.url %>"
+        alt="<%- theme.title%>"
+    /></a>
+    <% } %>
+    <h1><a id="author" href="<%- config.root %>"> <%- theme.author %> </a></h1>
 
-        <% if (theme.avatar.url) { %>
-            <a id="avatar" href="<%- config.root %>"><img id="avatar_img" src="<%- theme.avatar.url %>"
-                    alt="<%- config.title%>" /></a>
-            <% } %>
-                <h1><a id="author" href="<%- config.root %>">
-                        <%- config.author %>
-                    </a></h1>
-                <% if(theme.Social_Accounts.github_follow) { -%>
-                    <div id="github-iframe">
-                        <iframe src="<%- theme.Social_Accounts.github_follow.href %>" scrolling="no" frameborder="0"
-                            width="150px" height="20px"></iframe>
-                    </div>
-                    <% } -%>
+    <%- partial('widget/follow') %>
 
-                        <% if (theme.Social_Accounts.weibostar) { -%>
-                            <div id="weibo"></div>
-                            <script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript"></script>
-                            <%- theme.Social_Accounts.weibostar.code %>
-                                <% } -%>
+    <span id="slogan">
+      <% if (theme.slogan) { %> Slogan:
+      <ul>
+        <% for ( sub in theme.slogan ) { -%>
+        <li style="display: none"><%- theme.slogan[sub] %></li>
+        <% } -%>
+      </ul>
+      <% } -%>
+      <script>
+        var sel = $("#slogan > ul > li");
+        //console.log(sel[Math.floor(Math.random()*sel.length)].style)//
+        //setInterval(lunbo,30000);
+        function lunbo() {
+          arguments.callee.pre = arguments.callee.pre || 0;
+          sel[arguments.callee.pre].style.display = "none";
+          arguments.callee.pre = Math.floor(Math.random() * sel.length);
+          sel[arguments.callee.pre].style.display = "inline-block";
+          setTimeout(lunbo, 30000);
+        }
+        lunbo();
+      </script>
+    </span>
 
-                                    <%- partial('widget/follow') %>
+    <span id="donate">
+      <a href="<%- config.root %>Donate" title="<%- theme.Reward.comment %>"
+        >Donate & Reward
+      </a>
+    </span>
+  </header>
+  <footer id="footer-message">
+    Copyright &copy; <% if(theme.Copyright.since ) { -%> <%-
+    theme.Copyright.since %> - <% } -%>
+    <span id="year">2021</span>
+    <a href="https://yaoqs.github.io" target="_blank">LordYao</a>. <% if
+    (theme.Copyright.creative_commons.url){-%>
+    <img src="<%- theme.Copyright.creative_commons.url %>" />
+    <% } else { %> <%- theme.Copyright.creative_commons.license %> . <%} %> All
+    Rights Reserved. <br />
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+    <a href="https://pages.github.com/" target="_blank">Github Pages</a>. Theme
+    <a
+      href="https://github.com/yaoqs/hexo-theme-scholar-future"
+      target="_blank"
+    >
+      <%- theme.name %>
+    </a>
+    designed by <a href="https://yaoqs.github.io" target="_blank"> LordYao </a>.
 
-                                        <span id="slogan">
-                                            <% if (theme.slogan) { %>
-                                                Slogan:
-                                                <ul>
-                                                    <% for ( sub in theme.slogan ) { -%>
-                                                        <li style="display: none;">
-                                                            <%- theme.slogan[sub] %>
-                                                        </li>
-                                                        <% } -%>
-                                                </ul>
-                                                <% } -%>
-                                                    <script>
-                                                        var sel = $('#slogan > ul > li');
-                                                        //console.log(sel[Math.floor(Math.random()*sel.length)].style)//
-                                                        //setInterval(lunbo,30000);
-                                                        function lunbo() {
-                                                            arguments.callee.pre = arguments.callee.pre || 0;
-                                                            sel[arguments.callee.pre].style.display = "none";
-                                                            arguments.callee.pre = Math.floor(Math.random() * sel.length);
-                                                            sel[arguments.callee.pre].style.display = "inline-block";
-                                                            setTimeout(lunbo, 30000);
-                                                        }
-                                                        lunbo();
-                                                    </script>
-                                        </span>
-
-                                        <span id="donate">
-                                            <a href="<%- config.root %>Donate"
-                                                title="<%- theme.Reward.comment %>">Donate &
-                                                Reward </a>
-                                        </span>
-    </header>
-    <footer id="footer-message">Copyright &copy;
-        <% if(theme.Copyright.since ) { -%>
-            <%- theme.Copyright.since %> -
-                <% } -%>
-                    <span id="year">2021</span>
-                    <a href="https://yaoqs.github.io" target="_blank">LordYao</a>.
-                    <% if (theme.Copyright.creative_commons.url){-%>
-                        <img src="<%- theme.Copyright.creative_commons.url %>" />
-                        <% } else { %>
-                            <%- theme.Copyright.creative_commons.license %> .
-                                <%} %>
-                                    All Rights Reserved. <br />
-                                    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                                        href="https://pages.github.com/" target="_blank">Github
-                                        Pages</a>.
-                                    Theme <a href="https://github.com/yaoqs/hexo-theme-scholar-future" target="_blank">
-                                        <%- theme.name %>
-                                    </a> designed by <a href="https://yaoqs.github.io" target="_blank">
-                                        LordYao
-                                    </a>.
-
-                                    <script>
-                                        var year = new Date(Date.now()).getFullYear();
-                                        document.getElementById("year").innerText = year;
-                                    </script>
-                                    <%- partial('widget/Statistics') %>
-    </footer>
+    <script>
+      var year = new Date(Date.now()).getFullYear();
+      document.getElementById("year").innerText = year;
+    </script>
+    <%- partial('widget/Statistics') %>
+  </footer>
 </aside>

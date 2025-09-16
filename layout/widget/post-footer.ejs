@@ -1,490 +1,512 @@
 <style>
-    .article-licensing {
-        position: relative;
-        z-index: 0;
-        box-shadow: none;
-        background: #f5f5f5;
-        border-radius: 4px;
-        overflow: hidden;
-    }
+  .article-licensing {
+    position: relative;
+    z-index: 0;
+    box-shadow: none;
+    background: #f5f5f5;
+    border-radius: 4px;
+    overflow: hidden;
+  }
 
-    .article-licensing p {
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 0.8em;
-    }
+  .article-licensing p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.8em;
+  }
 
-    .article-licensing:after {
-        position: absolute;
-        z-index: -1;
-        right: 50px;
-        top: 30.9px;
-        content: '\f25e';
-        font-size: 200px;
-        font-family: 'Font Awesome 5 Brands';
-        opacity: 0.1;
-    }
+  .article-licensing:after {
+    position: absolute;
+    z-index: -1;
+    right: 50px;
+    top: 30.9px;
+    content: "\f25e";
+    font-size: 200px;
+    font-family: "Font Awesome 5 Brands";
+    opacity: 0.1;
+  }
 
-    .article-licensing .level-left {
-        flex-wrap: wrap;
-        max-width: 100%;
-    }
+  .article-licensing .level-left {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
 
-    .article-licensing .licensing-title {
-        line-height: 1.2em;
-        margin-left: 10px;
-    }
+  .article-licensing .licensing-title {
+    line-height: 1.2em;
+    margin-left: 10px;
+  }
 
-    .article-licensing .licensing-meta {
-        margin-left: 10px;
-    }
+  .article-licensing .licensing-meta {
+    margin-left: 10px;
+  }
 
-    .article-licensing .licensing-meta .icon {
-        vertical-align: bottom;
-    }
+  .article-licensing .licensing-meta .icon {
+    vertical-align: bottom;
+  }
 
-    .article-licensing .licensing-meta a {
-        color: inherit;
-    }
+  .article-licensing .licensing-meta a {
+    color: inherit;
+  }
 
+  .level {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .level code {
+    border-radius: 4px;
+  }
+
+  .level img {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .level.is-mobile {
+    display: flex;
+  }
+
+  .level.is-mobile .level-left,
+  .level.is-mobile .level-right {
+    display: flex;
+  }
+
+  .level.is-mobile .level-left + .level-right {
+    margin-top: 0;
+  }
+
+  .level.is-mobile .level-item:not(:last-child) {
+    margin-bottom: 0;
+    margin-right: 0.75rem;
+  }
+
+  .level.is-mobile .level-item:not(.is-narrow) {
+    flex-grow: 1;
+  }
+
+  @media screen and (min-width: 769px), print {
     .level {
-        align-items: center;
-        justify-content: space-between;
+      display: flex;
     }
 
-    .level code {
-        border-radius: 4px;
+    .level > .level-item:not(.is-narrow) {
+      flex-grow: 1;
     }
+  }
 
-    .level img {
-        display: inline-block;
-        vertical-align: top;
+  .level-item {
+    align-items: center;
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+
+  .level-item .title,
+  .level-item .subtitle {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .level-item:not(:last-child) {
+      margin-bottom: 0.75rem;
     }
+  }
 
-    .level.is-mobile {
-        display: flex;
+  .level-left,
+  .level-right {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .level-left .level-item.is-flexible,
+  .level-right .level-item.is-flexible {
+    flex-grow: 1;
+  }
+
+  @media screen and (min-width: 769px), print {
+    .level-left .level-item:not(:last-child),
+    .level-right .level-item:not(:last-child) {
+      margin-right: 0.75rem;
     }
+  }
 
-    .level.is-mobile .level-left,
-    .level.is-mobile .level-right {
-        display: flex;
+  .level-left {
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  @media screen and (max-width: 768px) {
+    .level-left + .level-right {
+      margin-top: 1.5rem;
     }
+  }
 
-    .level.is-mobile .level-left+.level-right {
-        margin-top: 0;
-    }
-
-    .level.is-mobile .level-item:not(:last-child) {
-        margin-bottom: 0;
-        margin-right: 0.75rem;
-    }
-
-    .level.is-mobile .level-item:not(.is-narrow) {
-        flex-grow: 1;
-    }
-
-    @media screen and (min-width: 769px),
-    print {
-        .level {
-            display: flex;
-        }
-
-        .level>.level-item:not(.is-narrow) {
-            flex-grow: 1;
-        }
-    }
-
-    .level-item {
-        align-items: center;
-        display: flex;
-        flex-basis: auto;
-        flex-grow: 0;
-        flex-shrink: 0;
-        justify-content: center;
-    }
-
-    .level-item .title,
-    .level-item .subtitle {
-        margin-bottom: 0;
-    }
-
-    @media screen and (max-width: 768px) {
-        .level-item:not(:last-child) {
-            margin-bottom: 0.75rem;
-        }
-    }
-
-    .level-left,
-    .level-right {
-        flex-basis: auto;
-        flex-grow: 0;
-        flex-shrink: 0;
-    }
-
-    .level-left .level-item.is-flexible,
-    .level-right .level-item.is-flexible {
-        flex-grow: 1;
-    }
-
-    @media screen and (min-width: 769px),
-    print {
-
-        .level-left .level-item:not(:last-child),
-        .level-right .level-item:not(:last-child) {
-            margin-right: 0.75rem;
-        }
-    }
-
+  @media screen and (min-width: 769px), print {
     .level-left {
-        align-items: center;
-        justify-content: flex-start;
+      display: flex;
     }
+  }
 
-    @media screen and (max-width: 768px) {
-        .level-left+.level-right {
-            margin-top: 1.5rem;
-        }
-    }
+  .level-right {
+    align-items: center;
+    justify-content: flex-end;
+  }
 
-    @media screen and (min-width: 769px),
-    print {
-        .level-left {
-            display: flex;
-        }
-    }
-
+  @media screen and (min-width: 769px), print {
     .level-right {
-        align-items: center;
-        justify-content: flex-end;
+      display: flex;
     }
-
-    @media screen and (min-width: 769px),
-    print {
-        .level-right {
-            display: flex;
-        }
-    }
+  }
 </style>
 <div class="article-licensing box">
-    <div class="licensing-title"><a href="<%- url_for(page.permalink) %>"><%- titlecase( post.title) %></a></div>
-    <div class="licensing-title">
-        <p><a href="<%- url_for(page.permalink) %>"><%- url_for(page.permalink) %></a></p>
-    </div>
-    <div class="licensing-meta level is-mobile">
-        <div class="level-left">
-            <div class="level-item is-narrow">
-                <div>
-                    <p>Author</p>
-                    <p><%- theme.Author %></p>
-                </div>
-            </div>
-            <div class="level-item is-narrow">
-                <div>
-                    <p>Posted on</p>
-                    <p>
-                        <%= date(post.date, 'YYYY-MM-DD' ) %>
-                    </p>
-                </div>
-            </div>
-            <div class="level-item is-narrow">
-                <div>
-                    <p>Updated on</p>
-                    <p>
-                        <%= date(post.update, 'YYYY-MM-DD' ) %>
-                    </p>
-                </div>
-            </div>
-            <div class="level-item is-narrow">
-                <div>
-                    <p>Licensed under</p>
-                    <p><a class="icon" rel="noopener" target="_blank" title="Creative Commons"
-                            href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a>
-                        <a class="icon" rel="noopener" target="_blank" title="Attribution"
-                            href="https://creativecommons.org/licenses/by/4.0/"><i
-                                class="fab fa-creative-commons-by"></i></a>
-                        <a class="icon" rel="noopener" target="_blank" title="Noncommercial"
-                            href="https://creativecommons.org/licenses/by-nc/4.0/"><i
-                                class="fab fa-creative-commons-nc"></i></a>
-                    </p>
-                </div>
-            </div>
+  <div class="licensing-title">
+    <a href="<%- url_for(page.permalink) %>"><%- titlecase( post.title) %></a>
+  </div>
+  <div class="licensing-title">
+    <p>
+      <a href="<%- url_for(page.permalink) %>"
+        ><%- url_for(page.permalink) %></a
+      >
+    </p>
+  </div>
+  <div class="licensing-meta level is-mobile">
+    <div class="level-left">
+      <div class="level-item is-narrow">
+        <div>
+          <p>Author</p>
+          <p><%- theme.Author %></p>
         </div>
+      </div>
+      <div class="level-item is-narrow">
+        <div>
+          <p>Posted on</p>
+          <p><%= date(post.date, 'YYYY-MM-DD' ) %></p>
+        </div>
+      </div>
+      <div class="level-item is-narrow">
+        <div>
+          <p>Updated on</p>
+          <p><%= date(post.update, 'YYYY-MM-DD' ) %></p>
+        </div>
+      </div>
+      <div class="level-item is-narrow">
+        <div>
+          <p>Licensed under</p>
+          <p>
+            <a
+              class="icon"
+              rel="noopener"
+              target="_blank"
+              title="Creative Commons"
+              href="https://creativecommons.org/"
+              ><i class="fab fa-creative-commons"></i
+            ></a>
+            <a
+              class="icon"
+              rel="noopener"
+              target="_blank"
+              title="Attribution"
+              href="https://creativecommons.org/licenses/by/4.0/"
+              ><i class="fab fa-creative-commons-by"></i
+            ></a>
+            <a
+              class="icon"
+              rel="noopener"
+              target="_blank"
+              title="Noncommercial"
+              href="https://creativecommons.org/licenses/by-nc/4.0/"
+              ><i class="fab fa-creative-commons-nc"></i
+            ></a>
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="licensing-title">
-        <p>转载或引用本文时请遵守许可协议，注明出处、不得用于商业用途！</p>
-    </div>
+  </div>
+  <div class="licensing-title">
+    <p>转载或引用本文时请遵守许可协议，注明出处、不得用于商业用途！</p>
+  </div>
 </div>
 
 <%- theme.CDN.socialshare %>
 <div class="social-share share-component"></div>
 
 <style>
-    .card {
-        background-color: #fff;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
-        color: #4a4a4a;
-        max-width: 100%;
-        position: relative;
-        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-        opacity: 1;
-        transform-origin: center top 0px;
-    }
+  .card {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
+    color: #4a4a4a;
+    max-width: 100%;
+    position: relative;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    opacity: 1;
+    transform-origin: center top 0px;
+  }
 
-    .card-header {
-        background-color: transparent;
-        align-items: stretch;
-        box-shadow: 0 0.125em 0.25em rgba(10, 10, 10, 0.1);
-        display: flex;
-    }
+  .card-header {
+    background-color: transparent;
+    align-items: stretch;
+    box-shadow: 0 0.125em 0.25em rgba(10, 10, 10, 0.1);
+    display: flex;
+  }
 
-    .card-header-title {
-        align-items: center;
-        color: #363636;
-        display: flex;
-        flex-grow: 1;
-        font-weight: 700;
-        padding: 0.75rem 1rem;
-    }
+  .card-header-title {
+    align-items: center;
+    color: #363636;
+    display: flex;
+    flex-grow: 1;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+  }
 
-    .card-header-title.is-centered {
-        justify-content: center;
-    }
+  .card-header-title.is-centered {
+    justify-content: center;
+  }
 
-    .card-header-icon {
-        align-items: center;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        padding: 0.75rem 1rem;
-    }
+  .card-header-icon {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+  }
 
-    .card-image {
-        display: block;
-        position: relative;
-    }
+  .card-image {
+    display: block;
+    position: relative;
+  }
 
-    .card-content {
-        background-color: transparent;
-        padding: 1.5em;
-        font-size: 1.2em;
-    }
+  .card-content {
+    background-color: transparent;
+    padding: 1.5em;
+    font-size: 1.2em;
+  }
 
-    .buttons.is-centered {
-        justify-content: center;
-        display: flex;
-        font-size: 0.8em;
-    }
+  .buttons.is-centered {
+    justify-content: center;
+    display: flex;
+    font-size: 0.8em;
+  }
 
-    .card-footer {
-        background-color: transparent;
-        border-top: 1px solid #ededed;
-        align-items: stretch;
-        display: flex;
-    }
+  .card-footer {
+    background-color: transparent;
+    border-top: 1px solid #ededed;
+    align-items: stretch;
+    display: flex;
+  }
 
-    .card-footer-item {
-        align-items: center;
-        display: flex;
-        flex-basis: 0;
-        flex-grow: 1;
-        flex-shrink: 0;
-        justify-content: center;
-        padding: 0.75rem;
-    }
+  .card-footer-item {
+    align-items: center;
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    padding: 0.75rem;
+  }
 
-    .card-footer-item:not(:last-child) {
-        border-right: 1px solid #ededed;
-    }
+  .card-footer-item:not(:last-child) {
+    border-right: 1px solid #ededed;
+  }
 
-    .card .media:not(:last-child) {
-        margin-bottom: 0.75rem;
-    }
+  .card .media:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
 
-    .donate {
-        position: relative;
-        padding: 10px 10px 10px 10px;
-        margin-left:1em;
-        border-radius:0.5em;
-    }
+  .donate {
+    position: relative;
+    padding: 10px 10px 10px 10px;
+    margin-left: 1em;
+    border-radius: 0.5em;
+  }
 
-    .donate .qrcode {
-        display: none;
-        position: absolute;
-        z-index: 99;
-        bottom: 2.5em;
-        line-height: 0;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-    }
+  .donate .qrcode {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    bottom: 2.5em;
+    line-height: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
 
-    .donate .qrcode img {
-        max-width: 280px;
-    }
+  .donate .qrcode img {
+    max-width: 280px;
+  }
 
-    .donate:hover .qrcode {
-        display: block;
-    }
+  .donate:hover .qrcode {
+    display: block;
+  }
 
-    .donate:first-child:not(:last-child) .qrcode {
-        left: -0.75rem;
-    }
+  .donate:first-child:not(:last-child) .qrcode {
+    left: -0.75rem;
+  }
 
-    .donate:last-child:not(:first-child) .qrcode {
-        right: -0.75rem;
-    }
+  .donate:last-child:not(:first-child) .qrcode {
+    right: -0.75rem;
+  }
 
-    .donate[data-type="alipay"] {
-        color: #fff;
-        background-color: #00a0e8;
-        border-color: transparent;
-    }
+  .donate[data-type="alipay"] {
+    color: #fff;
+    background-color: #00a0e8;
+    border-color: transparent;
+  }
 
-    .donate[data-type="alipay"]:active {
-        background-color: #008ecf;
-    }
+  .donate[data-type="alipay"]:active {
+    background-color: #008ecf;
+  }
 
-    .donate[data-type="alipay"]:hover {
-        background-color: #0097db;
-    }
+  .donate[data-type="alipay"]:hover {
+    background-color: #0097db;
+  }
 
-    .donate[data-type="alipay"]:focus:not(:active) {
-        box-shadow: 0 0 0 0.125em rgba(0, 160, 232, 0.25);
-    }
+  .donate[data-type="alipay"]:focus:not(:active) {
+    box-shadow: 0 0 0 0.125em rgba(0, 160, 232, 0.25);
+  }
 
-    .donate[data-type="buymeacoffee"] {
-        color: rgba(0, 0, 0, 0.7);
-        background-color: #fd0;
-        border-color: transparent;
-    }
+  .donate[data-type="buymeacoffee"] {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #fd0;
+    border-color: transparent;
+  }
 
-    .donate[data-type="buymeacoffee"]:active {
-        background-color: #e6c700;
-    }
+  .donate[data-type="buymeacoffee"]:active {
+    background-color: #e6c700;
+  }
 
-    .donate[data-type="buymeacoffee"]:hover {
-        background-color: #f2d200;
-    }
+  .donate[data-type="buymeacoffee"]:hover {
+    background-color: #f2d200;
+  }
 
-    .donate[data-type="buymeacoffee"]:focus:not(:active) {
-        box-shadow: 0 0 0 0.125em rgba(255, 221, 0, 0.25);
-    }
+  .donate[data-type="buymeacoffee"]:focus:not(:active) {
+    box-shadow: 0 0 0 0.125em rgba(255, 221, 0, 0.25);
+  }
 
-    .donate[data-type="paypal"] {
-        color: rgba(0, 0, 0, 0.7);
-        background-color: #feb700;
-        border-color: transparent;
-    }
+  .donate[data-type="paypal"] {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #feb700;
+    border-color: transparent;
+  }
 
-    .donate[data-type="paypal"]:active {
-        background-color: #e5a500;
-    }
+  .donate[data-type="paypal"]:active {
+    background-color: #e5a500;
+  }
 
-    .donate[data-type="paypal"]:hover {
-        background-color: #f1ae00;
-    }
+  .donate[data-type="paypal"]:hover {
+    background-color: #f1ae00;
+  }
 
-    .donate[data-type="paypal"]:focus:not(:active) {
-        box-shadow: 0 0 0 0.125em rgba(254, 183, 0, 0.25);
-    }
+  .donate[data-type="paypal"]:focus:not(:active) {
+    box-shadow: 0 0 0 0.125em rgba(254, 183, 0, 0.25);
+  }
 
-    .donate[data-type="patreon"] {
-        color: #fff;
-        background-color: #ff424d;
-        border-color: transparent;
-    }
+  .donate[data-type="patreon"] {
+    color: #fff;
+    background-color: #ff424d;
+    border-color: transparent;
+  }
 
-    .donate[data-type="patreon"]:active {
-        background-color: #ff2835;
-    }
+  .donate[data-type="patreon"]:active {
+    background-color: #ff2835;
+  }
 
-    .donate[data-type="patreon"]:hover {
-        background-color: #ff3541;
-    }
+  .donate[data-type="patreon"]:hover {
+    background-color: #ff3541;
+  }
 
-    .donate[data-type="patreon"]:focus:not(:active) {
-        box-shadow: 0 0 0 0.125em rgba(255, 66, 77, 0.25);
-    }
+  .donate[data-type="patreon"]:focus:not(:active) {
+    box-shadow: 0 0 0 0.125em rgba(255, 66, 77, 0.25);
+  }
 
-    .donate[data-type="wechat"] {
-        color: #fff;
-        background-color: #1aad19;
-        border-color: transparent;
-    }
+  .donate[data-type="wechat"] {
+    color: #fff;
+    background-color: #1aad19;
+    border-color: transparent;
+  }
 
-    .donate[data-type="wechat"]:active {
-        background-color: #179716;
-    }
+  .donate[data-type="wechat"]:active {
+    background-color: #179716;
+  }
 
-    .donate[data-type="wechat"]:hover {
-        background-color: #18a217;
-    }
+  .donate[data-type="wechat"]:hover {
+    background-color: #18a217;
+  }
 
-    .donate[data-type="wechat"]:focus:not(:active) {
-        box-shadow: 0 0 0 0.125em rgba(26, 173, 25, 0.25);
-    }
+  .donate[data-type="wechat"]:focus:not(:active) {
+    box-shadow: 0 0 0 0.125em rgba(26, 173, 25, 0.25);
+  }
 
-    .donate[data-type="GitHub Sponsor"] {
-        color: #fff;
-        background-color: #000000;
-        border-color: transparent;
-    }
+  .donate[data-type="GitHub Sponsor"] {
+    color: #fff;
+    background-color: #000000;
+    border-color: transparent;
+  }
 
-    .donate[data-type="GitHub Sponsor"]:active {
-        background-color: #000000;
-    }
+  .donate[data-type="GitHub Sponsor"]:active {
+    background-color: #000000;
+  }
 
-    .donate[data-type="GitHub Sponsor"]:hover {
-        background-color: #000000;
-    }
+  .donate[data-type="GitHub Sponsor"]:hover {
+    background-color: #000000;
+  }
 
-    .donate[data-type="GitHub Sponsor"]:focus:not(:active) {
-        box-shadow: 0 0 0 0.125em rgba(0, 160, 232, 0.25);
-    }
+  .donate[data-type="GitHub Sponsor"]:focus:not(:active) {
+    box-shadow: 0 0 0 0.125em rgba(0, 160, 232, 0.25);
+  }
 </style>
 <div class="card">
-    <div class="card-content">
-        <p>Like this article? Support the author with</p>
-        <div class="buttons is-centered">
-            <a class="button donate" data-type="alipay">
-                <span class="icon is-small">
-                    <i class="fab fa-alipay"></i>
-                </span>
-                <span>Alipay</span>
-                <span class="qrcode">
-                    <img width="200px" src="<%- theme.Reward.alipay %>" alt="Alipay">
-                </span>
-            </a>
-            <a class="button donate" data-type="wechat">
-                <span class="icon is-small">
-                    <i class="fab fa-weixin"></i>
-                </span>
-                <span>Wechat</span>
-                <span class="qrcode">
-                    <img src="<%- theme.Reward.wechatpay %>" alt="Wechat">
-                </span>
-            </a>
-            <a class="button donate" data-type="paypal">
-                <span class="icon is-small">
-                    <i class="fab fa-paypal"></i>
-                </span>
-                <span>PayPal</span>
-                <span class="qrcode">
-                    <img src="<%- theme.Reward.paypal.img %>" alt="PayPal">
-                </span>
-            </a>
-            <a class="button donate" data-type="GitHub Sponsor" href="<%- theme.Reward.GitHubSponsor %>">
-                <span class="icon is-small">
-                    <i class="fab fa-GitHub"></i>
-                </span>
-                <span>GitHub Sponsor</span>
-            </a>
-            <a class="button donate" data-type="buymeacoffee" href="<%- theme.Reward.BuyMeaCoffee %>">
-                <span class="icon is-small">
-                    <i class="fab fa-buymeacoffee"></i>
-                </span>
-                <span>Buy Me a Coffee</span>
-            </a>
-        </div>
+  <div class="card-content">
+    <p>Like this article? Support the author with</p>
+    <div class="buttons is-centered">
+      <a class="button donate" data-type="alipay">
+        <span class="icon is-small">
+          <i class="fab fa-alipay"></i>
+        </span>
+        <span>Alipay</span>
+        <span class="qrcode">
+          <img width="200px" src="<%- theme.Reward.alipay %>" alt="Alipay" />
+        </span>
+      </a>
+      <a class="button donate" data-type="wechat">
+        <span class="icon is-small">
+          <i class="fab fa-weixin"></i>
+        </span>
+        <span>Wechat</span>
+        <span class="qrcode">
+          <img src="<%- theme.Reward.wechatpay %>" alt="Wechat" />
+        </span>
+      </a>
+      <a class="button donate" data-type="paypal">
+        <span class="icon is-small">
+          <i class="fab fa-paypal"></i>
+        </span>
+        <span>PayPal</span>
+        <span class="qrcode">
+          <img src="<%- theme.Reward.paypal.img %>" alt="PayPal" />
+        </span>
+      </a>
+      <a
+        class="button donate"
+        data-type="GitHub Sponsor"
+        href="<%- theme.Reward.GitHubSponsor %>"
+      >
+        <span class="icon is-small">
+          <i class="fab fa-GitHub"></i>
+        </span>
+        <span>GitHub Sponsor</span>
+      </a>
+      <a
+        class="button donate"
+        data-type="buymeacoffee"
+        href="<%- theme.Reward.BuyMeaCoffee %>"
+      >
+        <span class="icon is-small">
+          <i class="fab fa-buymeacoffee"></i>
+        </span>
+        <span>Buy Me a Coffee</span>
+      </a>
     </div>
+  </div>
 </div>

@@ -68,7 +68,7 @@ hr {
   /* Sidebar end */
 }
 #aside h1 {
-  font-size: 1.9em;
+  font-size: 1.8em;
   margin-top: 0.8em;
   margin-bottom: 0.6em;
 }
@@ -84,12 +84,12 @@ hr {
 }
 #aside #avatar img {
   margin-top: 4em;
-  margin-bottom: -1.73em;
+  margin-bottom: -0.5em;
   width: 10em;
   /*height			: 9em;*/
-  border-radius: 4.5em;
-  -moz-border-radius: 4.5em;
   -webkit-border-radius: 4.5em;
+  -moz-border-radius: 4.5em;
+  border-radius: 4.5em;
   border: none;
 }
 @keyframes octocat-wave {
@@ -120,9 +120,7 @@ hr {
   font-size: 0.7em;
   margin-top: -0.7em;
   margin-bottom: 0em;
-}
-#aside #follow-icons a {
-  color: #ccc;
+  padding-top: 0.5em;
 }
 #aside #follow-icons span {
   vertical-align: top;
@@ -243,7 +241,7 @@ hr {
 }
 /*menu*/
 #Contents {
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 hr#topline {
   margin-top: 0px;
@@ -272,7 +270,10 @@ hr#footerline {
 }
 /*			menu end		*/
 /* Page Elements */
-#content {
+article{
+  padding-left: 1.5em;
+}
+main#page {
   display: block;
   width: 100%;
 }
@@ -333,6 +334,10 @@ section#Abstract span.keywords-content {
 }
 /*		abstract end		*/
 /*		markdown content		*/
+section#content {
+  font-family: "Times New Roman", "宋体", serif;
+  word-break: break-all;
+}
 /*		code			*/
 figure,
 pre {
@@ -479,7 +484,7 @@ section.author {
   position: fixed;
   float: right;
   right: 10px;
-  top: 90vh;
+  /*top: 90vh;*/
 }
 #qrcode {
   display: grid;
@@ -491,7 +496,7 @@ section.author {
 @media only screen and (min-width: 1281px) {
   html,
   body {
-    font-size: 1.1em;
+    font-size: 1.0em;
   }
 }
 /* Small Screens */

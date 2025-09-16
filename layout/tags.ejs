@@ -1,32 +1,37 @@
-<h1 class="post-title">
-    <%= page.tag %>
-</h1>
+<h1 class="post-title"><%= page.tag %></h1>
 <style>
-    span.taglist a {
-        font-size: 0.9em;
-        font-weight: lighter;
-        text-transform: none;
-    }
+  span.taglist a {
+    font-size: 0.9em;
+    font-weight: lighter;
+    text-transform: none;
+  }
 </style>
 
-
 <div>
-    <span>Tag Cloud:</span>
-    <% if (site.tags.length) { %>
-        <script type="text/javascript" charset="utf-8" src="<%- url_for('/js/tagcloud.js') %>"></script>
-        <script type="text/javascript" charset="utf-8" src="<%- url_for('/js/tagcanvas.js') %>"></script>
-        <div class="widget-wrap" style="position: inherit;float: left;">
-            <div id="myCanvasContainer" class="widget tagcloud">
-                <canvas id="resCanvas" width="500%" height="400%">
-                    <p>need hexo-tag-cloud</p>
-                    <%- tagcloud() %>
-                </canvas>
-            </div>
-        </div>
-        <% } %>
-            <div id="taglist" style="position: relative;/*! float: right; */">
-                <%- tagcloud() %>
-            </div>
+  <span>Tag Cloud:</span>
+  <% if (site.tags.length) { %>
+  <script
+    type="text/javascript"
+    charset="utf-8"
+    src="<%- url_for('/js/tagcloud.js') %>"
+  ></script>
+  <script
+    type="text/javascript"
+    charset="utf-8"
+    src="<%- url_for('/js/tagcanvas.js') %>"
+  ></script>
+  <div class="widget-wrap" style="position: inherit; float: left">
+    <div id="myCanvasContainer" class="widget tagcloud">
+      <canvas id="resCanvas" width="500%" height="400%">
+        <p>need hexo-tag-cloud</p>
+        <%- tagcloud() %>
+      </canvas>
+    </div>
+  </div>
+  <% } %>
+  <div id="taglist" style="position: relative; /*! float: right; */">
+    <%- tagcloud() %>
+  </div>
 </div>
 
 <!--pnpm install --save hexo-statistics-charts-->

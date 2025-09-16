@@ -102,9 +102,9 @@ hr {
         margin-bottom: -1.73em;
         width: 10em;
         /*height			: 9em;*/
-        border-radius: 4.5em;
-        -moz-border-radius: 4.5em;
         -webkit-border-radius: 4.5em;
+        -moz-border-radius: 4.5em;
+        border-radius: 4.5em;
         border: none;
     }
 
@@ -147,10 +147,6 @@ hr {
         font-size: 0.7em;
         margin-top: -0.7em;
         margin-bottom: 0em;
-
-        a {
-            color: #ccc;
-        }
 
         span {
             vertical-align: top;
@@ -336,7 +332,7 @@ hr#footerline {
 /*			menu end		*/
 
 /* Page Elements */
-#content {
+main#page {
     display: block;
     width: 100%;
 }
@@ -406,9 +402,13 @@ section#Abstract {
         line-height: 1.2em;
     }
 }
-
 /*		abstract end		*/
 /*		markdown content		*/
+section#content
+{
+    font-family: "Times New Roman", "宋体", serif;
+    word-break: break-all;
+}
 /*		code			*/
 figure,
 pre {

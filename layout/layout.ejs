@@ -1,103 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="<%= config.root + theme.favicon %>" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="<%- config.author %>"
+      href="<%- theme.rss %>"
+    />
 
-<head>
-  <!--[if lt IE 9]>
-    <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
-<![endif]-->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="<%- theme.favicon %>" />
-  <link rel="alternate" type="application/rss+xml" title="<%- config.author %>" href="<%- theme.rss %>">
-
-  <% var title=page.title; if (is_archive()){ title='Archives' ; if (is_month()){ title +=': ' + page.year + '/' +
-    page.month; } else if (is_year()){ title +=': ' + page.year; } } else if (is_category()){ title='Category: ' +
-    page.category; } else if (is_tag()){ title='Tag: ' + page.tag; } %>
+    <% var title=page.title; if (is_archive()){ title='Archives' ; if
+    (is_month()){ title +=': ' + page.year + '/' + page.month; } else if
+    (is_year()){ title +=': ' + page.year; } } else if (is_category()){
+    title='Category: ' + page.category; } else if (is_tag()){ title='Tag: ' +
+    page.tag; } %>
 
     <!--SEO-->
     <% if (page.keywords){ %>
-      <meta name="keywords"
-        content="<%= config.keywords %>,<%= theme.keywords %>,<%= page.keywords %>,<%= page.title %>">
-      <% } else if (config.keywords){ %>
-        <meta name="keywords" content="<%= config.keywords %>,<%= theme.keywords %>">
-        <%} %>
-          <% if (page.description){ %>
-            <meta name="description" content="<%= theme.description %>,<%= page.description %>">
-            <% } else { %>
-              <meta name="description" content="<%= theme.description %>,<%= config.description %>">
-              <%} %>
+    <meta
+      name="keywords"
+      content="<%= config.keywords , theme.keywords , page.keywords , page.title %>"
+    />
+    <% } else if (config.keywords){ %>
+    <meta
+      name="keywords"
+      content="<%= config.keywords , theme.keywords %>"
+    />
+    <%} %> <% if (page.description){ %>
+    <meta
+      name="description"
+      content="<%= theme.description , page.description %>"
+    />
+    <% } else { %>
+    <meta
+      name="description"
+      content="<%= theme.description , config.description %>"
+    />
+    <%} %>
 
-                <script>
-                  (function () {
-                    var bp = document.createElement('script');
-                    var curProtocol = window.location.protocol.split(':')[0];
-                    if (curProtocol === 'https') {
-                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-                    }
-                    else {
-                      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-                    }
-                    var s = document.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(bp, s);
-                  })();
-                </script>
+    <script>
+      (function () {
+        var bp = document.createElement("script");
+        var curProtocol = window.location.protocol.split(":")[0];
+        if (curProtocol === "https") {
+          bp.src = "https://zz.bdstatic.com/linksubmit/push.js";
+        } else {
+          bp.src = "http://push.zhanzhang.baidu.com/push.js";
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
 
-                <title>
-                  <% if (title){ %>
-                    <%= title %> | <% } %>
-                        <%= config.title %>
-                </title>
+    <title><% if (title){ %> <%= title %> | <% } %> <%= config.title %></title>
 
-                <%- theme.CDN.bootstrap %>
-                  <%- theme.CDN.fontawesome %>
+    <%- theme.CDN.bootstrap %> <%- theme.CDN.fontawesome %> <%- css('css/future.css') %> <%- css('css/main') %>
 
-                    <%- css('css/future.css') %>
-                      <%- css('css/main') %>
+    <!--引用cdn服务的时候，怎么做到cdn加载不到之后用本地的-->
+    <%- theme.CDN.jquery %> <%- theme.CDN.qrcode %> <%- theme.CDN.d3js %> <%-
+    js("js/ax.js") %> <%- js("/js/main.js") %> <%- autoCanonical(config, page)
+    %>
+    <%- theme.CDN.html5shiv %>
+  </head>
 
-                        <!--引用cdn服务的时候，怎么做到cdn加载不到之后用本地的-->
-                        <%- theme.CDN.jquery %>
+  <body>
+    <%- partial('./_partial/aside.ejs') %> <%- include('./_partial/nav.ejs') %>
+    <% if (page.title=="" ){ %> <%- body %> <% } else { %>
+    <div id="journal">
+      <div id="journal-name">
+        <%- theme.Journal.title %> <br />
+        <%- theme.Journal.subtitle %>
+      </div>
 
-                          <%- theme.CDN.qrcode %>
-                            <%- theme.CDN.d3js %>
-
-                              <%- js("js/ax.js") %>
-
-                                <%- js("/js/main.js") %>
-                                <%- autoCanonical(config, page) %>
-</head>
-
-<body>
-  <%- partial('./_partial/aside.ejs') %>
-    <%- include('./_partial/nav.ejs') %>
-
-      <% if (page.title=="" ){ %>
-        <%- body %>
-          <% } else { %>
-            <div id="journal">
-              <div id="journal-name">
-                <%- theme.Journal.title %> <br>
-                  <%- theme.Journal.subtitle %>
-              </div>
-
-              <div id="post">
-                <% if (page.title==site.title) { %>
-                  <%- body %>
-                    <% } else { %>
-                      <main id="content">
-
-                        <%- body %>
-                      </main>
-                      <% } %>
-              </div>
-
-            </div>
-            <% } %>
-
-              <%- include('./widget/donate') %>
-              <%- include('./widget/search.ejs') %>
-</body>
-
+      <div id="post">
+        <% if (page.title==site.title) { %> <%- body %> <% } else { %>
+        <main id="page"><%- body %></main>
+        <% } %>
+      </div>
+    </div>
+    <% } %> <%- include('./widget/donate') %> <%- include('./widget/search.ejs')
+    %>
+  </body>
 </html>

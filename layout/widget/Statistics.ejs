@@ -1,13 +1,11 @@
 <div id="Statistics">
-    <% for (tongji in theme.Site_visit_tongji ) { -%>
-        <% if(theme.Site_visit_tongji[tongji]) { -%>
-            <%- theme.Site_visit_tongji[tongji] -%>&nbsp;
-                <% } -%>
-                    <% } %>
-                        <br />
-                        <% if(theme.wordCount.enable ){ %>
-                            <span class="post-count">
-                                site total word count:<%= totalcount(site) %>
-                            </span>
-                            <% }%>
+  <% for (tongji in theme.Site_visit_tongji ) { -%> <%
+  if(theme.Site_visit_tongji[tongji]) { -%> <%- theme.Site_visit_tongji[tongji]
+  -%>&nbsp; <% } -%> <% } %>
+  <br />
+  <% if(theme.wordCount.enable ){ %>
+  <span class="post-count">
+    site total word count:<%= totalcount(site) %>
+  </span>
+  <% }%>
 </div>

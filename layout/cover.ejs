@@ -1,47 +1,43 @@
 <div>
-    <div id="face" onclick="showmenu(true)">
-        <!--   封面   -->
-        <div class="description center-align">
-            <% if (theme.subtitle.enable) { %>
-                <span id="subtitle"></span>
-                <%- theme.CDN.typed %>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [
-                            <% theme.subtitle.sub.forEach(function(item){ %>
-                            "<%= item %>",
-                            <% }) %>
-                        ],
-                        startDelay: <%= theme.subtitle.startDelay %>,
-                        typeSpeed: <%= theme.subtitle.typeSpeed %>,
-                        loop: <%= theme.subtitle.loop %>,
-                        backSpeed: <%= theme.subtitle.backSpeed %>,
-                        showCursor: <%= theme.subtitle.showCursor %>
-                    });
-                </script>
-            <% } else { %>
-                <%= config.description %>
-            <% } %>
-        </div>
-        <div id="xingkong"  title="Click me to show menu!">
-            <div id="test">Your browser can not support canvas</div>
-        </div>
-
-        <%- js('js/star.js') %>
-    </div>
-    <!--   menu   -->
-    <div id="blog">
-        <%- partial('_partial/menu') %>
-    </div>
-    <script>
-        $(document).ready(function() {showmenu(false);
+  <div id="face" onclick="showmenu(true)">
+    <!--   封面   -->
+    <div class="description center-align">
+      <% if (theme.subtitle.enable) { %>
+      <span id="subtitle"></span>
+      <%- theme.CDN.typed %>
+      <script>
+        var typed = new Typed("#subtitle", {
+            strings: [
+                <% theme.subtitle.sub.forEach(function(item){ %>
+                "<%= item %>",
+                <% }) %>
+            ],
+            startDelay: <%= theme.subtitle.startDelay %>,
+            typeSpeed: <%= theme.subtitle.typeSpeed %>,
+            loop: <%= theme.subtitle.loop %>,
+            backSpeed: <%= theme.subtitle.backSpeed %>,
+            showCursor: <%= theme.subtitle.showCursor %>
         });
-        function showmenu(showed) {
-            if (window.location.pathname.search("page") != -1 ||showed) {
-                document.getElementById("blog").style.display = 'block';
-                document.getElementById("face").style.display = 'none';
-            }
-        }
+      </script>
+      <% } else { %> <%= config.description %> <% } %>
+    </div>
+    <div id="xingkong" title="Click me to show menu!">
+      <div id="test">Your browser can not support canvas</div>
+    </div>
 
-    </script>
+    <%- js('js/star.js') %>
+  </div>
+  <!--   menu   -->
+  <div id="blog"><%- partial('_partial/menu') %></div>
+  <script>
+    $(document).ready(function () {
+      showmenu(false);
+    });
+    function showmenu(showed) {
+      if (window.location.pathname.search("page") != -1 || showed) {
+        document.getElementById("blog").style.display = "block";
+        document.getElementById("face").style.display = "none";
+      }
+    }
+  </script>
 </div>

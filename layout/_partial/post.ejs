@@ -1,171 +1,158 @@
 <% permalink=config.url + config.root + post.path %>
 
-  <hr id="topline" />
-  <div id="DOI">
-    <%= date(post.date, 'MM/DD, YYYY' ) %> <br>
-      <%- url_for(page.permalink) %>
-        <% if(theme.wordCount.postWordCount && theme.wordCount.enable){ %>
-          <br>
-          <span class="post-count">
-            post word count: <%= wordcount(post.content) %> words.&nbsp;
-          </span>
-          <% }%>
-            <% if(theme.wordCount.min2read && theme.wordCount.enable){ %>
-              <span class="post-count">
-                post estimate read time: <%= min2read(post.content) %> min
-              </span>
+<hr id="topline" />
+<div id="DOI">
+  <%= date(post.date, 'MM/DD, YYYY' ) %> <br />
+  <%- url_for(page.permalink) %> <% if(theme.wordCount.postWordCount &&
+  theme.wordCount.enable){ %>
+  <br />
+  <span class="post-count">
+    post word count: <%= wordcount(post.content) %> words.&nbsp;
+  </span>
+  <% }%> <% if(theme.wordCount.min2read && theme.wordCount.enable){ %>
+  <span class="post-count">
+    post estimate read time: <%= min2read(post.content) %> min
+  </span>
 
-              <% }%>
+  <% }%>
+</div>
+
+<article class="post">
+  <h1 class="post-title"><%- titlecase( post.title) %></h1>
+  <div id="post-author">
+    <%- post.author %> <% if(post.coauthor){ post.coauthor } %><br />
+    <%- theme.Address %>
   </div>
+  <section class="post-content article-entry" id="post-content">
+    <section id="Abstract">
+      <hr class="AbstractLine" />
+      <span class="Abstract">Abstract</span>
+      <span class="Abstract-content">
+        <%- page.excerpt %> <% if (post.summary){ %>
+        <div><%- post.summary %></div>
+        <% } %>
+      </span>
 
-
-  <article class="post">
-
-    <h1 class="post-title">
-      <%- titlecase( post.title) %>
-    </h1>
-    <div id="post-author">
-      <%- post.author %> <% if(post.coauthor){ post.coauthor } %><br />
-        <%- theme.Address %>
-    </div>
-    <section class="post-content article-entry">
-      <section id="Abstract">
-        <hr class="AbstractLine" />
-        <span class="Abstract">Abstract</span>
-        <span class="Abstract-content">
-          <%- page.excerpt %>
-            <!--Table of Contents begin-->
-            <% if ( post.toc || ( theme.toc && post.toc) && !index ){ %>
-              <div id="toc" class="toc-article">
-                <a class="js-toggle-toc" href="javascript:void(0)"></a>
-                <div class="toc-content">
-                  <% if (post.encrypt==true) { %>
-                    <%- toc(post.origin, {list_number: false}) %>
-                      <% } else { %>
-                        <%- toc(post.content, {list_number: false}) %>
-                          <% } %>
-                </div>
-              </div>
-              <% } %>
-                <% if (post.summary){ %>
-                  <div>
-                    <%- post.summary %>
-                  </div>
-                  <% } %>
-                    <!--Table of Contents end -->
+      <span class="Abstract"
+        >Keywords
+        <span class="keywords-content">
+          <% if (post.tags && post.tags.length){ %> <%
+          post.tags.forEach(function(tag, index) { %>
+          <a href="<%- url_for(tag.path) %>"><%- titlecase(tag.name) %></a
+          >&nbsp; <% }); %> <% } %> <% if (post.categories &&
+          post.categories.length){ %> <%
+          post.categories.forEach(function(category, index) { %>
+          <a href="<%- url_for(category.path) %>"
+            ><%- titlecase(category.name) %></a
+          >&nbsp; <% }); %> <% } %>
         </span>
-
-
-        <span class="Abstract">Keywords
-          <span class="keywords-content">
-            <% if (post.tags && post.tags.length){ %>
-              <% post.tags.forEach(function(tag, index) { %>
-                <a href="<%- url_for(tag.path) %>"><%- titlecase(tag.name) %></a>&nbsp;
-                <% }); %>
-                  <% } %>
-                    <% if (post.categories && post.categories.length){ %>
-                      <% post.categories.forEach(function(category, index) { %>
-                        <a href="<%- url_for(category.path) %>"><%- titlecase(category.name) %></a>&nbsp;
-                        <% }); %>
-                          <% } %>
-          </span>
+      </span>
+      <hr class="AbstractLine" />
+      <span class="Abstract"
+        >Citation
+        <span class="keywords-content">
+          <%- theme.Author %>&period;<%- titlecase( post.title) %>&period;<%-
+          theme.Journal.title %> <%- theme.Journal.subtitle %>&comma;<%=
+          date(post.date, 'YYYYMMDD' ) %>&period; <%- url_for(page.permalink) %>
         </span>
-        <hr class="AbstractLine" />
-        <span class="Abstract">Citation
-          <span class="keywords-content">
-            <%- theme.Author %>&period;<%- titlecase( post.title) %>&period;<%- theme.Journal.title %>
-                  <%- theme.Journal.subtitle %>&comma;<%= date(post.date, 'YYYYMMDD' ) %>&period;
-                      <%- url_for(page.permalink) %>
-          </span>
-        </span>
-        <hr class="AbstractLine" />
+      </span>
+      <hr class="AbstractLine" />
+    </section>
+    <% if (post.mathjax){ %>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+      rel="stylesheet"
+    />
+    <% } %>
+    <section id="content"><%- post.content %></section>
+
+    <section class="References">
+      <span id="References">References</span>
+      <span id="References-content"> </span>
+    </section>
+
+    <section class="post-footer">
+      <hr id="footerline" />
+      <br />
+      <section class="author">
+        *Corresponding Author: <%- theme.Author %> &lt;Email: <%-
+        mail_to(theme.Email) %>&gt; <% if
+        (theme.Copyright.creative_commons.url){ -%>
+        <img src="<%- theme.copyright.creative_commons.url %>" />
+        <% } else { -%> <%- theme.Copyright.creative_commons.license %> . <%}
+        -%>
       </section>
+      <br />
+      <ol id="list">
+        <li>
+          <%- theme.Author %>&period;<%- titlecase( post.title) %>&period;<%-
+          theme.Journal.title %>&period;<%- theme.Journal.subtitle %>&comma;<%=
+          date(post.date, 'YYYYMMDD' ) %>&period;<%- url_for(page.permalink) %>
+        </li>
+        <li>
+          <%- theme.Copyright.Statement %> <br />
+          <%- theme.Copyright.url %> <%- url_for(page.permalink) %>
+        </li>
+      </ol>
+    </section>
 
+    <script>
+      //复制加版权
+      jQuery(document).on("copy", function (e) {
+        var selected = window.getSelection();
+        var selectedText = selected.toString().replace(/\n/g, "<br>"); // Solve the line breaks conversion issue 处理换行转换的问题
+        var copyFooter =
+          "<br>---------------------<br>著作权归作者所有。<br>" +
+          "商业转载请联系作者获得授权，非商业转载请注明出处。<br>" +
+          "<br>作者：" +
+          document.getElementById("author").innerText +
+          "<br>复制时间: " +
+          Date.now() +
+          "<br>原文链接：" +
+          document.location.href +
+          "<br>© 版权声明：本文为「" +
+          document.getElementById("author").innerText +
+          "」的原创文章，遵循 CC 4.0 BY-NC-SA 版权协议，转载请附上原文出处链接及本声明。";
 
-      <section>
-        <%- post.content %>
-      </section>
-
-
-
-      <section class="References">
-        <span id="References">References</span>
-        <span id="References-content">
-          
-        </span>
-
-      </section>
-
-
-      <section class="post-footer">
-        <hr id="footerline" /><br>
-        <section class="author">
-          *Corresponding Author: <%- theme.Author %> &lt;Email: <%- mail_to(theme.Email) %>&gt;
-              <% if (theme.Copyright.creative_commons.url){ -%>
-                <img src="<%- theme.copyright.creative_commons.url %>" />
-                <% } else { -%>
-                  <%- theme.Copyright.creative_commons.license %> .
-                    <%} -%>
-        </section>
-        <br>
-        <ol id="list">
-          <li>
-            <%- theme.Author %>&period;<%- titlecase( post.title) %>&period;<%- theme.Journal.title %>&period;<%-
-                    theme.Journal.subtitle %>&comma;<%= date(post.date, 'YYYYMMDD' ) %>&period;<%-
-                        url_for(page.permalink) %>
-          </li>
-          <li>
-            <%- theme.Copyright.Statement %> <br />
-              <%- theme.Copyright.url %>
-                <%- url_for(page.permalink) %>
-          </li>
-  
-        </ol>
-      </section>
-      
-      <script>//复制加版权
-        jQuery(document).on('copy', function (e) {
-          var selected = window.getSelection();
-          var selectedText = selected.toString().replace(/\n/g, '<br>');  // Solve the line breaks conversion issue 处理换行转换的问题
-          var copyFooter = '<br>---------------------<br>著作权归作者所有。<br>'
-            + '商业转载请联系作者获得授权，非商业转载请注明出处。<br>'
-            + '<br>作者：' + document.getElementById('author').innerText
-            + '<br>复制时间: ' + Date.now()
-            + '<br>原文链接：' + document.location.href
-            + '<br>© 版权声明：本文为「' + document.getElementById('author').innerText + '」的原创文章，遵循 CC 4.0 BY-NC-SA 版权协议，转载请附上原文出处链接及本声明。';
-
-          var copyHolder = $('<div>', { id: 'temp', html: selectedText + copyFooter, style: { position: 'absolute', left: '-99999px' } });
-
-          $('body').append(copyHolder);
-          selected.selectAllChildren(copyHolder[0]);
-          window.setTimeout(function () {
-            copyHolder.remove();
-          }, 0);
+        var copyHolder = $("<div>", {
+          id: "temp",
+          html: selectedText + copyFooter,
+          style: { position: "absolute", left: "-99999px" },
         });
 
-      </script>
-    </section>
-    <%- include('../widget/author') %>
-      <%- include('../widget/post-footer') %>
-  </article>
+        $("body").append(copyHolder);
+        selected.selectAllChildren(copyHolder[0]);
+        window.setTimeout(function () {
+          copyHolder.remove();
+        }, 0);
+      });
+    </script>
+  </section>
+  <%- include('../widget/author') %> <%- include('../widget/post-footer') %> <%-
+  include('../widget/toc') %>
+</article>
 
-  <div id="qrcode"></div>
-  <script>
-    $('#qrcode').qrcode({ width: 173, height: 173, text: "<%- url_for(page.permalink) %>" });
-  </script>
+<%- include('../widget/comments') %>
 
-  <div class="pagination">
-    <% if (page.prev) { %>
-      <a class="newer-posts" href="<%- url_for(page.prev.path) %>">
-        ← <%- page.prev.title %>
-      </a>
-      <% } %>
+<div id="qrcode"></div>
+<script>
+  $("#qrcode").qrcode({
+    width: 173,
+    height: 173,
+    text: "<%- url_for(page.permalink) %>",
+  });
+</script>
 
-        <% if (page.next) { %>
-          <a class="older-posts" href="<%- url_for(page.next.path) %>">
-            <%- page.next.title %> →
-          </a>
-          <% } %>
-            <br />
-  </div>
-  <a id="toTop" href="#top" title="回顶部">Top</a>
+<div class="pagination">
+  <% if (page.prev) { %>
+  <a class="newer-posts" href="<%- url_for(page.prev.path) %>">
+    ← <%- page.prev.title %>
+  </a>
+  <% } %> <% if (page.next) { %>
+  <a class="older-posts" href="<%- url_for(page.next.path) %>">
+    <%- page.next.title %> →
+  </a>
+  <% } %>
+  <br />
+</div>
+<a id="toTop" href="#top" title="回顶部">Top</a>

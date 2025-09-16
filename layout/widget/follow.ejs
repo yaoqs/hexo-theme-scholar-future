@@ -1,14 +1,31 @@
 <div id="follow-icons">
-<!--
-  http://www.fontawesome.com.cn/faicons/#web-application
--->
-
+  <% if(theme.github_follow) { -%>
+  <div id="github-iframe">
+    <iframe
+      src="<%- theme.github_follow.href %>"
+      scrolling="no"
+      frameborder="0"
+      width="150px"
+      height="20px"
+    ></iframe>
+  </div>
+  <% } -%> 
+  <% if (theme.weibostar) { -%>
+  <%- theme.weibostar.code %> 
+  <% } -%> 
   <% for ( follow in theme.Social_Accounts ) { -%>
-    <% if (theme.Social_Accounts[follow].href) { -%>
-      <a href="<%- theme.Social_Accounts[follow].href %>" title="<%- theme.Social_Accounts[follow].name %>"><i class="<%- theme.Social_Accounts[follow].class %>"></i></a>
-      <% } -%>
-  <% } -%>
+
+  <% if (theme.Social_Accounts[follow].badge) { -%>
+  <a
+    href="<%- theme.Social_Accounts[follow].href %>"
+    title="<%- theme.Social_Accounts[follow].title %>"
+    ><img src="https://img.shields.io/badge/<%= theme.Social_Accounts[follow].title+theme.Social_Accounts[follow].style %>"/></a>
+  <% } -%> 
+  <% } -%> 
   <% if (theme.rss) { -%>
-    <a id="rss" href="<%- theme.rss %>" title="RSS"><i class="fa fa-rss fa-2x"></i></a>
+  <a href="<%- theme.rss %>" title="RSS"
+    ><img
+      src="https://img.shields.io/badge/rss-atom-ffffff&logo=rss&logoColor=ffffff"
+  /></a>
   <% } -%>
 </div>

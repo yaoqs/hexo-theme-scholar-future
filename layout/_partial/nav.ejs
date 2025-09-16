@@ -1,29 +1,38 @@
 <nav class="navbar">
-    <h6>
-        <span id="custom_html_list"></span>
+  <h6>
+    <span id="custom_html_list"></span>
 
-        <% for (list in theme.custom_html_list){ %>
-            <% if (theme.custom_html_list[list]) { -%>
-                &middot;
-                <a href=" <%- config.root %><%- theme.custom_html_list[list] %> ">
-                    <%- theme.custom_html_list[list] %>
-                </a>
-                <% } -%>
-                    <% }%>
-                        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-                            <span id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></span>
-                        </a>
+    <% for (list in theme.custom_html_list){ %> <% if
+    (theme.custom_html_list[list]) { -%> &middot;
+    <a href=" <%- config.root %><%- theme.custom_html_list[list] %> ">
+      <%- theme.custom_html_list[list] %>
+    </a>
+    <% } -%> <% }%>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <span
+        id="searchIcon"
+        class="fas fa-search"
+        title="搜索"
+        style="zoom: 0.85"
+      ></span>
+    </a>
 
-                        <div id="repos">
-                            <div class="dropdown" onmouseenter="showList('dropdown-a')"
-                                onmouseleave="showList('dropdown-a')">
-                                <a id="a" href="javascript:void(0)" class="dropbtn">&#9776; Repositories Pages</a>
-                                <div class="dropdown-content" id="dropdown-a">
-                                    <script>
-                                        $(async function () {
-                                            jax("https://api.github.com/users/<%= theme.githubname %>/repos",
-                                                await function (dataString) {
-                                                    /*var div2 = document.querySelector("#dropdown-a");
+    <div id="repos">
+      <div
+        class="dropdown"
+        onmouseenter="showList('dropdown-a')"
+        onmouseleave="showList('dropdown-a')"
+      >
+        <a id="a" href="javascript:void(0)" class="dropbtn"
+          >&#9776; Repositories Pages</a
+        >
+        <div class="dropdown-content" id="dropdown-a">
+          <script>
+            $(async function () {
+              jax(
+                "https://api.github.com/users/<%= theme.githubname %>/repos",
+                await function (dataString) {
+                  /*var div2 = document.querySelector("#dropdown-a");
                                                     for (var rep of dataString) {
                                                         //console.log(rep.name);
                                                         var i = document.createElement('a');
@@ -33,29 +42,53 @@
                                                         i.innerText = '§ ' + rep.full_name;
                                                         div2.appendChild(i);
                                                     }*/
-                                                    var da = d3.select("body").select("#dropdown-a").selectAll("a").data(dataString).enter().append("a").attr("target", "_blank").style("padding-left", "1em").text((rep) => { return '§ ' + rep.full_name }).attr("href", (rep) => { return "https://<%= theme.githubname %>.github.io/" + rep.name });
-                                                },
-                                                function () {
-                                                    $("<div style='color:red;width: 9em;height: 2em;text-align: center;display: table-cell;vertical-align: middle;'>当前无网络</div>").appendTo($("#dropdown-a"));
-                                                });
-                                        });
+                  var da = d3
+                    .select("body")
+                    .select("#dropdown-a")
+                    .selectAll("a")
+                    .data(dataString)
+                    .enter()
+                    .append("a")
+                    .attr("target", "_blank")
+                    .style("padding-left", "1em")
+                    .text((rep) => {
+                      return "§ " + rep.full_name;
+                    })
+                    .attr("href", (rep) => {
+                      return (
+                        "https://<%= theme.githubname %>.github.io/" + rep.name
+                      );
+                    });
+                },
+                function () {
+                  $(
+                    "<div style='color:red;width: 9em;height: 2em;text-align: center;display: table-cell;vertical-align: middle;'>当前无网络</div>"
+                  ).appendTo($("#dropdown-a"));
+                }
+              );
+            });
+          </script>
+        </div>
+      </div>
 
-                                    </script>
-                                </div>
-                            </div>
-
-                            &middot;
-                            <div class="dropdown" onmouseenter="showList('dropdown-b')"
-                                onmouseleave="showList('dropdown-b')">
-                                <a href="<%- config.root %>" class="dropbtn">Home</a>
-                                <div class="dropdown-content" id="dropdown-b">
-                                    <% for (index in theme.Menu) { %>
-                                        <a href='<%- theme.Menu[index].url %>'><i class="<%- theme.Menu[index].icon %>"
-                                                aria-hidden="true"></i><span style="text-align: center;">&#x0009;<%-
-                                                    theme.Menu[index].name %></span></a>
-                                        <% } %>
-                                </div>
-                            </div>
-                        </div>
-    </h6>
+      &middot;
+      <div
+        class="dropdown"
+        onmouseenter="showList('dropdown-b')"
+        onmouseleave="showList('dropdown-b')"
+      >
+        <a href="<%- config.root %>" class="dropbtn">Home</a>
+        <div class="dropdown-content" id="dropdown-b">
+          <% for (index in theme.Menu) { %>
+          <a href="<%- theme.Menu[index].url %>"
+            ><i class="<%- theme.Menu[index].icon %>" aria-hidden="true"></i
+            ><span style="text-align: center"
+              >&#x0009;<%- theme.Menu[index].name %></span
+            ></a
+          >
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </h6>
 </nav>
