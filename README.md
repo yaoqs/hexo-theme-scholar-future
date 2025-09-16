@@ -9,10 +9,10 @@ Scholar-Future 是一个基于 [Hexo](https://github.com/hexojs/hexo) 框架的�
 
 ### 特色徽章
 
-- ![Title](https://img.shields.io/badge/FUTURE-Natural_Philosophy_&_Infomation_Sciences-ffffff?style=for-the-badge&logo=Author&logoColor=black)
-- ![Author](https://img.shields.io/badge/Author-Yao_Qingsheng-ffffff?style=for-the-badge&logo=Author&logoColor=black)
-- ![Author-cn](https://img.shields.io/badge/Author-要庆生-ffffff?style=for-the-badge&logo=author&logoColor=black)
-- ![slogan](https://img.shields.io/badge/Slogan-解放思想，发展生产力-darkred?style=for-the-badge&logo=china&logoColor=black)
+- ![Title](https://img.shields.io/badge/FUTURE-Natural_Philosophy_&_Infomation_Sciences-ffffff?style=flat-squre&logo=Author&logoColor=black)
+- ![Author](https://img.shields.io/badge/Author-Yao_Qingsheng-ffffff?style=flat-squre&logo=Author&logoColor=black)
+- ![Author-cn](https://img.shields.io/badge/Author-要庆生-ffffff?style=flat-squre&logo=author&logoColor=black)
+- ![slogan](https://img.shields.io/badge/Slogan-解放思想，发展生产力-darkred?style=flat-squre&logo=china&logoColor=black)
 - ![Address](https://img.shields.io/badge/Address-Department_of_Natural_Philosophy_&_Infomation_Sciences,CHINA-blue?style=for-the-badge&logo=address&logoColor=black)
 
 ## 🖼️ 主题预览
@@ -50,8 +50,8 @@ theme_config:
 
 | 支付方式 | 二维码 |
 |---------|--------|
-| 支付宝 | ![支付宝](https://yaoqs.github.io/images/支付宝收款码.jpg) |
-| 微信 | ![微信](https://yaoqs.github.io/images/微信收款码.png) |
+| 支付宝 | <image alt="alipay" src="https://yaoqs.github.io/images/支付宝收款码.jpg" width="200"/> |
+| 微信 | <image alt="wechat" src="https://yaoqs.github.io/images/微信收款码.png" width="200"/> |
 | PayPal | [![PayPal](https://img.shields.io/badge/Donate-paypal-ffffff?style=flat-square&logo=paypal&logoColor=red)](https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=243292490@qq.com&currency_code=USD&amount=1&return=http://yaoqs.github.com/about.html&item_name=LordYao%27s%20Blog&undefined_quantity=1) |
 | PayPal | ![PayPal](https://yaoqs.github.io/images/paypal.png) |
 
@@ -144,7 +144,7 @@ theme_config:
 
 ### 技术探索
 
-- [x] Lab 页面**实验室**功能设计
+- [x] &#x1f9ea;Lab 页面**实验室**功能设计
   - [ ] 地图及天气预报
   - [ ] **JS插件集成**
     - [ ] [Three.js](https://github.com/mrdoob/three.js) - 3D可视化
@@ -155,7 +155,9 @@ theme_config:
 
 ### 📅 版本计划
 
-- &#x1f9ea; v1.0.0 发布日期：2022年1月1日
+- &#x1f9ea; v0.0.1 发布日期：Sep 15, 2021
+- &#x1f9ea; v1.0.0 发布日期：Jul 22, 2024
+- &#x1f9ea; v2.0.0 发布日期：Sep 16, 2025
 
 ## 以下代码用于在GitHub page 中显示
 
