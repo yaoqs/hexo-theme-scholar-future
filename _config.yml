@@ -74,8 +74,8 @@ avatar:
 # 按照字母排序
 # 可在网站根目录的_config.yml中的theme_config: 中进行覆盖
 github_follow:
-	href: https://ghbtns.com/github-btn.html?user=yaoqs&type=follow&count=true
-	code: <iframe src="https://ghbtns.com/github-btn.html?user=yaoqs&amp;type=follow&amp;count=true" scrolling="no" width="150" height="20" frameborder="0"></iframe>
+  href: https://ghbtns.com/github-btn.html?user=yaoqs&type=follow&count=true
+  code: <iframe src="https://ghbtns.com/github-btn.html?user=yaoqs&amp;type=follow&amp;count=true" scrolling="no" width="150" height="20" frameborder="0"></iframe>
 weibostar:
   name: 加关注
   js: https://tjs.sjs.sinajs.cn/open/api/js/wb.js
