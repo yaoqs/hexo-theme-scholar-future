@@ -114,6 +114,6 @@ function background() {
     animation();
 }
 background();
-$(window).resize(function () {
+window.addEventListener('resize', function() {
     background();
 })

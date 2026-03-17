@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     var body = $('body'),
         contentSelector = 'post-content',
         toolbarId = 'sideToolbar',
@@ -118,7 +118,7 @@ $(document).ready(function () {
  */
 function lenStat(target){
     var strlen=0; //初始定义长度为0
-    var txtval = $.trim(target);
+    var txtval = target.trim();
     for(var i=0;i<txtval.length;i++){
      if(isChinese(txtval.charAt(i))==true){
       strlen=strlen+2;//中文为2个字符

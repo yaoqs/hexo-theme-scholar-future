@@ -29,9 +29,9 @@
         <div class="dropdown-content" id="dropdown-a">
           <script>
             $(async function () {
-              jax(
-                "https://api.github.com/users/<%= theme.githubname %>/repos",
-                await function (dataString) {
+              $.ajax({
+                url: "https://api.github.com/users/<%= theme.githubname %>/repos",
+                success: function (dataString) {
                   /*var div2 = document.querySelector("#dropdown-a");
                                                     for (var rep of dataString) {
                                                         //console.log(rep.name);
@@ -65,7 +65,7 @@
                     "<div style='color:red;width: 9em;height: 2em;text-align: center;display: table-cell;vertical-align: middle;'>当前无网络</div>"
                   ).appendTo($("#dropdown-a"));
                 }
-              );
+              });
             });
           </script>
         </div>

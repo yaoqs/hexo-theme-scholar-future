@@ -59,11 +59,10 @@
 
     <title><% if (title){ %> <%= title %> | <% } %> <%= config.title %></title>
 
-    <%- theme.CDN.bootstrap %> <%- theme.CDN.fontawesome %> <%- css('css/future.css') %> <%- css('css/main') %>
+    <%- theme.CDN.bootstrap %> <%- theme.CDN.fontawesome %> <%- css('css/future.css') %>
 
     <!--引用cdn服务的时候，怎么做到cdn加载不到之后用本地的-->
-    <%- theme.CDN.jquery %> <%- theme.CDN.qrcode %> <%- theme.CDN.d3js %> <%-
-    js("js/ax.js") %> <%- js("/js/main.js") %> <%- autoCanonical(config, page)
+    <%- theme.CDN.jquery %> <%- theme.CDN.qrcode %> <%- theme.CDN.d3js %> <%- js("/js/main.js") %> <%- autoCanonical(config, page)
     %>
     <%- theme.CDN.html5shiv %>
   </head>
