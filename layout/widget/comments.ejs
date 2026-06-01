@@ -1,5 +1,5 @@
 <% if (post.comments){ if (config.utterances && config.utterances.enable){ %>
-<%= config.utterances.js %>
+<%- config.utterances.js %>
 <% } else if (config.giscus && config.giscus.enable) { %>
-<%= config.giscus.js %>
+<%- config.giscus.js %>
 <% } } %>
